@@ -4,7 +4,7 @@
  * 用于支付端的方法验证
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\User;
 
 
 use App\Models\Article;
@@ -12,9 +12,9 @@ use App\Models\CostRecord;
 use App\Models\Freight;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use App\Seller\Facades\Seller;
+use App\User\Facades\User;
 use Encore\Admin\Facades\Admin;
-use App\Seller\Layout\Content;
+use App\User\Layout\Content;
 use App\Repositories\FreightRepository;
 use Encore\Admin\Widgets\Box;
 use Encore\Admin\Widgets\Table;
@@ -28,10 +28,10 @@ class ArticleController extends Controller
 
     public function index(){
 
-        return Seller::content(function (Content $content) {
+        return User::content(function (Content $content) {
 
-//            $content->header(__('Article'));
-//            $content->description(__('Article'));
+            $content->header(__('Article'));
+            $content->description(__('Article'));
 
             $content->body($this->grid());
 
@@ -40,7 +40,7 @@ class ArticleController extends Controller
 
     public function faq(){
 
-        return Seller::content(function (Content $content) {
+        return User::content(function (Content $content) {
 
             $content->header(__('FAQ'));
             $content->description(__('FAQ'));
@@ -52,7 +52,7 @@ class ArticleController extends Controller
 
     public function show($id){
         //
-        return Seller::content( function (Content $content) use ($id) {
+        return User::content( function (Content $content) use ($id) {
 
             $article = Article::findOrFail($id);
             $box = new Box($article->title, $article->content);
@@ -77,7 +77,7 @@ class ArticleController extends Controller
      */
     protected function grid($type='')
     {
-        return Seller::grid(Article::class, function (Grid $grid) use ($type){
+        return User::grid(Article::class, function (Grid $grid) use ($type){
 
             $grid->model()->where('type_id',$type);
             $grid->disableExport();

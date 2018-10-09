@@ -1,0 +1,116 @@
+/* Common */
+.skin-color .btn-success, .skin-color .btn-twitter {
+    border-color: #f87622;
+    background-color: #f87622;
+}
+.skin-color .btn-success:hover, .skin-color .btn-twitter:hover {
+    border-color: #e76511;
+    background-color: #e76511;
+}
+.skin-color .main-header>.logo:hover {
+    background-color: #f87622;
+}
+
+.skin-color .btn-primary,
+.skin-color .pagination > .active > span {
+    border-color: #f87622;
+    background-color: #f87622;
+}
+.skin-color .btn-primary:hover,
+.skin-color .pagination > .active > span:hover
+{
+    border-color: #e76511;
+    background-color: #e76511;
+}
+.skin-color .nav-tabs-custom > .nav-tabs > li.active {
+    border-top-color: #f87622;
+}
+/* Layout */
+.skin-color.login-page { background-size: cover; position: relative; }
+.skin-color .login-box { opacity:0.9; position: absolute; margin: 0; }
+.skin-color .login-logo { background: #fff; margin-bottom: 0; padding-top: 25px; }
+.skin-color .main-header {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.skin-color .main-header > .logo {
+    background-color: #f87622;
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+}
+.skin-color .main-header .navbar .nav > li > a {
+    color: #333333;
+}
+.skin-color .main-header .navbar .nav > li > a:hover,
+.skin-color .main-header .navbar .nav > li > a:active,
+.skin-color .main-header .navbar .nav > li > a:focus,
+.skin-color .main-header .navbar .nav > .open > a,
+.skin-color .main-header .navbar .nav > .active > a {
+    background-color: #ffffff;
+    color: #666666;
+}
+.skin-color .main-header .navbar .sidebar-toggle {
+    color: #666666;
+}
+.skin-color .main-header .navbar .sidebar-toggle:hover {
+    color: #666666;
+}
+.skin-color .main-header .navbar .navbar-nav > li > a {
+    border-right: 1px solid #eee;
+}
+.skin-color .main-header .navbar .navbar-custom-menu .navbar-nav > li > a,
+.skin-color .main-header .navbar .navbar-right > li > a {
+    border-left: 1px solid #eee;
+    border-right-width: 0;
+}
+.skin-color .main-header .navbar .messages-menu .dropdown-menu li .menu > li > a {
+    color: #666;
+}
+.skin-color .main-header li.user-header {
+    background-color: #2f323a;
+}
+.skin-color .main-sidebar,
+.skin-color .left-side {
+    background-color: #2f323a;
+}
+.skin-color .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
+    background: #2f323a;
+}
+.skin-color .sidebar-menu .treeview-menu {
+    padding: 10px 0 10px 3px;
+    background: #1b1d23;
+}
+.skin-color .sidebar-menu a {
+    color: #a5a7ab;
+}
+.skin-color .sidebar-menu > li:hover > a {
+    color: #CCCCCC;
+}
+.skin-color .sidebar-menu > li.active > a {
+    color: #FFFFFF;
+    border-left-color: #f87622;
+}
+.skin-color .sidebar-menu li > a > .fa-ico-toggle {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 0;
+    margin-right: 10px;
+    background: #515660;
+}
+.skin-color .sidebar-menu li.active > a > .fa-ico-toggle {
+    background: #f87622;
+}
+.skin-color .content-wrapper {
+    background-color: #f6f6f6;
+}
+.box.box-solid.box-info {
+    border: 1px solid #f87622;
+}
+.box.box-solid.box-info>.box-header {
+    color: #fff;
+    background: #f87622;
+    background-color: #f87622;
+}
+

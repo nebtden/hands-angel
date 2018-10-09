@@ -36,4 +36,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+    //重写验证字段
+    public function username()
+    {
+        return 'name';
+    }
 }

@@ -1,0 +1,14 @@
+/**
+simon.zhang 添加用于nilo独有样式。。加前缀区分
+
+**/
+.nilo_span{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    /* height: 20px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

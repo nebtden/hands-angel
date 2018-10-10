@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> {{ trans('admin::lang.login') }}</title>
+    <title> 登录</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -41,7 +41,7 @@
                     @endforeach
                 @endif
 
-                <input type="input" class="form-control" placeholder="{{ trans('admin::lang.name') }}" name="name" value="{{ old('name') }}">
+                <input type="input" class="form-control" placeholder="用户名" name="name" value="{{ old('name') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
@@ -55,14 +55,7 @@
                 <input type="password" class="form-control" placeholder="{{ trans('admin::lang.password') }}" name="password" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback" >
-                <select name="language" class="form-control" >
-                    <option value="en">English</option>
-                    <option value="zh_CN">汉语</option>
 
-                </select>
-                <span class="glyphicon glyphicon-book form-control-feedback"></span>
-            </div>
             <div class="row">
 
                 <!-- /.col -->
@@ -70,14 +63,12 @@
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div style="width: auto;display: table;margin-left: auto;margin-right: auto;">
-                        <button type="submit" class="btn btn-primary" style="">{{ trans('admin::lang.login') }}</button>
-
+                        <button type="submit" class="btn btn-primary" style="">登录</button>
                     </div>
                     <a href="javascript:;" style="position:absolute;right:0px;top:3px;float: right" class=" " data-toggle="modal"  data-target=".bs-example-modal-sm"     >
                         FAQ
                     </a>
-                    {{--<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">1111</button>--}}
-                    {{--<a href="javascript:;" >支持kilimalll登陆</a>--}}
+
 
                 </div>
                 <!-- /.col -->
@@ -89,26 +80,7 @@
 </div>
 <!-- /.login-box -->
 
-<!-- Small modal -->
-{{--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>--}}
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <h4 class="modal-title">FAQ</h4>
-            </div>
-            <div class="modal-body">
-                <p>支持Kilimall卖家账号登录，登录用户名是：国家代码_卖家用户名（e.g.：ke_UseName）</p>
-                <p>国家代码：肯尼亚：ke，尼日利亚：ng，乌干达：ug</p>
-                <hr>
-                <p>Support Kilimall seller account login，Login name：Country code_Kilimall seller account（e.g.：ke_UseName）</p>
-                <p>Country code：Kenya：ke，Nigeria：ng，Uganda：ug</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- jQuery 2.1.4 -->
 <script src="{{ asset("/packages/admin/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js")}} "></script>

@@ -1,32 +1,22 @@
 
 <li>
-    <a href="{{ url('seller/store') }}"><i class="fa fa-shopping-bag"></i>
-        <span>@lang('seller.Stores')</span>
+    <a href="{{ url('user/articles') }}"><i class="fa fa-shopping-bag"></i>
+        <span>文章列表</span>
+    </a>
+</li>
+
+<li>
+    <a href="{{ url('user/task') }}"><i class="fa fa-shopping-bag"></i>
+        <span>任务列表</span>
     </a>
 </li>
 
 
 <li>
-    <a href="{{ url('seller/freight') }}"><i class="fa fa-plane"></i>
-        <span>@lang('seller.Freight')</span>
-    </a>
-</li>
-<li>
-    <a href="{{url('seller/storage') }}"><i class="fa fa-home"></i>
-        <span>@lang('seller.Storage')</span>
-    </a>
-</li>
-<li>
-    <a href="{{url('seller/waybill-append') }}"><i class="fa fa-arrow-right"></i>
-        <span>@lang('seller.WaybillCreate')</span>
-    </a>
-</li>
-<li>
-    <a href="{{url('seller/transaction') }}"><i class="fa fa-usd"></i>
+    <a href="{{url('user/apply_log') }}"><i class="fa fa-usd"></i>
         <span>@lang('seller.Transaction')</span>
     </a>
 </li>
-
 
 <li class="treeview active">
     <a href="#">
@@ -55,8 +45,8 @@
 </li>
 
 <li>
-    <a href="/seller/setting/{{ Seller::user()->id }}/edit"><i class="fa fa-gears"></i>
-        <span>@lang('seller.Reset Password')</span>
+    <a href="/user/setting/{{ Seller::user()->id }}/edit"><i class="fa fa-gears"></i>
+        <span>重置密码</span>
     </a>
 </li>
 <li>
@@ -66,16 +56,4 @@
 </li>
 
 
-{{--<li class="treeview">--}}
-{{--<a href="#">--}}
-{{--<i class="fa {{$item['icon']}}"></i>--}}
-{{--<span>{{$item['title']}}</span>--}}
-{{--<i class="fa fa-angle-left pull-right"></i>--}}
-{{--</a>--}}
-{{--<ul class="treeview-menu">--}}
-{{--@foreach($item['children'] as $item)--}}
-{{--@include('admin.partials.menu', $item)--}}
-{{--@endforeach--}}
-{{--</ul>--}}
-{{--</li>--}}
 

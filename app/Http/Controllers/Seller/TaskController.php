@@ -16,7 +16,6 @@ use Encore\Admin\Grid;
 use App\Seller\Facades\Seller;
 use Encore\Admin\Facades\Admin;
 use App\Seller\Layout\Content;
-use App\Repositories\FreightRepository;
 use Encore\Admin\Widgets\Box;
 use Encore\Admin\Widgets\Table;
 use Illuminate\Routing\Route;
@@ -27,14 +26,10 @@ class TaskController extends Controller
 {
 
 
-    public function index(){
+    public function index(Content $content){
+        return $content->header('header')->description('description')
+            ->body($this->grid());
 
-        return Seller::content(function (Content $content) {
-
-
-            $content->body($this->grid());
-
-        });
     }
 
 
@@ -54,31 +49,23 @@ class TaskController extends Controller
 
     /**
      * Make a grid builder.
-     * @param $type 类型
+     *
      * @return Grid
      */
-    protected function grid($type='')
+    protected function grid()
     {
-        return Seller::grid(Task::class, function (Grid $grid) use ($type){
+        $grid = new Grid(new Task());
 
-            $grid->model()->where('type_id',$type);
-
-            $grid->disableRowSelector();
-            $grid->disableBatchDeletion();
-
-            $grid->title()->value(function ($title) {
-                return "<a href='".url('/user/task',[
+        $grid->column('title')->display(function ($title) {
+            return "<a href='".url('/user/task',[
                     'id'=>$this->id
-                ])."'>$this->task</span></a>";
-            });
-
-
-            $grid->filter(function($filter) use ($type){
-
-            });
-
+                ])."'>$title</span></a>";
         });
+
+        return $grid;
     }
+
+
 
 
     /**

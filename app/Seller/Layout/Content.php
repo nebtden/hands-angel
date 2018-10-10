@@ -11,11 +11,18 @@ use Encore\Admin\Layout\Content as AdminContent;
 
 class Content extends AdminContent{
 
+
+    /**
+     * Render this content.
+     *
+     * @return string
+     */
     public function render()
     {
         $items = [
             'header'      => $this->header,
             'description' => $this->description,
+            'breadcrumb'  => $this->breadcrumb,
             'content'     => $this->build(),
         ];
 

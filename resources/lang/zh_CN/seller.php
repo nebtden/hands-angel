@@ -7,6 +7,7 @@ return [
     'Storage'=>'仓储费用',
     'Transaction'=>'充值记录',
     'Day'=>'日',
+    'Title'=>'标题',
     'Week'=>'周',
     'Month'=>'月',
     'Reset Password'=>'修改密码',

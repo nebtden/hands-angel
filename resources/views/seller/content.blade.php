@@ -3,8 +3,8 @@
 @section('content')
     <section class="content-header">
         <h1>
-            {{ $header or trans('seller.lang.title') }}
-            <small>{{ $description or trans('seller.lang.description') }}</small>
+            {{ $header  }}
+            <small>{{ $description }}</small>
         </h1>
 
     </section>

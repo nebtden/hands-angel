@@ -43,7 +43,7 @@ class HomeController extends Controller
 
 
     public function ClinentRow($content){
-        $content->row('欢迎使用nilo物流系统！');
+        $content->row('欢迎来到天使之城！');
     }
 
     public function SellerRow($content){

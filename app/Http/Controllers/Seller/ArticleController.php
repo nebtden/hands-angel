@@ -29,26 +29,11 @@ class ArticleController extends Controller
     public function index(){
 
         return Seller::content(function (Content $content) {
-
-//            $content->header(__('Article'));
-//            $content->description(__('Article'));
-
             $content->body($this->grid());
-
         });
     }
 
-    public function faq(){
 
-        return Seller::content(function (Content $content) {
-
-            $content->header(__('FAQ'));
-            $content->description(__('FAQ'));
-
-            $content->body($this->grid(1));
-
-        });
-    }
 
     public function show($id){
         //
@@ -57,14 +42,6 @@ class ArticleController extends Controller
             $article = Article::findOrFail($id);
             $box = new Box($article->title, $article->content);
             $content->row($box);
-//            echo $box;
-//            //运单的发货人信息
-//            $headers = ['Keys', 'Values'];
-//            $rows = ['SenderName2'=> '','SenderName1'=> '',
-//            ];
-//            $table = new Table($headers, $rows);
-//            $content->row((new Box('SenderInfo', $table))->style('info')->solid());
-
 
         });
     }
@@ -81,13 +58,11 @@ class ArticleController extends Controller
 
             $grid->model()->where('type_id',$type);
             $grid->disableExport();
-            $grid->disableCreation();
+            $grid->disableCreateButton();
             $grid->disableRowSelector();
             $grid->disableBatchDeletion();
             $grid->disableActions();
 
-//            $grid->display('id', 'ID');
-//            $grid->title(__('Title'));
             $grid->title()->value(function ($title) {
                 return "<a href='".url('/seller/article',[
                     'id'=>$this->id

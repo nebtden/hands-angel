@@ -7,23 +7,18 @@
 namespace App\Http\Controllers\Seller;
 
 
-use App\Models\Article;
-use App\Models\CostRecord;
-use App\Models\Freight;
-use App\Models\Task;
+
+use App\Models\TasksApplyLog;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Facades\Seller;
 use Encore\Admin\Facades\Admin;
 use App\Seller\Layout\Content;
-use App\Repositories\FreightRepository;
 use Encore\Admin\Widgets\Box;
-use Encore\Admin\Widgets\Table;
-use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\URL;
 
-class TaskController extends Controller
+
+class TasksApplyLogController extends Controller
 {
 
 
@@ -43,7 +38,7 @@ class TaskController extends Controller
         //
         return Seller::content( function (Content $content) use ($id) {
 
-            $article = Article::findOrFail($id);
+            $article = TasksApplyLog::findOrFail($id);
             $box = new Box($article->title, $article->content);
             $content->row($box);
 

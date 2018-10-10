@@ -25,14 +25,12 @@ Auth::routes();
 //普通页面
 Route::get('/home', 'Seller\HomeController@index');
 
-Route::middleware(['pjax'])->resource('/user/transaction', 'Seller\TransactionController');
+Route::middleware(['pjax'])->resource('/user/task', 'Seller\TaskController');
 
-Route::middleware(['pjax'])->resource('/user/transition', 'Seller\TransitionController');
+Route::middleware(['pjax'])->resource('/user/apply_log', 'Seller\TasksApplyLogController');
 
 Route::middleware(['pjax'])->resource('/user/article', 'Seller\ArticleController');
 
-
-Route::middleware(['pjax'])->get('/user/faq', 'Seller\ArticleController@faq');
 
 
 

@@ -85,54 +85,13 @@ class SettingController extends Controller
     protected function form()
     {
 
-        return Admin::form(Auth::user(), function (Form $form) {
-            $user = Auth::user();
-            if(!$user->is_reset_password){
-                $form->html("<span style='color: red'>".__('Please change your password when first login in!')."<span>");
-            }
 
-            //检测id是否为自己id  @todo
-            $currentRoute = Route::current();//获取当前地址信息
-            $params = $currentRoute->parameters();//获取参数
+            $form = new Form(new );
 
-            $id = $params['setting'];
-            if($id!=$user->id){
-                return false;
-            }
-
-            $form->display('name', __('Name'));
-            $form->password('old_password',__('Old Password'))->rules('required');;
-            $form->password('password',__('Password'))->rules('required|length:6,20');
-
-            $form->password('password_again',__('Password Again'))->rules('required|same:password');;
-
-            $form->hidden('is_reset_password');
-            $form->ignore(['old_password','password_again']);
+            $form->display('id', 'ID');
+            $form->display('created_at', 'Created At');
 
 
-            $form->saving(function(Form $form) {
-
-
-                if (!Hash::check($_POST['old_password'], $form->model()->password)) {
-                    throw  new \Exception(__('Old Password Error!'));
-                }
-                if($form->password){
-                    $form->password = bcrypt($form->password);
-                }
-                $form->is_reset_password = 1;
-
-            });
-
-            $form->saved(function(){
-                $request = App()->request;
-
-                $request->session()->flush();
-
-                $request->session()->regenerate();
-
-                return redirect('/login');
-            });
-
-        });
+            return $form;
     }
 }

@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use App\Models\Article;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     /**
      * Show the application dashboard.
@@ -23,6 +17,28 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        //栏目
+        $categories = Category::all();
+
+        //文章列表1
+        $first_articles = Article::where([
+            'category_id'=>1,
+            'status'=>1,
+        ])->limit(3)->get();
+
+
+        //文章列表2
+        $send_articles = Article::where([
+            'category_id'=>2,
+            'status'=>1,
+        ])->limit(3)->get();
+
+        return view('welcome',[
+
+            'categories'=>$categories,
+            'first_articles'=>$first_articles,
+            'send_articles'=>$send_articles,
+        ]);
     }
 }

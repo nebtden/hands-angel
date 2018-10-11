@@ -6,21 +6,15 @@
 
 namespace App\Http\Controllers\Seller;
 
-
-use App\Models\Article;
 use App\Models\CostRecord;
 use App\Models\Freight;
 use App\Models\Task;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use App\Seller\Facades\Seller;
-use Encore\Admin\Facades\Admin;
 use App\Seller\Layout\Content;
-use Encore\Admin\Widgets\Box;
-use Encore\Admin\Widgets\Table;
-use Illuminate\Routing\Route;
+use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\URL;
+
 
 class TaskController extends Controller
 {
@@ -29,23 +23,56 @@ class TaskController extends Controller
     public function index(Content $content){
         return $content->header('header')->description('description')
             ->body($this->grid());
+    }
 
+
+    /**
+     * Show interface.
+     *
+     * @param mixed   $id
+     * @param Content $content
+     * @return Content
+     */
+    public function show($id, Content $content)
+    {
+        return $content
+            ->header('Detail')
+            ->description('description')
+            ->body($this->detail($id));
     }
 
 
 
-    public function show($id){
-        //
-        return Seller::content( function (Content $content) use ($id) {
 
-            $article = Article::findOrFail($id);
-            $box = new Box($article->title, $article->content);
-            $content->row($box);
-
-
-        });
+    /**
+     * Edit interface.
+     *
+     * @param mixed   $id
+     * @param Content $content
+     * @return Content
+     */
+    public function edit($id, Content $content)
+    {
+        return $content
+            ->header('Edit')
+            ->description('description')
+            ->body($this->form()->edit($id));
     }
 
+
+    /**
+     * Create interface.
+     *
+     * @param Content $content
+     * @return Content
+     */
+    public function create(Content $content)
+    {
+        return $content
+            ->header('Create')
+            ->description('description')
+            ->body($this->form());
+    }
 
     /**
      * Make a grid builder.
@@ -54,7 +81,9 @@ class TaskController extends Controller
      */
     protected function grid()
     {
+        $user = Auth::user();
         $grid = new Grid(new Task());
+        $grid->model()->where('user_id',$user->id);
 
         $grid->column('title')->display(function ($title) {
             return "<a href='".url('/user/task',[
@@ -65,6 +94,22 @@ class TaskController extends Controller
         return $grid;
     }
 
+    /**
+     * Make a show builder.
+     *
+     * @param mixed   $id
+     * @return Show
+     */
+    protected function detail($id)
+    {
+        $show = new Show(Task::findOrFail($id));
+
+        $show->id('ID');
+        $show->title('标题');
+        $show->content('内容');
+
+        return $show;
+    }
 
 
 
@@ -76,20 +121,20 @@ class TaskController extends Controller
     protected function form()
     {
 
-        return Admin::form(Task::class, function (Form $form) {
+        $form = new Form(new Task());
 
+        $form->text('title', '标题');
+        $form->textarea('content', '内容');
+        $form->select('type_id', '类型')->options(Task::$types);
 
-            $form->text('title', '标题');
-            $form->textarea('content', '内容');
-            $form->select('type_id', '类型')->options(Task::$types);
-
-            $form->saving(function(Form $form) {
-                $user = Auth::user();
-                $form->user_id = $user->id;
-            });
-
-
+        $form->hidden('user_id');
+        $form->saving(function(Form $form) {
+            $user = Auth::user();
+            $form->user_id = $user->id;
         });
+        return $form;
+
+
     }
 
 }

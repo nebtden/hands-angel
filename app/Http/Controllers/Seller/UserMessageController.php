@@ -63,6 +63,8 @@ class UserMessageController extends Controller
 //        $form->email('email', '邮件');
         $form->select('is_married', '是否结婚')->options(UserMessage::$married);
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
+
+        //@todo  省份联动
         $form->date('birth_day', '出生日期');
         $form->text('qq', 'QQ');
         $form->text('wechat', '微信');

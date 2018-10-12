@@ -14,36 +14,38 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Facades\Seller;
 use Encore\Admin\Facades\Admin;
-use App\Seller\Layout\Content;
 use App\Repositories\FreightRepository;
 use Encore\Admin\Widgets\Box;
 use Encore\Admin\Widgets\Table;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
+use App\Seller\Layout\Content;
 
 class ArticleController extends Controller
 {
 
 
-    public function index(){
+    public function index(Content $content){
 
-        return Seller::content(function (Content $content) {
-            $content->body($this->grid());
-        });
+        return $content->header('header')->description('description')
+            ->body($this->grid());
     }
 
 
-
-    public function show($id){
-        //
-        return Seller::content( function (Content $content) use ($id) {
-
-            $article = Article::findOrFail($id);
-            $box = new Box($article->title, $article->content);
-            $content->row($box);
-
-        });
+    /**
+     * Show interface.
+     *
+     * @param mixed   $id
+     * @param Content $content
+     * @return Content
+     */
+    public function show($id, Content $content)
+    {
+        return $content
+            ->header('Detail')
+            ->description('description')
+            ->body($this->detail($id));
     }
 
 

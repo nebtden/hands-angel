@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserMessage extends Model
 {
+    protected  $fillable = ['id'];
 
     public static $sex = [
         '1'=>'男',

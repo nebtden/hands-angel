@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 
 class Controller extends BaseController{
 
+
+
     public function __construct(Request $request)
     {
         $this->middleware(['auth']);

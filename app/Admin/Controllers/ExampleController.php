@@ -8,6 +8,8 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use App\Models\Task;
+
 
 class ExampleController extends Controller
 {
@@ -78,7 +80,7 @@ class ExampleController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new YourModel);
+        $grid = new Grid(new Task());
 
         $grid->id('ID')->sortable();
         $grid->created_at('Created at');
@@ -95,7 +97,7 @@ class ExampleController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(YourModel::findOrFail($id));
+        $show = new Show(Task::findOrFail($id));
 
         $show->id('ID');
         $show->created_at('Created at');
@@ -111,9 +113,10 @@ class ExampleController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new YourModel);
+        $form = new Form(new Task());
 
         $form->display('id', 'ID');
+        $form->text('title', 'ID');
         $form->display('created_at', 'Created At');
         $form->display('updated_at', 'Updated At');
 

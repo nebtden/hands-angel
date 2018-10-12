@@ -1,12 +1,7 @@
 
-<li>
-    <a href="{{ url('user/articles') }}"><i class="fa fa-shopping-bag"></i>
-        <span>文章</span>
-    </a>
-</li>
 
 <li>
-    <a href="{{ url('user/task') }}"><i class="fa fa-shopping-bag"></i>
+    <a href="{{ url('user/tasks') }}"><i class="fa fa-shopping-bag"></i>
         <span>任务</span>
     </a>
 </li>

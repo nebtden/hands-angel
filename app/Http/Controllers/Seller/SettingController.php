@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Seller;
 
 
+use App\User;
 use Encore\Admin\Form;
 use App\Seller\Facades\Seller;
 use Encore\Admin\Facades\Admin;
@@ -50,19 +51,19 @@ class SettingController extends Controller
         return $this->form()->update($id);
     }
 
-/*    public function update(Request $request){
+    /*    public function update(Request $request){
 
-        $password  = $request->input('password');
-        if($password){
-            $user = Auth::user();
-            //@simon.zhang  需要验证位数等。。进行加密
-            $user->password = bcrypt($password);
-            $user->update();
-        }
+            $password  = $request->input('password');
+            if($password){
+                $user = Auth::user();
+                //@simon.zhang  需要验证位数等。。进行加密
+                $user->password = bcrypt($password);
+                $user->update();
+            }
 
-        return redirect('/seller/setting');
+            return redirect('/seller/setting');
 
-    }*/
+        }*/
 
 
     public function edit($id)
@@ -85,13 +86,15 @@ class SettingController extends Controller
     protected function form()
     {
 
+        $form = new Form(new User());
 
-            $form = new Form(new );
+        $form->display('id', 'ID');
+        $form->display('created_at', 'Created At');
+        $form->saving(function(Form $form) {
+            $user = Auth::user();
+            $form->password = Hash::make($form->password);
+        });
 
-            $form->display('id', 'ID');
-            $form->display('created_at', 'Created At');
-
-
-            return $form;
+        return $form;
     }
 }

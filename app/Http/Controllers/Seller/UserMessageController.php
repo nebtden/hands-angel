@@ -59,7 +59,7 @@ class UserMessageController extends Controller
 
         $form->select('sex', '性别')->options(UserMessage::$sex);
         $form->mobile('mobile', '手机号码');
-        $form->email('email', '邮件');
+//        $form->email('email', '邮件');
         $form->select('is_married', '是否结婚')->options(UserMessage::$married);
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
         $form->date('birth_day', '出生日期');

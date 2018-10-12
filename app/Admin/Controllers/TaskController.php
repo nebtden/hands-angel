@@ -4,14 +4,14 @@
  * 用于方法验证
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Admin\Controllers;
 
 use App\Models\CostRecord;
 use App\Models\Freight;
 use App\Models\Task;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use App\Seller\Layout\Content;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,13 +24,6 @@ class TaskController extends Controller
         return $content->header('header')->description('description')
             ->body($this->grid());
     }
-
-
-    public function others(Content $content){
-        return $content->header('header')->description('description')
-            ->body($this->grid());
-    }
-
 
 
 
@@ -69,59 +62,30 @@ class TaskController extends Controller
 
 
     /**
-     * Create interface.
-     *
-     * @param Content $content
-     * @return Content
-     */
-    public function create(Content $content)
-    {
-        return $content
-            ->header('Create')
-            ->description('description')
-            ->body($this->form());
-    }
-
-    /**
      * Make a grid builder.
      *
      * @return Grid
      */
     protected function grid()
     {
-        $user = Auth::user();
+
         $grid = new Grid(new Task());
-        $grid->model()->where('user_id',$user->id);
+
 
         $grid->column('title')->display(function ($title) {
             return "<a href='".url('/user/task',[
                     'id'=>$this->id
                 ])."'>$title</span></a>";
         });
-
-        return $grid;
-    }
-
-
-    /**
-     * Make a grid builder.
-     *
-     * @return Grid
-     */
-    protected function other_grid()
-    {
-        $user = Auth::user();
-        $grid = new Grid(new Task());
-        $grid->model()->where('user_id',$user->id);
-
-        $grid->column('title')->display(function ($title) {
-            return "<a href='".url('/user/task',[
-                    'id'=>$this->id
-                ])."'>$title</span></a>";
+        $grid->column('status')->display(function ($status){
+            return Task::$status[$status];
         });
 
         return $grid;
     }
+
+
+
 
 
     /**

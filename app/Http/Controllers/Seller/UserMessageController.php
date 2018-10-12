@@ -41,8 +41,6 @@ class UserMessageController extends Controller
         $show = new Show(UserMessage::findOrFail($id));
 
 
-        $show->title('标题');
-        $show->content('内容');
 
         return $show;
     }
@@ -59,7 +57,6 @@ class UserMessageController extends Controller
 
         $form = new Form(new UserMessage());
 
-//        $form->text('real_name', '真实姓名');
         $form->select('sex', '性别')->options(UserMessage::$sex);
         $form->mobile('mobile', '手机号码');
         $form->email('email', '邮件');
@@ -69,11 +66,7 @@ class UserMessageController extends Controller
         $form->text('qq', 'QQ');
         $form->text('wechat', '微信');
 
-        $form->hidden('user_id');
-        $form->saving(function(Form $form) {
-            $user = Auth::user();
-            $form->user_id = $user->id;
-        });
+
         return $form;
 
 

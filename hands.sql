@@ -800,8 +800,8 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('19', 'test', 'akothissheila@gmail.com', '2018-10-09 22:08:01', '$2y$10$iqZIp82igtuIEf8dNXW3XOYVk0GUy0.TU1LdIn4Ggbl.9McOXBdbi', null, null, null);
-INSERT INTO `users` VALUES ('20', 'simon', 'simon@qq.com', null, '$2y$10$MWoYqcSSck3Dcqgzg9pic.NQHxDGe5b0MeQwp4M0ve6Hb8yEWoH..', null, '2018-10-10 14:24:43', '2018-10-10 14:24:43');
+INSERT INTO `users` VALUES ('19', 'test', 'akothissheila@gmail.com', '2018-10-09 22:08:01', '$2y$10$iqZIp82igtuIEf8dNXW3XOYVk0GUy0.TU1LdIn4Ggbl.9McOXBdbi','', 1,null, null, null);
+INSERT INTO `users` VALUES ('20', 'simon', 'simon@qq.com', null, '$2y$10$MWoYqcSSck3Dcqgzg9pic.NQHxDGe5b0MeQwp4M0ve6Hb8yEWoH..','',1, null, '2018-10-10 14:24:43', '2018-10-10 14:24:43');
 
 -- ----------------------------
 -- Table structure for user_images

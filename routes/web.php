@@ -16,6 +16,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/list', 'HomeController@list')->name('list');
 
 //卖家登陆路由
 Auth::routes();

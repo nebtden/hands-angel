@@ -23,8 +23,9 @@ class UserMessageController extends Controller
 
     public function index(Content $content){
         $user = Auth::user();
-        return $content->header('header')->description('description')
-            ->body($this->form()->edit($user->id));
+        return $content->header('个人信息')->description('个人信息补充')
+             ->body('注意，经用户反馈，个人信息补充完整，更有可能发布成功')
+             ->body($this->form()->edit($user->id));
     }
 
 

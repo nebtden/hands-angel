@@ -28,6 +28,7 @@ Route::middleware(['pjax'])->resource('/user/task', 'Seller\TaskController');
 Route::middleware(['pjax'])->resource('/user/apply_log', 'Seller\TasksApplyLogController');
 
 Route::middleware(['pjax'])->resource('/user/article', 'Seller\ArticleController');
+Route::middleware(['pjax'])->resource('/user/message', 'Seller\UserMessageController');
 
 
 

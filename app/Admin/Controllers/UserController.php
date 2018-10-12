@@ -4,33 +4,27 @@
  * 用于方法验证
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Admin\Controllers;
 
 use App\Models\CostRecord;
 use App\Models\Freight;
 use App\Models\Task;
+use App\Models\UserMessage;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use App\Seller\Layout\Content;
+use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
 
 
-class TaskController extends Controller
+class UserController extends Controller
 {
 
 
     public function index(Content $content){
-        return $content->header('自身需求')->description('description')
+        return $content->header('header')->description('description')
             ->body($this->grid());
     }
-
-
-    public function others(Content $content){
-        return $content->header('其他需求')->description('description')
-            ->body($this->other_grid());
-    }
-
 
 
 
@@ -69,59 +63,32 @@ class TaskController extends Controller
 
 
     /**
-     * Create interface.
-     *
-     * @param Content $content
-     * @return Content
-     */
-    public function create(Content $content)
-    {
-        return $content
-            ->header('Create')
-            ->description('description')
-            ->body($this->form());
-    }
-
-    /**
      * Make a grid builder.
      *
      * @return Grid
      */
     protected function grid()
     {
-        $user = Auth::user();
-        $grid = new Grid(new Task());
-        $grid->model()->where('user_id',$user->id);
 
-        $grid->column('title')->display(function ($title) {
-            return "<a href='".url('/user/task',[
-                    'id'=>$this->id
-                ])."'>$title</span></a>";
+        $grid = new Grid(new Task());
+
+        $grid->column('name')->display(function ($name){
+            return $name;
+        });
+
+        $grid->column('status')->display(function ($status){
+            return Task::$status[$status];
+        });
+
+        $grid->filter(function ($filter) {
+
         });
 
         return $grid;
     }
 
 
-    /**
-     * Make a grid builder.
-     *
-     * @return Grid
-     */
-    protected function other_grid()
-    {
 
-        $grid = new Grid(new Task());
-
-
-        $grid->column('title')->display(function ($title) {
-            return "<a href='".url('/user/task',[
-                    'id'=>$this->id
-                ])."'>$title</span></a>";
-        });
-
-        return $grid;
-    }
 
 
     /**

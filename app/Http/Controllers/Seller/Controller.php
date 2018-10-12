@@ -10,8 +10,7 @@ namespace App\Http\Controllers\Seller;
 use App\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Seller;
-use App\Models\Client;
+
 
 class Controller extends BaseController{
 
@@ -20,13 +19,6 @@ class Controller extends BaseController{
         $this->middleware(['auth']);
     }
 
-    public function getSellerIds(){
-        $user = Auth::user();
-        $store_ids = Seller::where([
-            'user_id'=>$user->id
-        ])->pluck('store_id')->toArray();
-        return $store_ids;
-    }
 
     /**
      * 获取当前用户能够管理的店铺
@@ -35,19 +27,8 @@ class Controller extends BaseController{
      */
     public function getMyConditon($grid){
         $user = Auth::user();
-        if($user->account_type==0){
-            $grid->model()->where('user_id',$user->id);
-        }else{
-            $client = Client::where(['user_id'=>$user->id])->first();
-            $grid->model()->where('client_id',$client->id);
-        }
+        $grid->model()->where('user_id',$user->id);
 
-//        $store_ids = $this->getSellerIds();
-//        if($store_ids){
-//            $grid->model()->whereIn('store_id', $store_ids);
-//        }else{
-//            throw new \Exception('you don\'t have any stores,please contact the administor!');
-//        }
         $grid->model()->orderBy('id', 'desc');
         return $grid;
 

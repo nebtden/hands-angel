@@ -45,8 +45,6 @@
                                 </li>
                             @endforeach
 
-
-
                         </ul>
                     </section>
 
@@ -59,11 +57,14 @@
                             <div class="row">
                                 <div class="col-12 col-12-small">
                                     <ul class="link-list">
-                                        <li><a href="#">Sed neque nisi consequat Sed neque nisi consequat Sed neque nisi consequat </a></li>
-                                        <li><a href="#">Dapibus sed mattis blandit</a></li>
-                                        <li><a href="#">Quis accumsan lorem</a></li>
-                                        <li><a href="#">Suspendisse varius ipsum</a></li>
-                                        <li><a href="#">Eget et amet consequat</a></li>
+                                        @foreach ($send_articles as $article)
+                                        <li>
+                                            <a href="{{url('article/detail',['id'=>$article->id])}}">
+                                                {{$article->title}}
+                                            </a>
+                                        </li>
+
+                                        @endforeach
                                     </ul>
                                 </div>
 

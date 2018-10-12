@@ -57,11 +57,17 @@ class UserMessageController extends Controller
     protected function form()
     {
 
-        $form = new Form(new Task());
+        $form = new Form(new UserMessage());
 
-        $form->text('title', '标题');
-        $form->textarea('content', '内容');
-        $form->select('type_id', '类型')->options(Task::$types);
+//        $form->text('real_name', '真实姓名');
+        $form->select('sex', '性别')->options(UserMessage::$sex);
+        $form->mobile('mobile', '手机号码');
+        $form->email('email', '邮件');
+        $form->select('is_married', '是否结婚')->options(UserMessage::$married);
+        $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
+        $form->date('birth_day', '出生日期');
+        $form->text('qq', 'QQ');
+        $form->text('wechat', '微信');
 
         $form->hidden('user_id');
         $form->saving(function(Form $form) {

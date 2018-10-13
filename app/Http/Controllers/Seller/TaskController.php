@@ -98,6 +98,9 @@ class TaskController extends Controller
                     'id'=>$this->id
                 ])."'>$title</span></a>";
         });
+        $grid->type_id('类型')->display(function ($type) {
+            return Task::$types[$type];
+        });
 
         return $grid;
     }
@@ -119,9 +122,10 @@ class TaskController extends Controller
                     'id'=>$this->id
                 ])."'>$title</span></a>";
         });
-        $grid->column('type')->display(function ($type) {
-            return ;
+        $grid->type_id('类型')->display(function ($type) {
+            return Task::$types[$type];
         });
+
 
         return $grid;
     }
@@ -155,7 +159,7 @@ class TaskController extends Controller
     {
 
         $form = new Form(new Task());
-
+        $form->setAction('admin/users');
         $form->text('title', '标题');
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);

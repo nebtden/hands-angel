@@ -15,11 +15,11 @@ use Encore\Admin\Grid;
 use App\Seller\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
-
+use Encore\Admin\Controllers\HasResourceActions;
 
 class UserMessageController extends Controller
 {
-
+    use  HasResourceActions;
 
     public function index(Content $content){
         $user = Auth::user();

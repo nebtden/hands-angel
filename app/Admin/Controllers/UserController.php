@@ -125,10 +125,7 @@ class UserController extends Controller
         $form->select('type_id', '类型')->options(Task::$types);
 
         $form->hidden('user_id');
-        $form->saving(function(Form $form) {
-            $user = Auth::user();
-            $form->user_id = $user->id;
-        });
+
         return $form;
 
 

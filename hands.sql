@@ -638,8 +638,8 @@ INSERT INTO `articles` VALUES ('15', '便捷云车：不可不知的年检知识
 -- ----------------------------
 -- Table structure for category
 -- ----------------------------
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE `category` (
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `route` varchar(255) DEFAULT NULL,
@@ -717,14 +717,14 @@ CREATE TABLE `password_resets` (
 DROP TABLE IF EXISTS `tasks`;
 CREATE TABLE `tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0' ,
   `title` varchar(255) NOT NULL COMMENT '标题',
   `content` text NOT NULL COMMENT '内容相关',
   `reply` text COMMENT '回复,也即评价',
-  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '类型  1：视频   2：偷窥   3：文爱    4：手天使',
+  `type_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT '类型  1：视频   2：偷窥   3：文爱    4：手天使',
   `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态 0 取消  1默认，开放   2自动关闭    3完成',
-  `created_at` int(11) NOT NULL COMMENT '创建时间',
-  `updated_at` int(11) NOT NULL COMMENT '更新时间',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
@@ -744,8 +744,8 @@ CREATE TABLE `tasks_apply_log` (
   `apply_user_id` int(11) NOT NULL COMMENT '接收人id，冗余字段',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '信息是否读取',
   `msg` text NOT NULL COMMENT '内容相关',
-  `created_at` int(11) NOT NULL COMMENT '创建时间',
-  `updated_at` int(11) NOT NULL COMMENT '更新时间',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
@@ -768,8 +768,8 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL COMMENT '邮箱',
   `type` smallint(1) NOT NULL DEFAULT '0' COMMENT '0：申请者  1完成者  ',
   `status` smallint(6) NOT NULL DEFAULT '10' COMMENT '状态',
-  `created_at` int(11) NOT NULL COMMENT '创建时间',
-  `updated_at` int(11) NOT NULL COMMENT '更新时间',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
@@ -853,8 +853,8 @@ INSERT INTO `user_menu` VALUES ('8', '专属服务', null, null, null, null, '1'
 -- ----------------------------
 -- Table structure for user_message
 -- ----------------------------
-DROP TABLE IF EXISTS `user_message`;
-CREATE TABLE `user_message` (
+DROP TABLE IF EXISTS `user_messages`;
+CREATE TABLE `user_messages` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `user_id` int(10) NOT NULL DEFAULT '0' COMMENT '用户id',
   `real_name` varchar(40) NOT NULL DEFAULT '' COMMENT '真实姓名',
@@ -872,6 +872,8 @@ CREATE TABLE `user_message` (
   `remark` text,
   `province_id` int(11) NOT NULL DEFAULT '0' COMMENT '城市id',
   `city_id` int(11) NOT NULL DEFAULT '0' COMMENT '城市id',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 

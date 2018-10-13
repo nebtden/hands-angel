@@ -119,6 +119,9 @@ class TaskController extends Controller
                     'id'=>$this->id
                 ])."'>$title</span></a>";
         });
+        $grid->column('type')->display(function ($type) {
+            return ;
+        });
 
         return $grid;
     }
@@ -156,20 +159,15 @@ class TaskController extends Controller
         $form->text('title', '标题');
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);
-//
-//        $form->hidden('user_id');
-//        $form->saved(function(Form $form) {
-//            $user = Auth::user();
-//            $form->user_id = $user->id;
-//        });
+        $form->hidden('user_id');
+        $form->saving(function(Form $form) {
+            $user = Auth::user();
+            $form->user_id = $user->id;
+        });
         return $form;
 
 
     }
-    public function store()
-    {
-        // this is your NEW store method
-        // put logic here to save the record to the database
-    }
+
 
 }

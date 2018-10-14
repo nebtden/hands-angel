@@ -12,6 +12,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
     $router->resource('/example', 'ExampleController');
+    $router->resource('/articles', 'ArticleController');
     $router->resource('/task', 'TaskController');
 
 });

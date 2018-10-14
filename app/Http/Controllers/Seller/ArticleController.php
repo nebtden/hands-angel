@@ -21,10 +21,12 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 use App\Seller\Layout\Content;
+use Encore\Admin\Controllers\HasResourceActions;
 
 class ArticleController extends Controller
 {
 
+    use  HasResourceActions;
 
     public function index(Content $content){
 

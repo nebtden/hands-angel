@@ -11,12 +11,11 @@ use App\Seller\Layout\Content;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
-
+use  Encore\Admin\Controllers\HasResourceActions;
 
 class SettingController extends Controller
 {
-    //use ModelForm;
-//    use ResetsPasswords;
+    use  HasResourceActions;
     /**
      * Index interface.
      *
@@ -26,8 +25,8 @@ class SettingController extends Controller
     {
         return Seller::content(function (Content $content) {
 
-            $content->header(__('Change Password'));
-            $content->description(__('Change Password'));
+            $content->header('更改密码');
+            $content->description(__('更改密码'));
 
             $user = Auth::user();
             $content->body($this->form()->edit($user->id));
@@ -38,40 +37,22 @@ class SettingController extends Controller
     public function show($id){
         return Seller::content(function (Content $content) use ($id){
 
-            $content->header(__('Change Password'));
-            $content->description(__('Change Password'));
+            $content->header('更改密码');
+            $content->description(__('更改密码'));
 
 
         });
     }
 
 
-    public function update($id)
-    {
-        return $this->form()->update($id);
-    }
-
-    /*    public function update(Request $request){
-
-            $password  = $request->input('password');
-            if($password){
-                $user = Auth::user();
-                //@simon.zhang  需要验证位数等。。进行加密
-                $user->password = bcrypt($password);
-                $user->update();
-            }
-
-            return redirect('/seller/setting');
-
-        }*/
 
 
     public function edit($id)
     {
         return Seller::content(function (Content $content) use ($id) {
 
-            $content->header(__('Change Password'));
-            $content->description(__('Change Password'));
+            $content->header('更改密码');
+            $content->description(__('更改密码'));
 
             $content->body($this->form()->edit($id));
         });
@@ -86,14 +67,52 @@ class SettingController extends Controller
     protected function form()
     {
 
-        $form = new Form(new User());
 
-        $form->display('id', 'ID');
-        $form->display('created_at', 'Created At');
+        $form = new Form(new User());
+        $user = Auth::user();
+
+        //检测id是否为自己id  @todo
+        $currentRoute = Route::current();//获取当前地址信息
+        $params = $currentRoute->parameters();//获取参数
+
+        $id = $params['setting'];
+        if($id!=$user->id){
+            return false;
+        }
+
+//        $form->display('name', __('Name'));
+        $form->password('old_password','旧密码')->rules('required');;
+        $form->password('password','新密码')->rules('required');
+
+        $form->password('password_again','确认密码')->rules('required|same:password');;
+
+
+        $form->ignore(['old_password','password_again']);
+
+
         $form->saving(function(Form $form) {
-            $user = Auth::user();
-            $form->password = Hash::make($form->password);
+
+
+            if (!Hash::check($_POST['old_password'], $form->model()->password)) {
+                throw  new \Exception(__('Old Password Error!'));
+            }
+            if($form->password){
+                $form->password = bcrypt($form->password);
+            }
+
+
         });
+
+        $form->saved(function(){
+            $request = App()->request;
+
+            $request->session()->flush();
+
+            $request->session()->regenerate();
+
+
+        });
+
 
         return $form;
     }

@@ -16,6 +16,7 @@ use App\Seller\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
 use Encore\Admin\Controllers\HasResourceActions;
+use Exception;
 
 class UserMessageController extends Controller
 {
@@ -47,6 +48,7 @@ class UserMessageController extends Controller
     /**
      * Make a show builder.
      *
+     *
      * @param mixed   $id
      * @return Show
      */
@@ -68,9 +70,19 @@ class UserMessageController extends Controller
      */
     public function edit($id, Content $content)
     {
-        return $content
-            ->header('Edit')
-            ->description('description')
+        $user = Auth::user();
+        if($user->id!=$id){
+            throw new Exception('error');
+        }
+
+        return $content->
+            header('个人信息')->description('个人信息补充')
+                ->row(' 
+<div class="box box-info"><div class="box-header with-border">
+         注意，经大家反馈，将个人信息补充完整，更有可能发布成功</div>
+</div>
+')
+
             ->body($this->form()->edit($id));
     }
 
@@ -83,7 +95,7 @@ class UserMessageController extends Controller
     {
 
         $form = new Form(new UserMessage());
-//      $form->setAction('/user/message');
+//        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);
         $form->mobile('mobile', '手机号码');
 //        $form->email('email', '邮件');
@@ -94,7 +106,9 @@ class UserMessageController extends Controller
         $form->date('birth_day', '出生日期');
         $form->text('qq', 'QQ');
         $form->text('wechat', '微信');
-
+        $form->saved(function (){
+            return url('/');
+        });
 
         return $form;
 

@@ -768,6 +768,7 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL COMMENT '邮箱',
   `type` smallint(1) NOT NULL DEFAULT '0' COMMENT '0：申请者  1完成者  ',
   `status` smallint(6) NOT NULL DEFAULT '10' COMMENT '状态',
+
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -791,6 +792,7 @@ CREATE TABLE `users` (
   `password_origin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否关闭此用户',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `referrer_user_id`  int(11) NOT NULL DEFAULT 0 COMMENT '推荐人id' AFTER `remember_token`;
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -880,3 +882,8 @@ CREATE TABLE `user_messages` (
 -- ----------------------------
 -- Records of user_message
 -- ----------------------------
+
+-- update.sql
+
+ALTER TABLE `users`
+ADD COLUMN `referrer_user_id`  int(11) NOT NULL DEFAULT 0 COMMENT '推荐人id' AFTER `remember_token`;

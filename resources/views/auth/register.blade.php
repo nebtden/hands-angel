@@ -82,6 +82,19 @@
                 <span class="glyphicon  form-control-feedback"></span>
             </div>
 
+            <div class="form-group has-feedback {{ $errors->has('referrer_user_id') ? ' has-error' : '' }}">
+
+
+                <input id="referrer_user_id" type="text" class="form-control" name="referrer_user_id" value="{{ old('referrer_user_id') }}"
+                       placeholder="如有推荐人id，请填写推荐人id"       >
+
+                @if ($errors->has('referrer_user_id'))
+                    <span class="help-block">
+                                        <strong>{{ $errors->first('referrer_user_id') }}</strong>
+                                    </span>
+                @endif
+                <span class="glyphicon glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
 
             <div class="row">
 

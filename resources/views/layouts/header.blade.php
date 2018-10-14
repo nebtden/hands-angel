@@ -6,11 +6,20 @@
                 <header id="header">
                     <h1><a href="index.html" id="logo">Minimaxing</a></h1>
                     <nav id="nav">
-                        <a href="index.html" class="current-page-item">Homepage</a>
-                        <a href="twocolumn1.html">Two Column #1</a>
-                        <a href="twocolumn2.html">Two Column #2</a>
-                        <a href="onecolumn.html">One Column</a>
-                        <a href="threecolumn.html">Three Column</a>
+                        <a href="/" class="current-page-item">主页</a>
+                        <a href="/vpn" class="current-page-item">说明</a>
+                        <a href="/vpn" class="current-page-item">后台招聘</a>
+                        <a href="/vpn" class="current-page-item">vpn教程</a>
+                        @auth
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                        @endauth
+
                     </nav>
                 </header>
 

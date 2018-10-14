@@ -8,7 +8,7 @@
 
 
 <li>
-    <a href="{{url('user/message') }}"><i class="fa fa-usd"></i>
+    <a href="/user/message/{{ Seller::user()->id }}/edit"><i class="fa fa-usd"></i>
         <span>消息</span>
     </a>
 </li>

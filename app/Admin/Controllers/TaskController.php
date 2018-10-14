@@ -14,7 +14,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Controller;
 
 class TaskController extends Controller
 {
@@ -120,7 +120,7 @@ class TaskController extends Controller
         $form->text('title', '标题');
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);
-
+        $form->date('birth_day', '出生日期');
         $form->hidden('user_id');
         $form->saving(function(Form $form) {
             $user = Auth::user();

@@ -35,6 +35,60 @@ class AppServiceProvider extends ServiceProvider
             return new Seller();
         });
         Form::registerBuiltinFields();
-        Admin::css('/css/nilo.css');
+//         Admin::css('/css/nilo.css');
+//        $this->loadAdminAuthConfig();
+//
+//        $this->registerRouteMiddleware();
+    }
+
+    protected $routeMiddleware = [
+        'admin.auth'       => Middleware\Authenticate::class,
+        'admin.pjax'       => Middleware\Pjax::class,
+        'admin.log'        => Middleware\LogOperation::class,
+        'admin.permission' => Middleware\Permission::class,
+        'admin.bootstrap'  => Middleware\Bootstrap::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'admin' => [
+            'admin.auth',
+            'admin.pjax',
+            'admin.log',
+            'admin.bootstrap',
+            'admin.permission',
+        ],
+    ];
+
+    /**
+     * Setup auth configuration.
+     *
+     * @return void
+     */
+    protected function loadAdminAuthConfig()
+    {
+        config(array_dot(config('admin.auth', []), 'auth.'));
+    }
+
+    /**
+     * Register the route middleware.
+     *
+     * @return void
+     */
+    protected function registerRouteMiddleware()
+    {
+        // register route middleware.
+        foreach ($this->routeMiddleware as $key => $middleware) {
+            app('router')->aliasMiddleware($key, $middleware);
+        }
+
+        // register middleware group.
+        foreach ($this->middlewareGroups as $key => $middleware) {
+            app('router')->middlewareGroup($key, $middleware);
+        }
     }
 }

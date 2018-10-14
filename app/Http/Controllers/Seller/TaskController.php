@@ -159,7 +159,7 @@ class TaskController extends Controller
     {
 
         $form = new Form(new Task());
-        $form->setAction('admin/users');
+//        $form->setAction('admin/users');
         $form->text('title', '标题');
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);

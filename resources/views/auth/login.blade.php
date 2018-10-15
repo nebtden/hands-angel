@@ -27,7 +27,7 @@
 <body class="hold-transition login-page skin-color">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/"><img src="/images/logo.png" width="120px" height="80px"></a>
+        <a href="/"><img src="/images/logo.jpg" width="120px" height="120px"></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

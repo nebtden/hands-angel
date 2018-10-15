@@ -23,6 +23,7 @@ Auth::routes();
 
 //普通页面
 Route::get('/home', 'Seller\HomeController@index');
+Route::get('/article/{id}', 'ArticleController@show');
 
 Route::middleware(['pjax'])->resource('/user/tasks', 'Seller\TaskController');
 Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');

@@ -41,4 +41,17 @@ class HomeController extends Controller
             'send_articles'=>$send_articles,
         ]);
     }
+
+    public function vpn(){
+        $article =         $send_articles = Article::where([
+            'category_id'=>2,
+            'status'=>1,
+        ])->limit(3)->get();
+        return view('article',[
+
+            'article'=>$article,
+
+        ]);
+
+    }
 }

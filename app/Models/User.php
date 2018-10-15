@@ -9,10 +9,10 @@ class User extends Model
     // table name
     protected $table = 'users';
 
-    public static  $money_type =[
+    public static  $status =[
 //        0=>'the first vessel',
-        1=>'day',
-        3=>'month',
+        1=>'正常',
+        0=>'关闭',
     ];
 
     public function store(){

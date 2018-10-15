@@ -9,17 +9,19 @@ namespace App\Admin\Controllers;
 use App\Models\CostRecord;
 use App\Models\Freight;
 use App\Models\Task;
+use App\Models\User;
 use App\Models\UserMessage;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
-
+use  Encore\Admin\Controllers\HasResourceActions;
 
 class UserController extends Controller
 {
 
+    use  HasResourceActions;
 
     public function index(Content $content){
         return $content->header('header')->description('description')
@@ -70,7 +72,7 @@ class UserController extends Controller
     protected function grid()
     {
 
-        $grid = new Grid(new Task());
+        $grid = new Grid(new User());
 
         $grid->column('name')->display(function ($name){
             return $name;
@@ -99,11 +101,11 @@ class UserController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Task::findOrFail($id));
+        $show = new Show(User::findOrFail($id));
 
         $show->id('ID');
-        $show->title('标题');
-        $show->content('内容');
+        $show->name('用户名');
+        $show->status('内容');
 
         return $show;
     }
@@ -118,13 +120,11 @@ class UserController extends Controller
     protected function form()
     {
 
-        $form = new Form(new Task());
+        $form = new Form(new User());
 
-        $form->text('title', '标题');
-        $form->textarea('content', '内容');
-        $form->select('type_id', '类型')->options(Task::$types);
+        $form->display('name', '用户名');
 
-        $form->hidden('user_id');
+        $form->select('status', '类型')->options(User::$status);
 
         return $form;
 

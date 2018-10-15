@@ -15,10 +15,11 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use  Encore\Admin\Controllers\HasResourceActions;
 
 class TaskController extends Controller
 {
-
+    use   HasResourceActions;
 
     public function index(Content $content){
         return $content->header('header')->description('description')

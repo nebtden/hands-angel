@@ -28,7 +28,7 @@ class TaskController extends Controller
 
     public function others(Content $content){
         return $content->header('其他需求')->description('description')
-            ->body($this->other_grid());
+            ->body(view('others'));
     }
 
 
@@ -114,8 +114,8 @@ class TaskController extends Controller
     protected function other_grid()
     {
 
-        $grid = new Grid(new Task());
 
+        $grid = new Grid(new Task());
 
         $grid->column('title')->display(function ($title) {
             return "<a href='".url('/user/task',[

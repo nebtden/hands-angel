@@ -6,11 +6,11 @@
                 <header id="header">
                     <h1><a href="/" id="logo">Minimaxing</a></h1>
                     <nav id="nav">
-                        <a href="/" class="current-page-item">主页</a>
-                        <a href="/vpn" class="current-page-item">说明</a>
-                        <a href="/users" class="current-page-item">用户列表</a>
-                        <a href="/vpn" class="current-page-item">后台招聘</a>
-                        <a href="/vpn" class="current-page-item">vpn教程</a>
+                        <a href="/"  >主页</a>
+                        <a href="/vpn"  >说明</a>
+                        <a href="/users"  >用户列表</a>
+                        <a href="/vpn"  >后台招聘</a>
+                        <a href="/vpn"  >vpn教程</a>
                         @auth
                             <a href="{{ url('/home') }}">Home</a>
                         @else

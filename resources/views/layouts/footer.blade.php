@@ -1,7 +1,7 @@
 <div id="footer-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-8 col-12-medium">
+            <div class="col-12 col-12-medium">
 
                 <section>
                     <h2>How about a truckload of links?</h2>
@@ -48,20 +48,7 @@
                 </section>
 
             </div>
-            <div class="col-4 col-12-medium">
 
-                <section>
-                    <h2>Something of interest</h2>
-                    <p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-                        Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet
-                        mollis justo facilisis quis. Sed sagittis mauris amet tellus gravida
-                        lorem ipsum dolor sit blandit.</p>
-                    <footer class="controls">
-                        <a href="#" class="button">Oh, please continue ....</a>
-                    </footer>
-                </section>
-
-            </div>
         </div>
         <div class="row">
             <div class="col-12">

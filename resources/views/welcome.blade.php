@@ -52,7 +52,7 @@
                 <div class="col-4 col-6-medium col-12-small">
 
                     <section>
-                        <h2>How about some links?</h2>
+                        <h2>文章列表</h2>
                         <div>
                             <div class="row">
                                 <div class="col-12 col-12-small">
@@ -84,10 +84,8 @@
                                     <a href="#">
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
-                                    <p> {{  $user->introduce }}  </p>
-                                    <p>微信：{{ substr_replace($user->wechat,"****",2,5) }} </p>
-                                    <p>QQ: {{substr_replace($user->qq,"****",2,5)}}</p>
-                                    <p>邮件： {{substr_replace($user->email,"****",2,5)}}}</p>
+                                    <p> {{  $user->introduce }}  <br>
+                                     微信：{{ substr_replace($user->wechat,"****",2,5) }}  <br> QQ: {{substr_replace($user->qq,"****",2,5)}} <br> 邮件： {{substr_replace($user->email,"****",2,5)}}</p>
                                 </li>
 
                             @endforeach

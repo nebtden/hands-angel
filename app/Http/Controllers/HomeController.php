@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Task;
 use App\Models\UserMessage;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -35,9 +36,14 @@ class HomeController extends Controller
         ])->orderBy('id', 'desc')->limit(3)->get();
 
         //用户列表
-        $users = UserMessage::where([
-            'status'=>1,
-        ])->orderBy('id', 'desc')->limit(3)->get();
+
+        $users = DB::table('user_messages')
+            ->join('users', 'users.id', '=', 'user_messages.id')
+            ->select('user_messages.*')
+            ->where('users.status',1)
+            ->orderBy('id', 'desc')
+            ->limit(3)
+            ->get() ;
 
         //文章列表2
         $send_articles = Article::where([

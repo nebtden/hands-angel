@@ -12,9 +12,13 @@ class Article extends Model
     //table name
     protected $table = 'articles';
 
-    public static $types = [
-        1=>'FAQ',
-        2=>'FAQ',
+    public static $categories = [
+        '0'=>'公司',
+        '1'=>'视频',
+        '2'=>'偷窥',
+        '3'=>'文爱',
+        '4'=>'手天使',
+        '5'=>'其他',
     ];
 
 

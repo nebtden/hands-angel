@@ -100,11 +100,11 @@ class UserMessageController extends Controller
         $form->image('head_image', '头像');
         $form->textarea('introduce', '个人简介');
 
-        $form->select('province')->options(
+        $form->select('province_id')->options(
             AreaProvince::all()->pluck('name','id')
-        )->load('city', '/api/city');
+        )->load('city_id', '/api/city');
 
-        $form->select('city');
+        $form->select('city_id');
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);

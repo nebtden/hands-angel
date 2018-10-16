@@ -4,16 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Province extends Model
+class AreaCity extends Model
 {
     //table name
-    protected $table = 'province';
+    protected $table = 'area_cities';
 
-    public  $timestamps = false;
 
-    public function country(){
-        return $this->belongsTo('App\Models\Country');
-    }
 
     public static function options($id){
         if (! $self = static::find($id)) {

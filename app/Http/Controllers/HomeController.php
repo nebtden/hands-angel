@@ -6,11 +6,16 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Task;
+use App\Models\AreaProvince;
 use App\Models\UserMessage;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public function test(){
+       $list =  111;
+       dd($list);
+    }
 
 
     /**

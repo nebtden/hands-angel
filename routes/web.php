@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', 'Seller\HomeController@index');
 Route::get('/users', 'UserController@index');
 Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/test', 'HomeController@test');
 
 Route::middleware(['pjax'])->resource('/user/tasks', 'Seller\TaskController');
 Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');

@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Seller;
 
 use App\Models\Task;
 use App\Models\UserMessage;
+use App\Models\AreaProvince;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Layout\Content;
@@ -97,7 +98,13 @@ class UserMessageController extends Controller
         $form = new Form(new UserMessage());
 
         $form->image('head_image', '头像');
-        $form->text('introduce', '个人简介');
+        $form->textarea('introduce', '个人简介');
+
+        $form->select('province')->options(
+            AreaProvince::all()->pluck('name','id')
+        )->load('city', '/api/city');
+
+        $form->select('city');
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);

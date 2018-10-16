@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 
 use App\Models\Deduction;
-use App\Models\Freight;
+
 use App\Models\User;
 use App\Models\Transaction;
 use App\User\Facades\User;

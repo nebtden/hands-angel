@@ -18,7 +18,7 @@
                 <div class="col-4 col-12-medium">
 
                     <section>
-                        <h2>Welcome to Minimaxing!</h2>
+                        <h2>欢迎使用系统</h2>
                         <p>This is <strong>Minimaxing</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a> and released for free by <a href="http://html5up.net">HTML5 UP</a>. It features
                             a simple, lightweight design, solid HTML5 and CSS3 code, and full responsive support for desktop, tablet, and small displays.</p>
                         <footer class="controls">
@@ -84,7 +84,7 @@
                                     <a href="#">
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
-
+                                    <p> {{  $user->introduce }}  </p>
                                     <p>微信：{{ substr_replace($user->wechat,"****",2,5) }} </p>
                                     <p>QQ: {{substr_replace($user->qq,"****",2,5)}}</p>
                                     <p>邮件： {{substr_replace($user->email,"****",2,5)}}}</p>

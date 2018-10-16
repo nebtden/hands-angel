@@ -7,7 +7,7 @@
 namespace App\Http\Controllers\Seller;
 
 use App\Models\CostRecord;
-use App\Models\Freight;
+
 use App\Models\Task;
 use App\Models\UserMessage;
 use Encore\Admin\Form;
@@ -96,6 +96,7 @@ class UserMessageController extends Controller
 
         $form = new Form(new UserMessage());
 
+        $form->image('head_image', '头像');
         $form->image('head_image', '头像');
 
 //        $form->setAction('/user/message');

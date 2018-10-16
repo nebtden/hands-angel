@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Seller;
 
 use App\Models\Article;
 use App\Models\CostRecord;
-use App\Models\Freight;
+
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Facades\Seller;

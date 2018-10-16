@@ -860,6 +860,7 @@ CREATE TABLE `user_messages` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `user_id` int(10) NOT NULL DEFAULT '0' COMMENT '用户id',
   `real_name` varchar(40) NOT NULL DEFAULT '' COMMENT '真实姓名',
+  `introduce` text ,
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机',
   `is_married` tinyint(1) DEFAULT '0' COMMENT '0  未结婚   1结婚',
   `email` varchar(120) NOT NULL DEFAULT '' COMMENT '邮箱',

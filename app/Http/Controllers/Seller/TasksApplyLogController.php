@@ -25,10 +25,7 @@ class TasksApplyLogController extends Controller
     public function index(){
 
         return Seller::content(function (Content $content) {
-
-
             $content->body($this->grid());
-
         });
     }
 
@@ -52,27 +49,22 @@ class TasksApplyLogController extends Controller
      * @param $type 类型
      * @return Grid
      */
-    protected function grid($type='')
+    protected function grid()
     {
-        return Seller::grid(Task::class, function (Grid $grid) use ($type){
+        $user = Auth::user();
+        $grid = new Grid(new TasksApplyLog());
+        $grid->model()->where('apply_user_id',$user->id);
 
-            $grid->model()->where('type_id',$type);
-
-            $grid->disableRowSelector();
-            $grid->disableBatchDeletion();
-
-            $grid->title()->value(function ($title) {
-                return "<a href='".url('/user/task',[
+        $grid->column('title')->display(function ($title) {
+            return "<a href='".url('/user/task',[
                     'id'=>$this->id
-                ])."'>$this->task</span></a>";
-            });
-
-
-            $grid->filter(function($filter) use ($type){
-
-            });
-
+                ])."'>$title</span></a>";
         });
+        $grid->type_id('类型')->display(function ($type) {
+            return Task::$types[$type];
+        });
+
+        return $grid;
     }
 
 

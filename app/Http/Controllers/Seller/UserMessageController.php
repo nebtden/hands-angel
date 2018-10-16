@@ -95,6 +95,9 @@ class UserMessageController extends Controller
     {
 
         $form = new Form(new UserMessage());
+
+        $form->image('head_image', '头像');
+
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);
         $form->mobile('mobile', '手机号码');
@@ -103,7 +106,7 @@ class UserMessageController extends Controller
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
 
         //@todo  省份联动
-        $form->year('birth_day', '出生年');
+        $form->year('birth_day', '出生年份');
 //        $form->('age', '年龄');
         $form->text('qq', 'QQ');
         $form->text('wechat', '微信');

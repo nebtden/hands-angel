@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 用户信息补充
+ * 其他人信息列表
  */
 
 namespace App\Http\Controllers\Seller;
@@ -51,9 +51,9 @@ class UserController extends Controller
      */
     protected function grid()
     {
-        $user = Auth::user();
+
         $grid = new Grid(new UserMessage());
-        $grid->model()->where('user_id',$user->id);
+
 
         $grid->column('title')->display(function ($title) {
             return "<a href='".url('/user/task',[
@@ -87,7 +87,7 @@ class UserController extends Controller
 //        $form->email('email', '邮件');
         $form->display('is_married', '是否结婚')->options(UserMessage::$married);
         $form->display('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
-        $form->date('birth_day', '出生日期');
+        $form->year('birth_day', '出生年份');
         $form->display('qq', 'QQ');
         $form->display('wechat', '微信');
 

@@ -33,6 +33,9 @@ Route::middleware(['pjax'])->resource('/user/apply_log', 'Seller\TasksApplyLogCo
 Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');
 Route::middleware(['pjax'])->resource('/user/message', 'Seller\UserMessageController');
 
+//查看最近几个用户
+Route::middleware(['pjax'])->resource('/user/users', 'Seller\UserController');
+
 
 
 

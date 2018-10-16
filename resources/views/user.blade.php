@@ -15,11 +15,11 @@
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
                                     <p> {{  $user->introduce }}<br>
-
+                                        微信： {{substr_replace($user->wechat,"****",2,5)}}
+                                        QQ: {{substr_replace($user->qq,"****",2,5)}}
+                                        邮件： {{substr_replace($user->email,"****",2,5)}}}  <br>
                                     </p>
-                                   {{-- <p>微信： </p>
-                                    <p>QQ: {{substr_replace($user->qq,"****",2,5)}}</p>
-                                    <p>邮件： {{substr_replace($user->email,"****",2,5)}}}</p>--}}
+
                                 </li>
                             @endforeach
                         </ul>

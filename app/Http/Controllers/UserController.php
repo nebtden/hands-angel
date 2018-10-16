@@ -4,16 +4,14 @@
  * 其他人信息列表
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers;
 
-use App\Models\CostRecord;
 
 use App\Models\UserMessage;
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use App\Seller\Layout\Content;
-use Encore\Admin\Show;
-use Illuminate\Support\Facades\Auth;
+
+
+
+
 
 
 class UserController extends Controller

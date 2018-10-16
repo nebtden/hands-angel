@@ -6,7 +6,7 @@
 
 namespace App\Http\Controllers\Seller;
 
-use App\Models\CostRecord;
+
 
 use App\Models\Task;
 use App\Models\UserMessage;
@@ -97,7 +97,7 @@ class UserMessageController extends Controller
         $form = new Form(new UserMessage());
 
         $form->image('head_image', '头像');
-        $form->image('head_image', '头像');
+        $form->text('introduce', '个人简介');
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);

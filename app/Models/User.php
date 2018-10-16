@@ -15,19 +15,15 @@ class User extends Model
         0=>'关闭',
     ];
 
-    public function store(){
-        return $this->hasMany('App\Models\Seller');
-    }
 
-    public function client(){
-        return $this->hasOne('App\Models\Client');
-    }
 
     public function address(){
         return $this->hasMany('App\Models\UserAddress');
     }
 
-
+    public function message(){
+        return $this->HasOne('App\Models\UserMessage');
+    }
 
 
 }

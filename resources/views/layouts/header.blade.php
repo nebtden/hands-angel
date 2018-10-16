@@ -4,10 +4,11 @@
             <div class="col-12">
 
                 <header id="header">
-                    <h1><a href="index.html" id="logo">Minimaxing</a></h1>
+                    <h1><a href="/" id="logo">Minimaxing</a></h1>
                     <nav id="nav">
                         <a href="/" class="current-page-item">主页</a>
                         <a href="/vpn" class="current-page-item">说明</a>
+                        <a href="/users" class="current-page-item">用户列表</a>
                         <a href="/vpn" class="current-page-item">后台招聘</a>
                         <a href="/vpn" class="current-page-item">vpn教程</a>
                         @auth

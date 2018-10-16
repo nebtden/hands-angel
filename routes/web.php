@@ -16,13 +16,14 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/list', 'HomeController@list')->name('list');
+
 //Route::get('/articles', 'Seller\ArticleController');
 //卖家登陆路由
 Auth::routes();
 
 //普通页面
 Route::get('/home', 'Seller\HomeController@index');
+Route::get('/users', 'UserController@index');
 Route::get('/article/{id}', 'ArticleController@show');
 
 Route::middleware(['pjax'])->resource('/user/tasks', 'Seller\TaskController');

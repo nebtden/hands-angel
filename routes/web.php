@@ -23,7 +23,7 @@ Auth::routes();
 
 //普通页面
 Route::get('/home', 'Seller\HomeController@index');
-Route::get('/users', 'UserController@index');
+Route::resource('/users', 'UserController');
 Route::get('/article/{id}', 'ArticleController@show');
 Route::get('/test', 'HomeController@test');
 

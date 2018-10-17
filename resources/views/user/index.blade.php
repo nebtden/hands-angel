@@ -11,7 +11,7 @@
                         <ul class="small-image-list">
                             @foreach ($users as $user)
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ url("/users/$user->id")}}">
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
                                     <p> 简介：{{ mb_strcut($user->introduce, 0, 150, 'utf-8').'...'   }}<br>

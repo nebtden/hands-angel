@@ -25,8 +25,18 @@ class UserController extends Controller
             ->get() ;
 
 
-        return view('user',[
+        return view('user.index',[
             'users'=>$users,
+        ]);
+    }
+
+
+    public function show($id){
+        $user = UserMessage::find($id);
+
+
+        return view('user.show',[
+            'user'=>$user,
         ]);
     }
 

@@ -101,20 +101,20 @@ class UserMessageController extends Controller
         $form->textarea('introduce', '个人简介');
 
 
-        $form->select('province_id')->options(
+        $form->select('province_id','省份')->options(
             AreaProvince::all()->pluck('name','id')
-        )->load('city_id', '/api/city');
+        )->load('city_id', '/api/city')->help('填写准确省份城市便于统计');
 
-        $form->select('city_id');
+        $form->select('city_id','城市');
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);
-        $form->mobile('mobile', '手机号码');
+        $form->mobile('mobile', '手机号码')->help('手机号');
 //        $form->email('email', '邮件');
         $form->select('is_married', '是否结婚')->options(UserMessage::$married);
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
 
-        //@todo  省份联动
+
         $form->year('birth_day', '出生年份');
 //        $form->('age', '年龄');
         $form->text('qq', 'QQ');

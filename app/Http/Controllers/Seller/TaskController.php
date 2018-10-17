@@ -164,6 +164,7 @@ class TaskController extends Controller
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);
         $form->hidden('user_id');
+        $form->select('status','状态')->options(Task::$status);
         $form->saving(function(Form $form) {
             $user = Auth::user();
             $form->user_id = $user->id;

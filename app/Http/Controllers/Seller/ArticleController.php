@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 用于支付端的方法验证
+ * 文章
  */
 
 namespace App\Http\Controllers\Seller;

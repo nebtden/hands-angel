@@ -16,9 +16,10 @@ class Task extends Model
     ];
 
     public static $status = [
-        0=>'未审核',
-        1=>'通过',
-        2=>'未通过',
+        -1 =>'关闭',
+        0  =>'未审核',
+        1  =>'通过',
+        2  =>'未通过',
     ];
 
     protected $table = 'tasks';

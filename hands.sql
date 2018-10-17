@@ -626,9 +626,9 @@ CREATE TABLE `categories` (
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '公司新闻', '/admin/menu/index', '1');
-INSERT INTO `category` VALUES ('2', '鼎翰文化', '/admin/role/index', '1');
-INSERT INTO `category` VALUES ('3', '精英人物', null, '1');
+INSERT INTO `categories` VALUES ('1', '公司新闻', '/admin/menu/index', '1');
+INSERT INTO `categories` VALUES ('2', '鼎翰文化', '/admin/role/index', '1');
+INSERT INTO `categories` VALUES ('3', '精英人物', null, '1');
 
 -- ----------------------------
 -- Table structure for menu
@@ -731,29 +731,7 @@ CREATE TABLE `tasks_apply_log` (
 -- ----------------------------
 INSERT INTO `tasks_apply_log` VALUES ('6', '0', 'simon', '0', '0', '1029928870@qq.com', '1535082103', '1535082103');
 
--- ----------------------------
--- Table structure for user
--- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `username` varchar(255) NOT NULL COMMENT '用户名',
-  `auth_key` varchar(32) NOT NULL COMMENT '自动登录key',
-  `password` varchar(255) DEFAULT NULL COMMENT '密码，明文存储',
-  `password_hash` varchar(255) NOT NULL COMMENT '加密密码',
-  `password_reset_token` varchar(255) DEFAULT NULL COMMENT '重置密码token',
-  `email` varchar(255) NOT NULL COMMENT '邮箱',
-  `type` smallint(1) NOT NULL DEFAULT '0' COMMENT '0：申请者  1完成者  ',
-  `status` smallint(6) NOT NULL DEFAULT '10' COMMENT '状态',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('7', 'simon', 'Qk5mclmUzomIkB33nsOsguZu_nskC6SS', null, '$2y$13$v8uRf0qHkaGW8QXY0YHkW.KeNVcRyGOQxjO.tkHqMKNvdPB3FyYwG', null, '278203533@qq.com', '10', '10', '1536302493', '1536302493');
 
 -- ----------------------------
 -- Table structure for users
@@ -765,10 +743,10 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password_origin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password_origin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否关闭此用户',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `referrer_user_id`  int(11) NOT NULL DEFAULT 0 COMMENT '推荐人id' AFTER `remember_token`;
+  `referrer_user_id`  int(11) NOT NULL DEFAULT 0 COMMENT '推荐人id' ,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

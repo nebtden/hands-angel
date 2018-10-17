@@ -6,8 +6,6 @@
 
 namespace App\Http\Controllers\Seller;
 
-
-
 use App\Models\Task;
 use App\Models\UserMessage;
 use App\Models\AreaProvince;
@@ -19,13 +17,13 @@ use Illuminate\Support\Facades\Auth;
 use Encore\Admin\Controllers\HasResourceActions;
 use Exception;
 
-class UserMessageController extends Controller
+class UserController extends Controller
 {
     use  HasResourceActions;
 
     public function index(Content $content){
         $user = Auth::user();
-        return $content->header('个人信息')->description('个人信息补充')
+        return $content->header('个人信息')->description('个人信息')
              ->body('注意，经大家反馈，将个人信息补充完整，更有可能发布成功')
              ->body($this->form()->edit($user->id));
     }

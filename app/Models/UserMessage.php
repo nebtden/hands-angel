@@ -21,8 +21,17 @@ class UserMessage extends Model
         '1'=>'有',
     ];
 
+
     public function user(){
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function Province(){
+        return $this->belongsTo('App\Models\AreaProvince');
+    }
+
+    public function City(){
+        return $this->belongsTo('App\Models\AreaCity');
     }
 
 

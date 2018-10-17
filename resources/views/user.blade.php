@@ -14,7 +14,7 @@
                                     <a href="#">
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
-                                    <p> 个人简介：{{  $user->introduce }}<br>
+                                    <p> 简介：{{ mb_strcut($user->introduce, 0, 150, 'utf-8').'...'   }}<br>
                                         微信： {{substr_replace($user->wechat,"****",2,5)}}&nbsp&nbsp&nbsp&nbsp
                                         QQ: {{substr_replace($user->qq,"****",2,5)}}&nbsp&nbsp&nbsp&nbsp&nbsp
                                         省份： {{substr_replace($user->email,"****",2,5)}}  <br>

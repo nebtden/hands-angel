@@ -16,12 +16,13 @@ class UserRelation extends Model
 
 
     public function apply_user(){
-        return $this->hasMany('App\Models\User');
+        return $this->HasOne('App\Models\User','apply_user_id','id');
     }
 
     public function applied_user(){
-        return $this->HasOne('App\Models\User');
+        return $this->HasOne('App\Models\User','applied_user_id','id');
     }
+
 
 
 }

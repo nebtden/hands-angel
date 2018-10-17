@@ -26,13 +26,15 @@ class UserMessage extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function Province(){
+    public function province(){
         return $this->belongsTo('App\Models\AreaProvince');
     }
 
-    public function City(){
+    public function city(){
         return $this->belongsTo('App\Models\AreaCity');
     }
+
+
 
 
 }

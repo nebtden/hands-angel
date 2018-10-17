@@ -1,14 +1,6 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50718
-Source Host           : 127.0.0.1:3306
-Source Database       : hands
-
-Target Server Type    : MYSQL
-Target Server Version : 50718
-File Encoding         : 65001
 
 Date: 2018-10-10 23:17:45
 */
@@ -869,3 +861,18 @@ CREATE TABLE `user_messages` (
 
 ALTER TABLE `users`
 ADD COLUMN `referrer_user_id`  int(11) NOT NULL DEFAULT 0 COMMENT '推荐人id' AFTER `remember_token`;
+
+
+CREATE TABLE `users_relations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apply_user_id` int(11) NOT NULL DEFAULT '0',
+  `applied_user_id` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否关闭此用户  1 开放  0 取消',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`applied_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+//新增用户关系表

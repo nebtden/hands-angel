@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Seller;
 use App\Models\Task;
 use App\Models\UserMessage;
 use App\Models\AreaProvince;
+use App\Models\AreaCity;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Layout\Content;
@@ -105,7 +106,11 @@ class UserMessageController extends Controller
             AreaProvince::all()->pluck('name','id')
         )->load('city_id', '/api/city')->help('填写准确省份城市便于统计');
 
-        $form->select('city_id','城市');
+        $form->select('city_id')->options(function ($id) {
+
+            return AreaCity::options($id);
+
+        });
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);

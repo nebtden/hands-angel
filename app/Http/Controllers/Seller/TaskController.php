@@ -161,10 +161,13 @@ class TaskController extends Controller
         $form = new Form(new Task());
 //        $form->setAction('admin/users');
         $form->text('title', '标题');
-        $form->textarea('content', '内容');
+        $form->editor('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);
         $form->hidden('user_id');
-        $form->select('status','状态')->options(Task::$status);
+        $form->select('status','状态')->options([
+            -1=>'关闭',
+            0=>'开通'
+        ])->default(0);
         $form->saving(function(Form $form) {
             $user = Auth::user();
             $form->user_id = $user->id;

@@ -119,7 +119,7 @@ class UserMessageController extends Controller
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
 
 
-        $form->year('birth_day', '出生年份');
+        $form->date('birth_day', '出生年份');
 //        $form->('age', '年龄');
         $form->text('qq', 'QQ');
         $form->text('wechat', '微信');

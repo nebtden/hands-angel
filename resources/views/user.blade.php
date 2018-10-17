@@ -14,10 +14,10 @@
                                     <a href="#">
                                         <img src="{{$user->head_image}}" alt="" class="left" />
                                     </a>
-                                    <p> {{  $user->introduce }}<br>
-                                        微信： {{substr_replace($user->wechat,"****",2,5)}}
-                                        QQ: {{substr_replace($user->qq,"****",2,5)}}
-                                        邮件： {{substr_replace($user->email,"****",2,5)}}}  <br>
+                                    <p> 个人简介：{{  $user->introduce }}<br>
+                                        微信： {{substr_replace($user->wechat,"****",2,5)}}&nbsp&nbsp&nbsp&nbsp
+                                        QQ: {{substr_replace($user->qq,"****",2,5)}}&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        省份： {{substr_replace($user->email,"****",2,5)}}  <br>
                                     </p>
 
                                 </li>

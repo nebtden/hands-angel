@@ -854,3 +854,13 @@ CREATE TABLE `users_relations` (
 
 
 //新增用户关系表
+CREATE TABLE `user_comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `user_id` int(11) NOT NULL COMMENT '会员ID',
+  `origin_id` int(11) NOT NULL COMMENT '原帖ID',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '原帖类型 0用户评论 1task评论',
+  `comment_content` varchar(500) NOT NULL COMMENT '评论内容',
+
+  `ip` varchar(50) NOT NULL COMMENT '来源IP',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='评论表';

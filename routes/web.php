@@ -23,9 +23,24 @@ Auth::routes();
 
 //普通页面
 Route::get('/home', 'Seller\HomeController@index');
-Route::resource('/users', 'UserController');
 Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/faq', 'ArticleController@faq');
+
+//   最近有很多女生反应，受骚扰情况较多，因此，只展示部分资料,微信、QQ等一律屏蔽。，  2016-08-04
+//    也对网站的逻辑进行了更新，现在男生女生都需要像对方发送邀请，对方同意之后，才可以交换资料。
+
+// 3 希望大家都做一个文明人，不要爆粗口。文明交友，文明撩骚，文明聊骚。。
+
+//  4 现网站支持大家分享，大家可以分享自己的用户id。对于分享成功次数较多（以成功注册且通过审核为准）的用户，可以升级为管理员（可以对用户进行审核）。
+
+//  5 我们开通了FAQ，可以像我们提建议。。
+
+
+Route::get('/notice', 'ArticleController@notice');
+
+
 Route::get('/test', 'HomeController@test');
+Route::resource('/users', 'UserController');
 
 Route::middleware(['pjax'])->resource('/user/tasks', 'Seller\TaskController');
 Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');

@@ -35,6 +35,9 @@ Route::get('/faq', 'ArticleController@faq');
 
 //  5 我们开通了FAQ，可以像我们提建议。。
 
+//  6  大家可以发布管理文章，提供最高测试。。
+
+
 
 Route::get('/notice', 'ArticleController@notice');
 

@@ -37,6 +37,8 @@ Route::get('/faq', 'ArticleController@faq');
 
 //  6  大家可以发布管理文章，提供最高测试。。
 
+//  7 可以考虑使用paypay等方式进行开通，尽量使用第三方语言，多个翻译。。
+
 
 
 Route::get('/notice', 'ArticleController@notice');

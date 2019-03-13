@@ -33,7 +33,7 @@ class HomeController extends Controller
         $first_articles = Article::where([
             'category_id'=>1,
             'status'=>1,
-        ])->limit(3)->get();
+        ])->limit(2)->get();
 
         //任务列表
         $tasks = Task::where([

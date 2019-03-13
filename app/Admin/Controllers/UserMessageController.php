@@ -7,7 +7,7 @@
 namespace App\Admin\Controllers;
 
 
-
+use App\Http\Controllers\Controller;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\UserMessage;
@@ -24,7 +24,7 @@ class UserMessageController extends Controller
     use  HasResourceActions;
 
     public function index(Content $content){
-        return $content->header('header')->description('description')
+        return $content->header('用户信息')->description('用户信息')
             ->body($this->grid());
     }
 
@@ -40,8 +40,8 @@ class UserMessageController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('Detail')
-            ->description('description')
+            ->header('用户信息')
+            ->description('用户信息')
             ->body($this->detail($id));
     }
 
@@ -58,8 +58,8 @@ class UserMessageController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header('编辑')
+            ->description('用户信息')
             ->body($this->form()->edit($id));
     }
 
@@ -85,6 +85,9 @@ class UserMessageController extends Controller
         });
         $grid->email('邮件');
         $grid->birth_day('出生年');
+        $grid->status('状态')->display(function ($status) {
+            return User::$status[$status];
+        });
 //       $grid->age('年龄(年龄可能邮件)')->;
 
 

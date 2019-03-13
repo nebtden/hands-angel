@@ -106,7 +106,7 @@ class UserMessageController extends Controller
             AreaProvince::all()->pluck('name','id')
         )->load('city_id', '/api/city')->help('填写准确省份城市便于统计');
 
-        $form->select('city_id')->options(function ($id) {
+        $form->select('city_id','城市')->options(function ($id) {
 
             return AreaCity::options($id);
 

@@ -13,8 +13,8 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('/example', 'ExampleController');
     $router->resource('/articles', 'ArticleController');
-    $router->resource('/task', 'TaskController');
-    $router->resource('/user', 'UserController');
-    $router->resource('/user-message', 'UserMessageController');
+    $router->resource('/tasks', 'TaskController');
+    $router->resource('/users', 'UserController');
+    $router->resource('/user-messages', 'UserMessageController');
 
 });

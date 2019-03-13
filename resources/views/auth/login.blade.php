@@ -103,11 +103,11 @@
     var View = {
 
         themes: [
-            { image: '/images/seller/background/1.jpg', top: '20%' },
-            { image: '/images/seller/background/2.jpg', right: '15%' },
-            { image: '/images/seller/background/3.jpg', bottom: '10%' },
-            { image: '/images/seller/background/4.jpg', left: '20%' },
-            { image: '/images/seller/background/5.jpg', bottom: '15%' }
+            { image: '/images/1.jpg', top: '20%' },
+            { image: '/images/2.jpg', right: '15%' },
+            { image: '/images/3.jpg', bottom: '10%' },
+            { image: '/images/4.jpg', left: '20%' },
+            { image: '/images/6.jpg', bottom: '15%' }
         ],
 
         init: function() {

@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', 'Seller\HomeController@index');
 Route::get('/article/{id}', 'ArticleController@show');
 Route::get('/faq', 'ArticleController@faq');
+Route::get('/list', 'HomeController@list');
 
 //   最近有很多女生反应，受骚扰情况较多，因此，只展示部分资料,微信、QQ等一律屏蔽。，  2016-08-04
 //    也对网站的逻辑进行了更新，现在男生女生都需要像对方发送邀请，对方同意之后，才可以交换资料。

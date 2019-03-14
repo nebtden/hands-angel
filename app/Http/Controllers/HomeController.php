@@ -78,4 +78,14 @@ class HomeController extends Controller
         ]);
 
     }
+
+    public function list(){
+
+        return view('user/listing',[
+
+            'article'=>[],
+
+        ]);
+
+    }
 }

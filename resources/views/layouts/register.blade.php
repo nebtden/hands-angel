@@ -21,8 +21,7 @@
                                                                                                      required="required"><i
                             class="fa fa-lock"></i></span>
                     <div class="wrap-button signup">
-                        <button type="button" id="logup-button" class=" login-btn effect-button" title="log in">LOG
-                            UP
+                        <button type="submit" id="logup-button" class=" login-btn effect-button" title="log in">LOG  UP
                         </button>
                     </div>
                 </form>

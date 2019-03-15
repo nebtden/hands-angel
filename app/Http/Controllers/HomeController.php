@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Task;
 use App\Models\AreaProvince;
 use App\Models\UserMessage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+//        return $id = Auth::id();
         //栏目
         $categories = Category::all();
 

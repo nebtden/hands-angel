@@ -110,7 +110,7 @@
                                         </div>
                                         <div
                                             style="width: 65px; height: 76px; overflow: hidden; position: absolute; left: -7px; top: -76px; z-index: 0;">
-                                            <img alt="" src="images/map.png" draggable="false"
+                                            <img alt="" src="/images/map.png" draggable="false"
                                                  style="position: absolute; left: 0px; top: 0px; user-select: none; width: 65px; height: 76px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                             style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;">
                                             <div title=""
                                                  style="width: 65px; height: 76px; overflow: hidden; position: absolute; opacity: 0; cursor: pointer; touch-action: none; left: -7px; top: -76px; z-index: 0;">
-                                                <img alt="" src="images/map.png" draggable="false"
+                                                <img alt="" src="/images/map.png" draggable="false"
                                                      style="position: absolute; left: 0px; top: 0px; user-select: none; width: 65px; height: 76px; border: 0px; padding: 0px; margin: 0px; max-width: none;">
                                             </div>
                                         </div>

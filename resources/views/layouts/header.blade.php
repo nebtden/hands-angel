@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div id="logo" class="logo float-left"><a href="/" rel="home"><img src="images/logo.png"
+                <div id="logo" class="logo float-left"><a href="/" rel="home"><img src="/images/logo.png"
                                                                                             alt="image"></a></div>
                 <!-- /.logo -->
                 <div class="btn-menu"><span></span></div><!-- //mobile menu button --></div><!-- /.col-lg-4 -->
@@ -12,7 +12,7 @@
                         <ul class="menu">
                             <li class="home"><a href="/">Home</a></li>
 
-                            <li><a href="/article/list">Article Listing</a>
+                            <li><a href="/article/list">Articles</a>
                             <li><a href="/user-list">Users</a>
                             <li><a href="blog.html">Blog</a>
                                 <ul class="submenu">

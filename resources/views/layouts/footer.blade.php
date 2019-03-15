@@ -38,7 +38,7 @@
                     <ul>
                         <li>
                             <div class="featured"><a href="index.html#" class="effect"><img
-                                        src="images/flickr/7.jpg" alt="image"></a></div>
+                                        src="/images/flickr/7.jpg" alt="image"></a></div>
                             <div class="info-listing"><h6><a href="index.html#">Lincoln Square Steak</a></h6>
                                 <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
                                             class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -48,7 +48,7 @@
                         </li>
                         <li>
                             <div class="featured"><a href="index.html#" class="effect"><img
-                                        src="images/flickr/8.jpg" alt="image"></a></div>
+                                        src="/images/flickr/8.jpg" alt="image"></a></div>
                             <div class="info-listing"><h6><a href="index.html#">Top 10 French coffe </a></h6>
                                 <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
                                             class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -63,27 +63,27 @@
                 <div class="widget widget_contact"><h5 class="widget-title">Quick Contact</h5>
                     <ul class="clearfix">
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/1.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/1.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/2.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/2.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/3.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/3.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/4.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/4.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/5.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/5.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                         <li>
-                            <div class="thumb"><a href="index.html#" class="effect"><img src="images/flickr/6.jpg"
+                            <div class="thumb"><a href="index.html#" class="effect"><img src="/images/flickr/6.jpg"
                                                                                          alt="image"></a></div>
                         </li>
                     </ul>

@@ -12,7 +12,7 @@
                 data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns"
                 data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
                 data-param7="" data-param8="" data-param9="" data-param10="" data-description=""><!-- MAIN IMAGE --><img
-                    src="images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
+                    src="/images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
                     data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
                     data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                     data-bgparallax="10" class="rev-slidebg" data-no-retina>
@@ -50,7 +50,7 @@
                 data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns"
                 data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
                 data-param7="" data-param8="" data-param9="" data-param10="" data-description=""><!-- MAIN IMAGE --><img
-                    src="images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
+                    src="/images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
                     data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
                     data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                     data-bgparallax="10" class="rev-slidebg" data-no-retina><!-- LAYERS --><!-- LAYER NR. 12 -->

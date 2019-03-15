@@ -4,7 +4,9 @@
     <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
     <div id="rev_slider_1078_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.3.0.2">
         <div class="slotholder"></div>
-        <ul><!-- SLIDE  --><!-- SLIDE 1 -->
+        <ul>
+            <!-- SLIDE  -->
+            <!-- SLIDE 1 -->
             <li data-index="rs-3050" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0"
                 data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
                 data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns"
@@ -13,7 +15,9 @@
                     src="images/slides/1.jpg" alt="" data-bgposition="center center" data-kenburns="off"
                     data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
                     data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
-                    data-bgparallax="10" class="rev-slidebg" data-no-retina><!-- LAYERS --><!-- LAYER NR. 12 -->
+                    data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                <!-- LAYERS -->
+                <!-- LAYER NR. 12 -->
                 <div class="tp-caption title-slide" id="slide-3050-layer-1"
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['-128','-128','-128','-50']"
@@ -24,7 +28,8 @@
                      data-textAlign="['center','center','center','center']" data-paddingtop="[10,10,10,10]"
                      data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0" data-paddingleft="[0,0,0,0]"
                      style="z-index: 16; white-space: nowrap;">Find Anything You Want
-                </div><!-- LAYER NR. 13 -->
+                </div>
+                <!-- LAYER NR. 13 -->
                 <div class="tp-caption sub-title" id="slide-3050-layer-4"
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
@@ -38,7 +43,8 @@
                      style="z-index: 17; white-space: nowrap;">Find awesome places, bars, restaurants <span>just one click </span>Our
                     website will provide you with reliable <br>addresses best price for the nearest address
                 </div>
-            </li><!-- SLIDE 2 -->
+            </li>
+            <!-- SLIDE 2 -->
             <li data-index="rs-3051" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0"
                 data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
                 data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns"
@@ -58,7 +64,8 @@
                      data-textAlign="['center','center','center','center']" data-paddingtop="[10,10,10,10]"
                      data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0" data-paddingleft="[0,0,0,0]"
                      style="z-index: 16; white-space: nowrap;">Find Anything You Want
-                </div><!-- LAYER NR. 13 -->
+                </div>
+                <!-- LAYER NR. 13 -->
                 <div class="tp-caption sub-title" id="slide-3051-layer-4"
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                      data-y="['middle','middle','middle','middle']" data-voffset="['-32','-32','-32','20']"
@@ -87,7 +94,8 @@
                     <span class="filter">
                         <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
                     </span>
-                </span><span class="select">
+                </span>
+                <span class="select">
                     <select>
                         <option>All Categories</option>
                         <option>Hotel & Travel</option>

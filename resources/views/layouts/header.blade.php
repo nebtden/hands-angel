@@ -11,8 +11,9 @@
                     <nav id="mainnav" class="mainnav float-left">
                         <ul class="menu">
                             <li class="home"><a href="/">Home</a></li>
-                            <li><a href="/user-list">Listing</a>
 
+                            <li><a href="/article/list">Article Listing</a>
+                            <li><a href="/user-list">Users</a>
                             <li><a href="blog.html">Blog</a>
                                 <ul class="submenu">
                                     <li><a href="blog.html">Blog</a></li>
@@ -28,9 +29,9 @@
                                     <li><a href="page-pricing.html">pricing</a></li>
                                     <li><a href="page-contact.html">Contact Us</a></li>
                                 </ul><!-- /.submenu --></li>
-                            <li><a data-toggle="modal" href="index.html#popup_login"><i class="fa fa-user"></i>Sign
+                            <li><a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i>Sign
                                     in</a></li>
-                            <li><a data-toggle="modal" href="index.html#popup_register"><i
+                            <li><a data-toggle="modal" href="#popup_register"><i
                                         class="fa fa-user-plus"></i>Register</a></li>
                         </ul><!-- /.menu -->
                     </nav>

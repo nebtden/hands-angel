@@ -11,7 +11,13 @@
                             <h3 class="title-listing">Our Menu</h3>
                             <div class="list-tab">
                                 <div class="flat-tabs" data-effect="fadeIn">
-                                    <ul class="menu-tab clearfix"><li class="active"><a href="#">Vegetarian</a></li><li class=""><a href="#">Tacos</a></li><li class=""><a href="#">Burritos</a></li><li class=""><a href="#">Specialties</a></li><li class=""><a href="#">Breakfast</a></li></ul>
+                                    <ul class="menu-tab clearfix">
+                                        <li class="active"><a href="#">Vegetarian</a></li>
+                                        <li class=""><a href="#">Tacos</a></li>
+                                        <li class=""><a href="#">Burritos</a>
+                                        </li><a href="#">Specialties</a></li>
+                                        <li class=""><a href="#">Breakfast</a></li>
+                                    </ul>
                                     <div class="content-tab">
                                         <div class="content-inner active">
                                             <div class="menu-food clearfix">

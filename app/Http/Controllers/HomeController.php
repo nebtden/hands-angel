@@ -56,7 +56,7 @@ class HomeController extends Controller
             'status'=>1,
         ])->limit(3)->get();
 
-        return view('home',[
+        return view('welcome',[
 
             'categories'=>$categories,
             'first_articles'=>$first_articles,

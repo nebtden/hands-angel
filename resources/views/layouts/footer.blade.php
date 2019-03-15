@@ -171,4 +171,5 @@
         </div>
     </div>
 </div>
-<!-- Go Top --><a class="go-top effect-button"><i class="fa fa-angle-up"></i></a>
+<!-- Go Top -->
+<a class="go-top effect-button"><i class="fa fa-angle-up"></i></a>

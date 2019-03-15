@@ -22,4 +22,15 @@ class ArticleController extends Controller
         ]);
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
+    public function list()
+    {
+
+        return view('article/list',[
+            'article'=>[],
+        ]);
+    }
+
 }

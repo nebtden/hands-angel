@@ -16,16 +16,20 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/user-list', 'HomeController@userList');
 
-//Route::get('/articles', 'Seller\ArticleController');
-//卖家登陆路由
-Auth::routes();
+//列表页
+Route::get('/article/list', 'ArticleController@list');
+Route::get('/article/detail', 'ArticleController@detail');
 
-//普通页面
-Route::get('/home', 'Seller\HomeController@index');
-Route::get('/article/{id}', 'ArticleController@show');
-Route::get('/faq', 'ArticleController@faq');
-Route::get('/list', 'HomeController@list');
+//用户列表页
+Route::get('/user', 'UserController@index');
+
+Route::get('/user/profile', 'UserController@profile');
+Route::get('/user/add-task', 'UserController@add-task');
+
+Route::get('/user', 'HomeController@user');
+
 
 //   最近有很多女生反应，受骚扰情况较多，因此，只展示部分资料,微信、QQ等一律屏蔽。，  2016-08-04
 //    也对网站的逻辑进行了更新，现在男生女生都需要像对方发送邀请，对方同意之后，才可以交换资料。
@@ -41,23 +45,11 @@ Route::get('/list', 'HomeController@list');
 //  7 可以考虑使用paypay等方式进行开通，尽量使用第三方语言，多个翻译。。
 
 
-
-Route::get('/notice', 'ArticleController@notice');
-
-
-Route::get('/test', 'HomeController@test');
 Route::resource('/users', 'UserController');
 
-Route::middleware(['pjax'])->resource('/user/tasks', 'Seller\TaskController');
-Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');
-
-Route::middleware(['pjax'])->resource('/user/apply_log', 'Seller\TasksApplyLogController');
-
-Route::middleware(['pjax'])->resource('/user/articles', 'Seller\ArticleController');
-Route::middleware(['pjax'])->resource('/user/message', 'Seller\UserMessageController');
 
 //查看最近几个用户
-Route::middleware(['pjax'])->resource('/user/users', 'Seller\UserController');
+//Route::middleware(['pjax'])->resource('/user/users', 'Seller\UserController');
 
 
 

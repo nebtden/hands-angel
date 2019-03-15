@@ -79,9 +79,9 @@ class HomeController extends Controller
 
     }
 
-    public function list(){
+    public function userList(){
 
-        return view('user/listing',[
+        return view('user-list',[
 
             'article'=>[],
 

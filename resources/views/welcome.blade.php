@@ -15,7 +15,8 @@
                                                   data-slider-max="10" data-slider-step="1"
                                                   data-slider-value="5"/></span></span><span class="select"><select><option>All Categories</option><option>Hotel & Travel</option><option>Restaurant</option><option>Healthy & Fitness</option><option>Food & Coffe</option></select></span><span
                         class="form-submit text-right"><button class="flat-button">Search <i
-                                class="ion-ios-search-strong"></i></button></span></form>
+                                class="ion-ios-search-strong"></i></button></span>
+                </form>
             </div>
         </div>
     </div>

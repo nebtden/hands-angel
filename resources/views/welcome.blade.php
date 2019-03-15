@@ -2,24 +2,7 @@
 
 @section('content')
     @include('layouts.slider')
-    <div class="container">
-        <div class="wrap-form">
-            <div class="flat-formsearch ">
-                <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post"
-                      action="index.html#"><span class="input-question"><input type="text"
-                                                                               placeholder="What are your looking for ?"
-                                                                               name="question"
-                                                                               id="question"></span><span
-                        class="input-location"><input type="text" placeholder="Location" name="location" id="location"><span
-                            class="filter"><input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0"
-                                                  data-slider-max="10" data-slider-step="1"
-                                                  data-slider-value="5"/></span></span><span class="select"><select><option>All Categories</option><option>Hotel & Travel</option><option>Restaurant</option><option>Healthy & Fitness</option><option>Food & Coffe</option></select></span><span
-                        class="form-submit text-right"><button class="flat-button">Search <i
-                                class="ion-ios-search-strong"></i></button></span>
-                </form>
-            </div>
-        </div>
-    </div>
+
     <section class="flat-row section-client">
         <div class="container">
             <div class="row">

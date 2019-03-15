@@ -28,7 +28,6 @@ Route::get('/user', 'UserController@index');
 Route::get('/user/profile', 'UserController@profile');
 Route::get('/user/add-task', 'UserController@add-task');
 
-Route::get('/user', 'HomeController@user');
 
 
 //   最近有很多女生反应，受骚扰情况较多，因此，只展示部分资料,微信、QQ等一律屏蔽。，  2016-08-04

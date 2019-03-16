@@ -30,7 +30,7 @@
                                         <div class="col-md-4">
                                             <div class="upload-img">
                                                 <form action="http://v.bootstrapmb.com/file-upload" class="dropzone" id="my-awesome-dropzone">
-                                                    <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+
                                                 </form>
                                             </div>
                                         </div>
@@ -150,3 +150,5 @@
 
 
 @endsection
+<script src="/javascript/dropzone.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/dropzone.css"><!-- Animation Style -->

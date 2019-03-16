@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        return $id = Auth::id();
+//        $id = Auth::user();
         //栏目
         $categories = Category::all();
 

@@ -6,9 +6,9 @@
             </div>
             <div class="modal-body text-center clearfix">
                 <form class="form-login form-listing" action="{{ route('login') }}" method="post">
-                    @csrf
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <h3 class="title-formlogin">Log in</h3><span class="input-login icon-form">
-                        <input type="text" placeholder="Your Name*" name="email" required="required"><i class="fa fa-user"></i></span><span class="input-login icon-form">
+                        <input type="text" placeholder="Your Name*" name="name" required="required"><i class="fa fa-user"></i></span><span class="input-login icon-form">
                         <input type="password" placeholder="Password*" name="password" required="required" value="{{ old('username') }}"><i class="fa fa-lock"></i></span>
                     <div class="flat-fogot clearfix">
                         <label class="float-left">

@@ -41,5 +41,11 @@ class UserController extends Controller
     }
 
 
+    public function profile(){
+
+        return view('user.profile',[
+            'user'=>[],
+        ]);
+    }
 
 }

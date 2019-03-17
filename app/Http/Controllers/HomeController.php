@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function test(){
-       $list =  111;
-       dd($list);
+         return Auth::user();
     }
 
 

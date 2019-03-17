@@ -6,8 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="flat-user profile"><a href="page-user.html" class="edit" title="">Back to profile <i
-                                class="fa fa-backward"></i></a>
+                    <div class="flat-user profile"><a href="page-user.html" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
                         <ul class="info">
                             <li><a href="page-profile.html#" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
                             </li>
@@ -29,20 +28,21 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
-                                                <form action="http://v.bootstrapmb.com/file-upload" class="dropzone" id="my-awesome-dropzone">
-
+                                                <form action="{{ url('user/upload') }}" class="dropzone" id="my-awesome-dropzone">
+                                                    {{ csrf_field() }}
                                                 </form>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <form method="post" action="page-profile.html#" class="form-profile"><p
-                                                    class="input-info"><label>Your name*</label><input type="text"
-                                                                                                       name="name"
-                                                                                                       id="name"></p>
-                                                <p class="input-info"><label>Your Phone Numbers*</label><input
-                                                        type="text" name="phone" id="phone"></p>
-                                                <p class="input-info"><label>Your Phone Numbers*</label><input
-                                                        type="text" name="email" id="email"></p></form>
+                                            <form method="post" action="page-profile.html#" class="form-profile"><p class="input-info"><label>Your name*</label>
+                                                    <input type="text" name="name" id="name"></p>
+                                                <p class="input-info">
+                                                    <label>Your Phone Numbers*</label>
+                                                    <input type="text" name="phone" id="phone"></p>
+                                                <p class="input-info">
+                                                    <label>Your Phone Numbers*</label>
+                                                    <input type="text" name="email" id="email"></p>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -51,18 +51,13 @@
                                         <div class="col-md-4"><h5>On the web</h5></div>
                                         <div class="col-md-8">
                                             <ul class="add-section">
-                                                <li class="twitter"><i class="fa fa-twitter-square twitter"></i><span>Twitter</span><a
-                                                        href="https://twitter.com/" title="">https://twitter.com/</a><i
-                                                        class="fa fa-minus-circle float-right"></i></li>
-                                                <li class="face"><i class="fa fa-facebook-square face"></i><span>Facebook</span><a
-                                                        href="https://www.facebook.com/"
-                                                        title="">https://www.facebook.com/</a><i
-                                                        class="fa fa-minus-circle float-right"></i></li>
-                                                <li class="youtube"><i class="fa fa-youtube-square youtube"></i><span>Youtube</span><i
-                                                        class="fa fa-minus-circle float-right"></i></li>
+                                                <li class="twitter"><i class="fa fa-twitter-square twitter"></i><span>Twitter</span><a href="https://twitter.com/" title="">https://twitter.com/</a>
+                                                    <i class="fa fa-minus-circle float-right"></i></li>
+                                                <li class="face"><i class="fa fa-facebook-square face"></i><span>Facebook</span>
+                                                    <a href="https://www.facebook.com/" title="">https://www.facebook.com/</a><i class="fa fa-minus-circle float-right"></i></li>
+                                                <li class="youtube"><i class="fa fa-youtube-square youtube"></i><span>Youtube</span><i class="fa fa-minus-circle float-right"></i></li>
                                                 <li class="add"><a href="page-profile.html#" class="add">Add new
-                                                        section</a><a href="page-profile.html#" title=""
-                                                                      class="float-right"><i class="fa fa-plus-circle "></i></a>
+                                                        section</a><a href="page-profile.html#" title="" class="float-right"><i class="fa fa-plus-circle "></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -80,16 +75,17 @@
                                         <ol class="comment-list">
                                             <li class="comment">
                                                 <article class="comment-body clearfix">
-                                                    <div class="comment-author"><img src="images/services/c1.png"
-                                                                                     alt="image"></div>
+                                                    <div class="comment-author">
+                                                        <img src="images/services/c1.png" alt="image"></div>
                                                     <!-- .comment-author -->
                                                     <div class="comment-text">
-                                                        <div class="comment-metadata"><h5><a href="page-profile.html#">Shaya
-                                                                    Hill </a><span>on San Angelo Restaurants</span></h5>
+                                                        <div class="comment-metadata"><h5><a href="page-profile.html#">Shaya Hill </a><span>on San Angelo Restaurants</span></h5>
                                                             <p class="day">12/01/2017</p>
-                                                            <div class="flat-start"><i class="fa fa-star"></i><i
-                                                                    class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                                    class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                                            <div class="flat-start"><i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
                                                             </div>
                                                         </div><!-- .comment-metadata -->
                                                         <div class="comment-content"><p>Lorem ipsum dolor sit amet,
@@ -104,12 +100,14 @@
                                                                                      alt="image"></div>
                                                     <!-- .comment-author -->
                                                     <div class="comment-text">
-                                                        <div class="comment-metadata"><h5><a href="page-profile.html#">Alex
-                                                                    Poole </a><span>on Grand Prairie Restaurants</span></h5>
+                                                        <div class="comment-metadata"><h5><a href="page-profile.html#">Alex  Poole </a><span>on Grand Prairie Restaurants</span></h5>
                                                             <p class="day">12/01/2017</p>
-                                                            <div class="flat-start"><i class="fa fa-star"></i><i
-                                                                    class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                                    class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                                                            <div class="flat-start">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-o"></i>
                                                             </div>
                                                         </div><!-- .comment-metadata -->
                                                         <div class="comment-content"><p>Lorem ipsum dolor sit amet,

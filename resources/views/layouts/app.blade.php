@@ -10,16 +10,20 @@
 </head>
 
 <body class="header_sticky"><!-- Preloader -->
-    <section class="loading-overlay">
-        <div class="Loading-Page"><h2 class="loader">Loading</h2></div>
-    </section><!-- Boxed -->
-    <div class="boxed"><!-- Header -->
+<section class="loading-overlay">
+    <div class="Loading-Page"><h2 class="loader">Loading</h2></div>
+</section><!-- Boxed -->
+<div class="boxed"><!-- Header -->
     @include('layouts.header')
 
     @yield('content')
     @include('layouts.footer')
+    @include('layouts.login')
+    @include('layouts.register')
 
-    </div>
+    <!-- Go Top -->
+    <a class="go-top effect-button"><i class="fa fa-angle-up"></i></a>
+</div>
 @include('layouts.javascript')
 </body>
 </html>

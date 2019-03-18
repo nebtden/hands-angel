@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::get('/test', 'HomeController@test');
 
 Auth::routes();
 
@@ -27,6 +27,8 @@ Route::get('/user', 'UserController@index');
 
 Route::get('/user/profile', 'UserController@profile');
 Route::get('/user/add-task', 'UserController@add-task');
+//上传图像必须本人
+Route::post('/user/upload', 'UserController@upload');
 
 
 

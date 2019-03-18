@@ -52,7 +52,7 @@
                     @endforeach
                 @endif
 
-                <input type="password" class="form-control" placeholder="{{ trans('admin::lang.password') }}" name="password" value="{{ old('username') }}">
+                <input type="password" class="form-control" placeholder="{{ trans('admin::lang.password') }}" name="password" value="{{ old('password') }}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
 

@@ -10,16 +10,37 @@
                     @csrf
                     <h3 class="title-formlogin">Sign Up</h3>
                     <span class="input-login icon-form">
-                        <input type="text" placeholder="Your Name*" name="name" required="required"><i class="fa fa-user"></i></span><span class="input-login icon-form"><input type="text" placeholder="E-mail*" name="email"required="required"><i
-                            class="fa fa-envelope-o"></i></span><span class="input-login icon-form"><input type="text"
-                                                                                                           placeholder="Password*"
-                                                                                                           name="password"
-                                                                                                           required="required"><i
-                            class="fa fa-lock"></i></span><span class="input-login icon-form"><input type="text"
-                                                                                                     placeholder="Repeat Password*"
-                                                                                                     name="password"
-                                                                                                     required="required"><i
-                            class="fa fa-lock"></i></span>
+                        <input type="text" placeholder="Your Name*" name="name" required="required">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                    @endif
+                    <span class="input-login icon-form">
+                        <input type="text" placeholder="E-mail*" name="email"required="required">
+                        <i class="fa fa-envelope-o"></i>
+                    </span>
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                    @endif
+
+                    <span class="input-login icon-form">
+                        <input type="text" placeholder="Password*"  name="password" required="required">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                    @endif
+                    <span class="input-login icon-form">
+                        <input type="text" placeholder="Repeat Password*" name="password_origin" required="required">
+                        <i class="fa fa-lock"></i>
+                    </span>
                     <div class="wrap-button signup">
                         <button type="submit" id="logup-button" class=" login-btn effect-button" title="log in">LOG  UP
                         </button>

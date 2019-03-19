@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -46,9 +47,9 @@ class UserController extends Controller
 
 
     public function profile(){
-
+        $user = Auth::user();
         return view('user.profile',[
-            'user'=>[],
+            'user'=>$user,
         ]);
     }
 
@@ -62,8 +63,14 @@ class UserController extends Controller
     }
 
     public function upload(Request $request){
+        $user_id = Auth::user()->id;
+        $path = $request->file('file')->storeAs(
+            'images/users',$user_id.'.'.$request->file('file')->extension(), 'public'
+        );
 
-        $path = $request->file('file')->store('avatars');
+        $user = Auth::user();
+        $user->head_img = '/storage/'. $path;
+        $user->update();
 
         return $path;
     }

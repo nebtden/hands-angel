@@ -162,17 +162,25 @@
 @section('javascript')
 <script src="/javascript/dropzone.js"></script>
 <link rel="stylesheet" type="text/css" href="/stylesheets/dropzone.css"><!-- Animation Style -->
+
 <script type="text/javascript">
+    Dropzone.options.myAwesomeDropzone = false;
+     Dropzone.autoDiscover = false;
     $("#my-awesome-dropzone").dropzone({
         url: "{{ url('user/upload') }}",
         addRemoveLinks : true,
         maxFilesize: 5,
-        dictDefaultMessage: '<span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block">' +
-            '<span class="font-lg">' +
-            '<i class="fa fa-caret-right text-danger"></i> Drop files <span class="font-xs">to upload</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (Or Click)</h4></span>',
+        dictDefaultMessage: ' ',
         dictResponseError: 'Error uploading file!',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        init: function () {
+            var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
+            this.options.addedfile.call(this, mockFile);
+            this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
+            mockFile.previewElement.classList.add('dz-success');
+            mockFile.previewElement.classList.add('dz-complete');
         }
     });
 </script>

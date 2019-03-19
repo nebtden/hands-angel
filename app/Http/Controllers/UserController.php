@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 
 use App\Models\UserMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -49,6 +50,15 @@ class UserController extends Controller
         return view('user.profile',[
             'user'=>[],
         ]);
+    }
+
+    //更新交易信息
+    public function update_profile(Request $request){
+        $user_id = Auth::user()->id;
+        $name = $request->input('name');
+        $mobile = $request->input('mobile');
+        $name = $request->input('name');
+        $name = $request->input('name');
     }
 
     public function upload(Request $request){

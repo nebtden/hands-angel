@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+
+
 @section('content')
     @include('layouts.banner')
     <section class="flat-row page-profile bg-theme">
@@ -28,13 +30,14 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
-                                                <form action="{{ url('user/upload') }}" class="dropzone" id="my-awesome-dropzone">
+                                                <div    class="dropzone" id="my-awesome-dropzone">
                                                     {{ csrf_field() }}
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <form method="post" action="page-profile.html#" class="form-profile"><p class="input-info"><label>Your name*</label>
+                                                    {{ csrf_field() }}
                                                     <input type="text" name="name" id="name"></p>
                                                 <p class="input-info">
                                                     <label>Your Phone Numbers*</label>
@@ -92,8 +95,11 @@
                                                                 consectetur adipisicing elit, sed do eiusmod tempor
                                                                 incididunt ut labore et dolore magna aliqua. Ut enim ad
                                                                 minim veniam, quis nostrud exercitation ullamco</p></div>
-                                                        <!-- .comment-content --></div><!-- /.comment-text --></article>
-                                                <!-- .comment-body --></li><!-- #comment-## -->
+                                                        <!-- .comment-content -->
+                                                    </div><!-- /.comment-text -->
+                                                </article>
+                                                <!-- .comment-body -->
+                                            </li><!-- #comment-## -->
                                             <li class="comment">
                                                 <article class="comment-body clearfix">
                                                     <div class="comment-author"><img src="images/services/c2.png"
@@ -113,9 +119,13 @@
                                                         <div class="comment-content"><p>Lorem ipsum dolor sit amet,
                                                                 consectetur adipisicing elit, sed do eiusmod tempor
                                                                 incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                                minim veniam, quis nostrud exercitation ullamco</p></div>
-                                                        <!-- .comment-content --></div><!-- /.comment-text --></article>
-                                                <!-- .comment-body --></li><!-- #comment-## -->
+                                                                minim veniam, quis nostrud exercitation ullamco</p>
+                                                        </div>
+                                                        <!-- .comment-content -->
+                                                    </div><!-- /.comment-text -->
+                                                </article>
+                                                <!-- .comment-body -->
+                                            </li><!-- #comment-## -->
                                             <li class="comment">
                                                 <article class="comment-body clearfix">
                                                     <div class="comment-author"><img src="images/services/c3.png"
@@ -148,5 +158,22 @@
 
 
 @endsection
+
+@section('javascript')
 <script src="/javascript/dropzone.js"></script>
 <link rel="stylesheet" type="text/css" href="/stylesheets/dropzone.css"><!-- Animation Style -->
+<script type="text/javascript">
+    $("#my-awesome-dropzone").dropzone({
+        url: "{{ url('user/upload') }}",
+        addRemoveLinks : true,
+        maxFilesize: 5,
+        dictDefaultMessage: '<span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block">' +
+            '<span class="font-lg">' +
+            '<i class="fa fa-caret-right text-danger"></i> Drop files <span class="font-xs">to upload</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (Or Click)</h4></span>',
+        dictResponseError: 'Error uploading file!',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+@stop

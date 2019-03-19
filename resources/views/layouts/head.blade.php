@@ -9,3 +9,5 @@
 <link href="/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
 <link href="/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
 <link href="/icon/favicon.png" rel="shortcut icon">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+

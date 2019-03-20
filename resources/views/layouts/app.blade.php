@@ -18,8 +18,14 @@
 
     @yield('content')
     @include('layouts.footer')
+
+    {{--@if()--}}
+    {{--@includeWhen(\Illuminate\Support\Facades\Auth::user(), 'layouts.login')--}}
+    @guest
     @include('layouts.login')
     @include('layouts.register')
+    @endguest
+
 
     <!-- Go Top -->
     <a class="go-top effect-button"><i class="fa fa-angle-up"></i></a>

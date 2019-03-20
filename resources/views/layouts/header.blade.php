@@ -5,7 +5,10 @@
                 <div id="logo" class="logo float-left"><a href="/" rel="home"><img src="/images/logo.png"
                                                                                             alt="image"></a></div>
                 <!-- /.logo -->
-                <div class="btn-menu"><span></span></div><!-- //mobile menu button --></div><!-- /.col-lg-4 -->
+                <div class="btn-menu">
+                    <span></span>
+                </div><!-- //mobile menu button -->
+            </div><!-- /.col-lg-4 -->
             <div class="col-lg-8">
                 <div class="nav-wrap">
                     <nav id="mainnav" class="mainnav float-left">
@@ -24,12 +27,12 @@
 
                             @guest
                                 <li>
-                                    <a data-toggle="modal" href="{{ url('login') }}">
+                                    <a data-toggle="modal" href="#popup_login">
                                         <i class="fa fa-user"></i>Sign in
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-toggle="modal" href="{ url('register') }}">
+                                    <a data-toggle="modal" href="#popup_register">
                                         <i class="fa fa-user-plus"></i>
                                         Register</a>
                                 </li>

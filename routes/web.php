@@ -12,6 +12,7 @@
 */
 
 Route::get('/test', 'HomeController@test');
+Route::get('/home', 'HomeController@test');
 
 Auth::routes();
 

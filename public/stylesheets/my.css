@@ -4,3 +4,10 @@
 .profile ul.add-section li.weixin span, .profile ul.add-section li i.weixin {
     color: #00bd0c;
 }
+
+.focus{
+    border: 1px solid #e8280b;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

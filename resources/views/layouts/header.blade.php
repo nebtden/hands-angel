@@ -10,29 +10,31 @@
                 <div class="nav-wrap">
                     <nav id="mainnav" class="mainnav float-left">
                         <ul class="menu">
-                            <li class="home"><a href="/">Home</a></li>
+                            <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">Home</a></li>
 
-                            <li><a href="/article/list">Articles</a>
-                            <li><a href="/user-list">Users</a>
-                            <li><a href="blog.html">Blog</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul><!-- /.submenu --></li>
-                            <li><a href="page-about.html">Page</a>
-                                <ul class="submenu">
-                                    <li><a href="page-about.html">About Us</a></li>
-                                    <li><a href="page-services.html">Services</a></li>
-                                    <li><a href="page-user.html">User</a></li>
-                                    <li><a href="page-profile.html">User profile</a></li>
-                                    <li><a href="page-addlisting.html">Add Listing</a></li>
-                                    <li><a href="page-pricing.html">pricing</a></li>
-                                    <li><a href="page-contact.html">Contact Us</a></li>
-                                </ul><!-- /.submenu --></li>
-                            <li><a data-toggle="modal" href="#popup_login"><i class="fa fa-user"></i>Sign
-                                    in</a></li>
-                            <li><a data-toggle="modal" href="#popup_register"><i
-                                        class="fa fa-user-plus"></i>Register</a></li>
+                            <li class="{{ Request::is('/article/list') ? 'home' : '' }}"><a href="/article/list">Articles</a>
+                            <li class="{{ Request::is('/user-list') ? 'home' : '' }}"><a href="/user-list">Users</a>
+
+                            @auth
+                                <li class="{{ Request::is('user/profile') ? 'home' : '' }}">
+                                    <a   href="{{ url('user/profile') }}"  >
+                                         Profile </a>
+                                </li>
+                            @endauth
+
+                            @guest
+                                <li>
+                                    <a data-toggle="modal" href="{{ url('login') }}">
+                                        <i class="fa fa-user"></i>Sign in
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="modal" href="{ url('register') }}">
+                                        <i class="fa fa-user-plus"></i>
+                                        Register</a>
+                                </li>
+                            @endguest
+
                         </ul><!-- /.menu -->
                     </nav>
                     <!-- /.mainnav -->
@@ -41,5 +43,11 @@
                             Listing
                         </button>
                     </div>
-                </div><!-- /.nav-wrap --></div><!-- /.col-lg-8 --></div><!-- /.row --></div>
+                </div>
+                <!-- /.nav-wrap -->
+            </div>
+            <!-- /.col-lg-8 -->
+        </div>
+        <!-- /.row -->
+    </div>
 </header>

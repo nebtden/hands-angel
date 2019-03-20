@@ -92,7 +92,7 @@
                         "password": $('#popup_login').find("input[name=password]").val(),
                     },
                     beforeSend:function(){
-                        $('#popup_login').remove('.has-error')
+                        $('#popup_login .has-error').remove()
                     },
                     success: function (data) {
                         // $("#result").html(data.success);

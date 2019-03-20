@@ -46,7 +46,14 @@ class UserController extends Controller
     }
 
 
-    public function profile(){
+    public function profile(Request $request){
+        if($request->post()){
+            $user_id = Auth::user()->id;
+            $name = $request->input('name');
+            $mobile = $request->input('mobile');
+            $name = $request->input('name');
+            $name = $request->input('name');
+        }
         $user = Auth::user();
         return view('user.profile',[
             'user'=>$user,
@@ -55,11 +62,7 @@ class UserController extends Controller
 
     //更新交易信息
     public function update_profile(Request $request){
-        $user_id = Auth::user()->id;
-        $name = $request->input('name');
-        $mobile = $request->input('mobile');
-        $name = $request->input('name');
-        $name = $request->input('name');
+
     }
 
     public function upload(Request $request){

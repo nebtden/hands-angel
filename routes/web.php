@@ -27,6 +27,7 @@ Route::get('/article/detail', 'ArticleController@detail');
 Route::get('/user', 'UserController@index');
 
 Route::get('/user/profile', 'UserController@profile');
+Route::post('/user/profile', 'UserController@profile');
 Route::get('/user/add-task', 'UserController@add-task');
 //上传图像必须本人
 Route::post('/user/upload', 'UserController@upload');

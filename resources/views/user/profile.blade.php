@@ -8,7 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="flat-user profile"><a href="page-user.html" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
+                    <div class="flat-user profile">
+                        <a href="page-user.html" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
                         <ul class="info">
                             <li><a href="page-profile.html#" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
                             </li>
@@ -18,8 +19,8 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="flat-tabs style2" data-effect="fadeIn">
-                        <form method="post" action="page-profile.html#" class="form-profile">
-                            {{csrf_token()}}}
+                        <form method="post" action="{{ url('user/profile') }}" class="form-profile">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <ul class="menu-tab clearfix">
                             <li class="active"><a href="page-profile.html#"><i class="ion-navicon-round"></i>(3)
                                     Listings</a></li>
@@ -60,19 +61,21 @@
                                                 <li class="twitter">
                                                     <i class="fa fa-twitter-square twitter"></i>
                                                     <span>Twitter</span>
-                                                    <a href="https://twitter.com/" title="">{{$user->twitter}}</a>
+                                                    <input type="url" name="twitter" value="{{$user->twitter}}">
+
                                                     <i class="fa fa-minus-circle float-right"></i>
                                                 </li>
                                                 <li class="face">
                                                     <i class="fa fa-facebook-square face"></i>
                                                     <span>Facebook</span>
-                                                    <a href="{{$user->facebook}}" title="">{{$user->facebook}}</a>
+                                                    <input type="url" name="facebook" value="{{$user->facebook}}">
+
                                                     <i class="fa fa-minus-circle float-right"></i>
                                                 </li>
                                                 <li class="weixin">
                                                     <i class="fa fa-weixin weixin"></i>
                                                     <span>Wechat</span>
-                                                    {{$user->wechat}}
+                                                    <input type="text" name="twitter" value="{{$user->wechat}}">
                                                     <i class="fa fa-minus-circle float-right"></i>
                                                 </li>
 

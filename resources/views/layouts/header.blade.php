@@ -42,8 +42,8 @@
                     </nav>
                     <!-- /.mainnav -->
                     <div class="button-addlist float-right">
-                        <button type="button" class="flat-button" onclick="location.href='page-addlisting.html'">Add
-                            Listing
+                        <button type="button" class="flat-button" onclick="location.href='/user/add-task'">Add
+                            Task
                         </button>
                     </div>
                 </div>

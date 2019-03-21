@@ -11,7 +11,10 @@
                         </li>
                         <li><i class="fa fa-phone"></i>+61 3 8376 6284</li>
                     </ul>
-                </div><!-- /.widget --></div><!-- /.col-lg-3 -->
+                </div>
+                <!-- /.widget -->
+            </div>
+            <!-- /.col-lg-3 -->
             <div class="col-lg-3">
                 <div id="nav_menu-2" class="widget widget_nav_menu"><h5 class="widget-title">Privacy Policy</h5>
                     <div class="wrap-menufooter clearfix">
@@ -108,4 +111,4 @@
     </div>
 </footer>
 
-<!-- Go Top --><a class="go-top effect-button"><i class="fa fa-angle-up"></i></a>
+

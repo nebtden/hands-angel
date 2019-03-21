@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('layouts.banner')
     <section class="main-content page-listing-grid">
         <div class="container">
             <div class="row">

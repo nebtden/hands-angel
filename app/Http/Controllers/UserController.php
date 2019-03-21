@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index(){
         //用户列表
@@ -76,6 +85,15 @@ class UserController extends Controller
         $user->update();
 
         return $path;
+    }
+
+
+    public function addTask(Request $request){
+
+        $user = Auth::user();
+        return view('user.add-task',[
+            'user'=>$user,
+        ]);
     }
 
 }

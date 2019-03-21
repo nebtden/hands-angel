@@ -46,6 +46,7 @@
     </div>
 </div>
 @section('javascript')
+    @parent
     <script type="application/javascript">
         $(function () {
 
@@ -96,7 +97,7 @@
                     },
                     success: function (data) {
                         // $("#result").html(data.success);
-                       location.href='/test'
+                       location.href='/user/profile'
                     },
                     error: function (request, status, error) {
                         json = $.parseJSON(request.responseText);

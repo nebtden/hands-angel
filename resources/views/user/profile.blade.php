@@ -110,7 +110,7 @@
     Dropzone.options.myAwesomeDropzone = false;
      Dropzone.autoDiscover = false;
     $("#my-awesome-dropzone").dropzone({
-        url: "{{ url('user/upload') }}",
+        url: "{{ url('upload') }}",
         addRemoveLinks : true,
         maxFilesize: 5,
         dictDefaultMessage: ' ',
@@ -124,6 +124,10 @@
             this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
             mockFile.previewElement.classList.add('dz-success');
             mockFile.previewElement.classList.add('dz-complete');
+        },
+        success: function( file, response ){
+            obj = JSON.parse(response);
+            alert(obj.filename); // <---- here is your filename
         }
     });
 </script>

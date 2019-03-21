@@ -6,6 +6,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Models\UserMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -87,10 +88,35 @@ class UserController extends Controller
         return $path;
     }
 
+    public function tasks(){
+        $user = Auth::user();
+        return view('user.task-list',[
+            'user'=>$user,
+        ]);
+    }
 
-    public function addTask(Request $request){
+    public function task(Request $request){
+
 
         $user = Auth::user();
+        return view('user.add-task',[
+            'user'=>$user,
+        ]);
+    }
+
+
+    public function addTask(Request $request){
+        $user = Auth::user();
+        if($request->post()){
+            $task = new Task();
+
+            $task->images = $request->input('images');
+            $task->title = $request->input('title');
+            $task->user_id = $user->id;
+            $task->save();
+
+        }
+
         return view('user.add-task',[
             'user'=>$user,
         ]);

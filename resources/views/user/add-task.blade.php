@@ -4,11 +4,14 @@
     @include('layouts.banner')
     <section class="flat-row page-addlisting">
         <div class="container">
+            <form method="post" action="{{ url('user/add-task') }}" class="filter-form form-addlist">
             <div class="add-filter">
+
                 <div class="row">
                     <div class="col-lg-2"><h5 class="title-list">Basic Listing</h5></div>
                     <div class="col-lg-10 widget-form">
-                        <form method="post" action="{{ url('task') }}" class="filter-form form-addlist">
+
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="input-info">
                                 <label class="nhan">Listing Title*</label>
                                 <input type="text" name="title" id="title" value="{{ $task->title??'' }}">
@@ -32,52 +35,12 @@
                                 </select>
                                 <i class="fa fa-angle-down"></i>
                             </p>
-                        </form>
-                        {{--<div class="more-filter">
-                            <label class="nhan">More Fillter*</label>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="flat-check">
-                                        <input type="checkbox" id="wifi" name="category" checked="checked"><label for="wifi">Wifi</label>
-                                    </div>
-                                    <div class="flat-check"><input type="checkbox" id="smoking" name="category">
-                                        <label for="smoking">Smoking allowed</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="flat-check">
-                                        <input type="checkbox" id="onl" name="category" checked="checked">
-                                        <label for="onl">Online
-                                            Reservation</label>
-                                    </div>
-                                    <div class="flat-check">
-                                        <input type="checkbox" id="park" name="category">
-                                        <label for="park">Parking street</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="flat-check">
-                                        <input type="checkbox" id="event" name="category">
-                                        <label for="event">Events</label>
-                                    </div>
-                                    <div class="flat-check">
-                                        <input type="checkbox" id="ele" name="category">
-                                        <label for="ele">Elevator in building</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="flat-check"><input type="checkbox" id="host" name="category">
-                                        <label for="host">Host</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>--}}
+
+
                         <div class="add-images">
                             <label class="nhan">Gallery</label>
                             <div action="{{ url('upload') }}" class="dropzone" id="my-awesome-dropzone">
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
-                                </div>
+                                <input type="hidden" name="images" value="">
                             </div>
                         </div>
                     </div>
@@ -87,7 +50,7 @@
                 <div class="row">
                     <div class="col-lg-2"><h5 class="title-list">Infomation</h5></div>
                     <div class="col-lg-10 profile"><label class="nhan">Contact</label>
-                        <form method="post" action="page-addlisting.html#" class="form-contact row">
+
                             <div class="col-lg-4"><p class="input-info"><input type="text" name="title"
                                                                                placeholder="Phone" required=""></p>
                             </div>
@@ -97,7 +60,7 @@
                             <div class="col-lg-4"><p class="input-info"><input type="text" name="title"
                                                                                placeholder="Website" required=""></p>
                             </div>
-                        </form>
+
                         <ul class="add-section">
                             <li class="twitter"><i class="fa fa-twitter-square twitter"></i><span>Twitter</span><a
                                     href="https://twitter.com/" title="">https://twitter.com/</a><i
@@ -140,7 +103,7 @@
                             <div class="flat-toggle">
                                 <div class="toggle-title active">Section 1</div>
                                 <div class="toggle-content">
-                                    <form method="post" action="page-addlisting.html#" class="form-profile">
+
                                         <ul class="list-input">
                                             <li class="clearfix excep"><p class="input-info title"><input type="text"
                                                                                                           name="nell"
@@ -166,13 +129,13 @@
                                                 <p class="input-info add-icon"><a href="page-addlisting.html#" title=""><i
                                                             class="fa fa-plus-circle"></i></a></p></li>
                                         </ul>
-                                    </form>
+
                                 </div>
                             </div><!-- /toggle -->
                             <div class="flat-toggle">
                                 <div class="toggle-title">Section 2</div>
                                 <div class="toggle-content">
-                                    <form method="post" action="page-addlisting.html#" class="form-profile">
+
                                         <ul class="list-input">
                                             <li class="clearfix"><p class="input-info title"><input type="text"
                                                                                                     name="title"
@@ -187,17 +150,18 @@
                                                 <p class="input-info add-icon"><a href="page-addlisting.html#" title=""><i
                                                             class="fa fa-plus-circle"></i></a></p></li>
                                         </ul>
-                                    </form>
+
                                 </div>
                             </div><!-- /toggle --></div><!-- /.flat-accordion -->
                         <div class="button-addlisting">
-                            <button type="button" class="flat-button" onclick="location.href='page-addlisting.html'">Add
+                            <button type="submit" class="flat-button"  >Add
                                 Listing
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
 @endsection
@@ -225,7 +189,10 @@
                 this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
                 mockFile.previewElement.classList.add('dz-success');
                 mockFile.previewElement.classList.add('dz-complete');
-            }
+            },
+            success: function( file, response ){
+                 $('#images').val(response);
+            },
         });
     </script>
 

@@ -5,7 +5,9 @@
 <head><!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--><title>{{ config('app.name') }} </title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <![endif]-->
+    <title>{{ config('app.name') }} </title>
     @include('layouts.head')
 </head>
 

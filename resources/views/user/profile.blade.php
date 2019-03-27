@@ -108,7 +108,7 @@
 
 <script type="text/javascript">
     Dropzone.options.myAwesomeDropzone = false;
-     Dropzone.autoDiscover = false;
+    Dropzone.autoDiscover = false;
     $("#my-awesome-dropzone").dropzone({
         url: "{{ url('upload') }}",
         addRemoveLinks : true,

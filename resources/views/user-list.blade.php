@@ -1,6 +1,3 @@
-<html>
-<head></head>
-<body>
 @extends('layouts.app') @section('content') @include('layouts.banner')
 <section class="main-content page-listing">
     <div class="container">
@@ -454,9 +451,8 @@
                         </div>
                     </div>
                 </div>
-            </div> @include('layouts.user-right')
+            </div>
+            @include('layouts.user-right')
         </div>
     </div>
 </section> @endsection
-</body>
-</html>

@@ -10,25 +10,15 @@
                             <div class="one-three showing"><p><span>16</span>Found Listings</p></div>
                             <div class="one-three more-filter">
                                 <ul class="unstyled">
-                                    <li class="current"><a href="listing-list.html#" class="title">More Fillter <i
-                                                class="fa fa-angle-right"></i></a>
+                                    <li class="current"><a href="listing-list.html#" class="title">More Fillter <i class="fa fa-angle-right"></i></a>
                                         <ul class="unstyled">
-                                            <li class="en"><input type="checkbox" id="wifi" name="category"><label
-                                                    for="wifi">Wifi</label></li>
-                                            <li class="en"><input type="checkbox" id="smoking" name="category"><label
-                                                    for="smoking">Smoking allowed</label></li>
-                                            <li class="en"><input type="checkbox" id="onl" name="category"><label
-                                                    for="onl">Online Reservation</label></li>
-                                            <li class="en"><input type="checkbox" id="parking" name="category"
-                                                                  checked="checked"><label for="parking">Parking
-                                                    street</label></li>
-                                            <li class="en"><input type="checkbox" id="event" name="category"><label
-                                                    for="event">Events</label></li>
-                                            <li class="en"><input type="checkbox" id="in" name="category"
-                                                                  checked="checked"><label for="in">Elevator in
-                                                    building</label></li>
-                                            <li class="en"><input type="checkbox" id="card" name="category"><label
-                                                    for="card">Credit Card Payment</label></li>
+                                            <li class="en"><input type="checkbox" id="wifi" name="category"><label for="wifi">Wifi</label></li>
+                                            <li class="en"><input type="checkbox" id="smoking" name="category"><label for="smoking">Smoking allowed</label></li>
+                                            <li class="en"><input type="checkbox" id="onl" name="category"><label for="onl">Online Reservation</label></li>
+                                            <li class="en"><input type="checkbox" id="parking" name="category" checked="checked"> <label for="parking">Parking street</label></li>
+                                            <li class="en"><input type="checkbox" id="event" name="category"><label for="event">Events</label></li>
+                                            <li class="en"><input type="checkbox" id="in" name="category" checked="checked"><label for="in">Elevator in building</label></li>
+                                            <li class="en"><input type="checkbox" id="card" name="category"><label for="card">Credit Card Payment</label></li>
                                         </ul>
                                     </li>
                                 </ul>

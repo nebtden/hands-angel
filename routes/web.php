@@ -19,9 +19,13 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/users', 'HomeController@userList');
 
-//列表页
+//文章列表页
+Route::get('/articles', 'ArticleController@list');
 Route::get('/article/list', 'ArticleController@list');
 Route::get('/article/detail', 'ArticleController@detail');
+
+//任务列表页
+Route::get('/tasks', 'TaskController@list');
 
 //用户列表页
 Route::get('/user', 'UserController@index');
@@ -54,7 +58,8 @@ Route::resource('/users', 'UserController');
 
 //查看最近几个用户
 //Route::middleware(['pjax'])->resource('/user/users', 'Seller\UserController');
-
+//  ----------------------------------------------------------------------
+//  设计逻辑：task 发布需求，article 显示列表
 
 
 

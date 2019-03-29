@@ -16,7 +16,7 @@
                             <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">Home</a></li>
 
                             <li class="{{ Request::is('/article/list') ? 'home' : '' }}"><a href="/article/list">Articles</a>
-                            <li class="{{ Request::is('/user-list') ? 'home' : '' }}"><a href="/user-list">Users</a>
+                            <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">Users</a>
 
                             @auth
                                 <li class="{{ Request::is('user/profile') ? 'home' : '' }}">

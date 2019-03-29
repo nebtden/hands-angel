@@ -17,7 +17,7 @@ Route::get('/home', 'HomeController@test');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('/user-list', 'HomeController@userList');
+Route::get('/users', 'HomeController@userList');
 
 //列表页
 Route::get('/article/list', 'ArticleController@list');

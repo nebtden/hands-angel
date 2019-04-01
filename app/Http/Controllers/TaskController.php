@@ -26,11 +26,15 @@ class TaskController extends Controller
             $images = Images::find($ids);
         }
 
-
+        //recent 列表
+        $recent = Task::where([])->orderBy('created_at','desc')->take(6)->get();
+        $types = Task::$types;
 
         return view('task/detail',[
             'task'=>$task,
             'images'=>$images,
+            'recent'=>$recent,
+            'types'=>$types,
         ]);
     }
 

@@ -26,7 +26,7 @@ Route::get('/article/detail', 'ArticleController@detail');
 
 //任务列表页
 Route::resource('user/tasks', 'User\TaskController');
-Route::get('/tasks', 'TaskController@list');
+Route::get('/tasks', 'TaskController@index');
 Route::get('/tasks/{id}', 'TaskController@show');
 
 //用户列表页

@@ -41,14 +41,15 @@ class TaskController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function index()
     {
+//        $page =
         //显示列表页
         $types = Task::$types;
         $provinces = AreaProvince::all();
         $list =  DB::table('tasks')->paginate(10);
 
-        return view('task/list',[
+        return view('task/index',[
             'list'=>$list,
             'types'=>$types,
             'provinces'=>$provinces,

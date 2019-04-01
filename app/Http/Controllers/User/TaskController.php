@@ -8,6 +8,7 @@ namespace App\Http\Controllers\User;
 
 
 
+use App\Models\Images;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,12 @@ class TaskController extends Controller
         $user = Auth::user();
 
         $task->images = $request->input('images');
+        if($images = $request->input('images')){
+            $images = explode(',',$images);
+            $cover_id = $images[0];
+            $task->cover = Images::find($cover_id)['src'];
+        }
+
         $task->title = $request->input('title');
         $task->content = $request->input('content');
         $task->user_id = $user->id;

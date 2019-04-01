@@ -2074,7 +2074,7 @@ section.main-content.page-listing {
     margin-bottom: 10px;
 }
 
-.add-filter .widget-form .filter-form p.icon i {
+.add-filter .widget-form   p.icon i {
     top: 53px;
 }
 
@@ -2471,7 +2471,7 @@ section.main-content.page-listing {
     color: #c3c3c3;
 }
 
-.widget-form .filter-form p.icon i {
+.widget-form  p.icon i {
     position: absolute;
     top: 16px;
     right: 17px;

@@ -34,7 +34,7 @@
                         <div class="add-images">
                             <label class="nhan">Gallery</label>
                             <div action="{{ url('upload') }}" class="dropzone" id="my-awesome-dropzone">
-                                <input type="hidden" name="images" value="">
+                                <input type="hidden" name="images" id="images" value="">
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
         Dropzone.autoDiscover = false;
         $("#my-awesome-dropzone").dropzone({
             url: "{{ url('upload') }}",
-            addRemoveLinks : true,
+            // addRemoveLinks : true,
             maxFilesize: 5,
             dictDefaultMessage: ' ',
             uploadMultiple:true,
@@ -63,16 +63,25 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            init: function () {
+/*            init: function () {
                 var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
                 this.options.addedfile.call(this, mockFile);
                 this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
                 mockFile.previewElement.classList.add('dz-success');
                 mockFile.previewElement.classList.add('dz-complete');
-            },
+            },*/
             success: function( file, response ){
-                 $('#images').val(response);
+                var val = $('#images').val();
+                if (val) {
+                    $('#images').val(val + ',' +response);
+                } else {
+                    $('#images').val( response);
+                }
             },
+            removedfile: function(file) {
+                var name = file.name;
+                console.log(name);
+           }
         });
     </script>
 

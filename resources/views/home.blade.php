@@ -418,8 +418,9 @@
         </div>
     </section>
 
+@endsection
+
 @section('css')
     @parent
     <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
 @endsection
-

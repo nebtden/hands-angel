@@ -47,7 +47,7 @@ class UploadController extends Controller
 
             //存储到数据库
             $image->user_id = $user->id;
-            $image->src = '/images/task'.$name;
+            $image->src = '/storage/images/task/'.$name;
             $image->save();
             $paths[] = $image->id;
         }

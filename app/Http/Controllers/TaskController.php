@@ -18,10 +18,10 @@ class TaskController extends Controller
     public function show($id)
     {
         //文章列表1
-        $article = Article::find($id);
+        $task = Task::find($id);
 
-        return view('article',[
-            'article'=>$article,
+        return view('task/detail',[
+            'task'=>$task,
         ]);
     }
 

@@ -4,7 +4,7 @@
     @include('layouts.banner')
     <section class="flat-row page-addlisting">
         <div class="container">
-            <form method="post" action="{{ url('user/add-task') }}" class="filter-form form-addlist">
+            <form method="post" action="{{ url('user/tasks') }}" class="filter-form form-addlist">
             <div class="add-filter">
 
                 <div class="row">
@@ -38,9 +38,7 @@
                             </div>
                         </div>
                         <div class="button-addlisting">
-                            <button type="submit" class="flat-button" onclick="location.href='page-addlisting.html'">Add
-                                Listing
-                            </button>
+                            <button type="submit" class="flat-button">Submit</button>
                         </div>
                     </div>
 

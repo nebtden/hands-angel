@@ -4,11 +4,14 @@
  * 用户信息补充
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\User;
+
+
 
 use App\Models\Task;
 use App\Models\UserMessage;
 use App\Models\AreaProvince;
+use App\Models\AreaCity;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use App\Seller\Layout\Content;
@@ -17,13 +20,13 @@ use Illuminate\Support\Facades\Auth;
 use Encore\Admin\Controllers\HasResourceActions;
 use Exception;
 
-class UserController extends Controller
+class UserMessageController extends Controller
 {
     use  HasResourceActions;
 
     public function index(Content $content){
         $user = Auth::user();
-        return $content->header('个人信息')->description('个人信息')
+        return $content->header('个人信息')->description('个人信息补充')
              ->body('注意，经大家反馈，将个人信息补充完整，更有可能发布成功')
              ->body($this->form()->edit($user->id));
     }
@@ -99,20 +102,23 @@ class UserController extends Controller
         $form->textarea('introduce', '个人简介');
 
 
-        $form->select('province_id')->options(
+        $form->select('province_id','省份')->options(
             AreaProvince::all()->pluck('name','id')
-        )->load('city_id', '/api/city');
+        )->load('city_id', '/api/city')->help('填写准确省份城市便于统计');
 
-        $form->select('city_id');
+        $form->select('city_id','城市')->options(function ($id) {
+
+            return AreaCity::options($id);
+
+        });
 
 //        $form->setAction('/user/message');
         $form->select('sex', '性别')->options(UserMessage::$sex);
-        $form->mobile('mobile', '手机号码');
-//        $form->email('email', '邮件');
+        $form->mobile('mobile', '手机号码')->help('手机号');
         $form->select('is_married', '是否结婚')->options(UserMessage::$married);
         $form->select('have_sex', '是否有性经验')->options(UserMessage::$hav_sex);
 
-        //@todo  省份联动
+
         $form->date('birth_day', '出生年份');
 //        $form->('age', '年龄');
         $form->text('qq', 'QQ');

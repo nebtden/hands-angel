@@ -17,7 +17,7 @@ Route::get('/home', 'HomeController@test');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('/users', 'HomeController@userList');
+//Route::get('/users', 'HomeController@userList');
 
 //文章列表页
 Route::get('/articles', 'ArticleController@list');
@@ -25,16 +25,22 @@ Route::get('/article/list', 'ArticleController@list');
 Route::get('/article/detail', 'ArticleController@detail');
 
 //任务列表页
+Route::resource('user/tasks', 'User\TaskController');
 Route::get('/tasks', 'TaskController@list');
+Route::get('/tasks/{id}', 'TaskController@show');
 
 //用户列表页
-Route::get('/user', 'UserController@index');
+Route::get('/users', 'UserController@index');
+Route::get('/users/{id}', 'UserController@show');
+
 
 Route::get('/user/profile', 'UserController@profile');
 Route::post('/user/profile', 'UserController@profile');
-Route::any('/user/add-task', 'UserController@addTask');
-//上传图像必须本人
+//Route::any('/user/add-task', 'UserController@addTask');
+
 Route::post('/user/upload', 'UserController@upload');
+
+//上传图像必须本人
 Route::any('/upload', 'UploadController@upload');
 
 

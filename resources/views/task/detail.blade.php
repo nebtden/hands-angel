@@ -1,250 +1,115 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="main-content page-listing-grid">
+    @include('layouts.banner')
+    <section class="main-content blog-posts blog-single">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="flat-select clearfix">
-                        <div class="float-left width50 clearfix">
-                            <div class="one-three showing"><p><span>16</span>Found Listings</p></div>
-                            <div class="one-three more-filter">
-                                <ul class="unstyled">
-                                    <li class="current"><a href="listing-list.html#" class="title">More Fillter <i
-                                                class="fa fa-angle-right"></i></a>
-                                        <ul class="unstyled">
-                                            <li class="en"><input type="checkbox" id="wifi" name="category"><label
-                                                    for="wifi">Wifi</label></li>
-                                            <li class="en"><input type="checkbox" id="smoking" name="category"><label
-                                                    for="smoking">Smoking allowed</label></li>
-                                            <li class="en"><input type="checkbox" id="onl" name="category"><label
-                                                    for="onl">Online Reservation</label></li>
-                                            <li class="en"><input type="checkbox" id="parking" name="category"
-                                                                  checked="checked"><label for="parking">Parking
-                                                    street</label></li>
-                                            <li class="en"><input type="checkbox" id="event" name="category"><label
-                                                    for="event">Events</label></li>
-                                            <li class="en"><input type="checkbox" id="in" name="category"
-                                                                  checked="checked"><label for="in">Elevator in
-                                                    building</label></li>
-                                            <li class="en"><input type="checkbox" id="card" name="category"><label
-                                                    for="card">Credit Card Payment</label></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="one-three sortby">
-                                <ul class="unstyled">
-                                    <li class="current"><a href="listing-list.html#" class="title">Sort by: Random <i
-                                                class="fa fa-angle-right"></i></a>
-                                        <ul class="unstyled">
-                                            <li class="en"><a href="listing-list.html#" title=""><i
-                                                        class="fa fa-caret-right"></i>Open Now</a></li>
-                                            <li class="en"><a href="listing-list.html#" title=""><i
-                                                        class="fa fa-caret-right"></i>Most reviewed</a></li>
-                                            <li class="en"><a href="listing-list.html#" title=""><i
-                                                        class="fa fa-caret-right"></i>Top rated</a></li>
-                                            <li class="en"><a href="listing-list.html#" title=""><i
-                                                        class="fa fa-caret-right"></i>Random</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="float-right">
-                            <div class="flat-sort"><a href="listing-list.html" class="course-list-view active"><i
-                                        class="fa fa-list"></i></a><a href="listing-grid.html" class="course-grid-view "><i
-                                        class="fa fa-th"></i></a></div>
-                        </div>
+                    <div class="post-wrap">
+                        <article class="post clearfix">
+                            <div class="featured-post"><img src="/images/blog/4.jpg" alt="image"></div>
+                            <!-- /.feature-post -->
+                            <div class="content-post">
+                                <h3 class="title-post">
+                                    overdraft
+                                </h3>
+                                <ul class="meta-post clearfix">
+                                    <li class="time"> January 22, 2017</li>
+                                    <li class="categories"><a href="blog-single.html#">Business</a>, <a
+                                            href="blog-single.html#">Leasing</a></li>
+                                </ul><!-- /.meta-post -->
+                                <div class="entry excerpt">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident, sunt in culpa qui
+                                        officia deserunt mollit anim id est laborum.</p>
+                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and
+                                        praising pain was born and I will give you a complete account of the system, and
+                                        expound the actual teachings of the great explorer of the truth, the
+                                        master-builder of human happiness. No one rejects, dislikes, or avoids pleasure
+                                        itself, because it is pleasure, but because those who do not know how to pursue
+                                        pleasure rationally encounter consequences that are extremely painful. Nor again
+                                        is there anyone who loves or pursues or desires to obtain pain of itself,
+                                        because it is pain, but because occasionally circumstances occur in which toil
+                                        and pain can procure him some great pleasure.</p>
+                                    <ul class="list-single">
+                                        <li>Customer experience, which includes the impression the homepage and overall
+                                            design style give the their satisfaction when they interact with the site
+                                            and perform tasks.
+                                        </li>
+                                        <li>Service-level, which looks at responsiveness and reliability of websites –
+                                            scores them on how quickly they respond to user commands and such factors as
+                                            average downtime.
+                                        </li>
+                                        <li>Best practices, such as ease of use, quality, availability and security –
+                                            site managers must be compliant data laws requiring them to protect customer
+                                            information and the integrity of customer accounts.
+                                        </li>
+                                    </ul>
+                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                                        officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                                        rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                                        est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
+                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p></div>
+                                <div class="direction clearfix">
+                                    <div class="tag-single float-left"><span>Tags:</span><a href="blog-single.html#">Business,</a><a
+                                            href="blog-single.html#">Tax,</a><a href="blog-single.html#">Finance</a></div>
+                                    <div class="social-links float-right"><span>Share:</span><a
+                                            href="blog-single.html#"><i class="fa fa-facebook"></i></a><a
+                                            href="blog-single.html#"><i class="fa fa-twitter"></i></a><a
+                                            href="blog-single.html#"><i class="fa fa-google-plus"></i></a></div>
+                                </div>
+                            </div><!-- /.content-post -->
+                        </article>
+
                     </div>
-                    <div class="listing-list">
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l1.jpg" alt="image">
-                                <div class="time"> Now Close</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button" onclick="location.href='#'">
-                                            Restautrant
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">San Antonio
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l2.jpg" alt="image">
-                                <div class="time"> Now Close</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button bg-green" onclick="location.href='#'">
-                                            bar & coffe
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">Grand Prairie
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l3.jpg" alt="image">
-                                <div class="time bg-green"> Now Open</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button" onclick="location.href='#'">bar &
-                                            coffe
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">Brownsville
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l4.jpg" alt="image">
-                                <div class="time"> Now Close</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button bg-yellow" onclick="location.href='#'">
-                                            EAT & DRINK
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">San Angelo
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l5.jpg" alt="image">
-                                <div class="time"> Now Close</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button bg-yellow" onclick="location.href='#'">
-                                            EAT & DRINK
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">Corpus Christi
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="flat-product clearfix">
-                            <div class="featured-product"><img src="images/services/l6.jpg" alt="image">
-                                <div class="time bg-green"> Now Open</div>
-                            </div>
-                            <div class="rate-product">
-                                <div class="link-review clearfix">
-                                    <div class="button-product float-left">
-                                        <button type="button" class="flat-button" onclick="location.href='#'">
-                                            Restautrant
-                                        </button>
-                                    </div>
-                                    <div class="start-review"><span class="flat-start"><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i></span><a href="listing-list.html#" class="review">( 2
-                                            reviewers )</a></div>
-                                </div>
-                                <div class="info-product"><h6 class="title"><a href="listing-single.html">Beaumont
-                                            Restaurants</a></h6>
-                                    <p>208 W 70th Street, New York, NY</p><a href="listing-list.html#" class="heart"><i
-                                            class="ion-android-favorite-outline"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-pagination style2 text-center">
-                        <ul class="flat-pagination clearfix">
-                            <li class="active"><a href="listing-list.html#">1</a></li>
-                            <li><a href="listing-list.html#">2</a></li>
-                            <li><a href="listing-list.html#">3</a></li>
-                            <li class="next"><a href="listing-list.html#">Next</a></li>
-                        </ul><!-- /.flat-pagination --></div><!-- /.blog-pagination --></div>
+                    <!-- /.post-wrap -->
+                </div>
                 <!-- /.col-lg-9 -->
                 <div class="col-lg-3">
                     <div class="sidebar">
-                        <div class=" widget widget-form style2"><h5 class="widget-title"> Search Box</h5>
-                            <form novalidate="" class="filter-form clearfix" id="filter-form" method="post"
-                                  action="listing-list.html#"><p class="book-notes"><input type="text"
-                                                                                           placeholder="What are you looking for?"
-                                                                                           name="question" required="">
-                                </p>
-                                <p class="book-form-select icon"><select class=" dropdown_sort">
-                                        <option value="">All Categories</option>
-                                        <option value="">Hotel & travel</option>
-                                        <option value="">Real Estate</option>
-                                        <option value="">Restaurant</option>
-                                        <option value="">Healthy & Fitness</option>
-                                        <option value="">Food and coffee</option>
-                                        <option value="">Drinks</option>
-                                    </select><i class="fa fa-angle-down"></i></p>
-                                <p class="book-form-address icon"><input type="text" placeholder="Address"
-                                                                         name="address" required=""><i
-                                        class="ion-android-locate"></i></p>
-                                <p class="location">Location <i class="ion-location float-right"></i></p>
-                                <p class="input-location form-filter"><span class="filter"><input id="ex8"
-                                                                                                  data-slider-id='ex1Slider'
-                                                                                                  type="text"
-                                                                                                  data-slider-min="0"
-                                                                                                  data-slider-max="10"
-                                                                                                  data-slider-step="1"
-                                                                                                  data-slider-value="5"/></span>
-                                </p>
-                                <p class="form-submit text-center">
-                                    <button class="flat-button">Search <i class="ion-ios-search-strong"></i></button>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="widget widget-map"><h5 class="widget-title">Map</h5>
-                            <p>Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie.</p>
-                            <div class="flat-maps">
-                                <div class="maps" style="width: 100%; height: 359px; "></div>
-                            </div>
-                        </div>
-                    </div><!-- /.sidebar --></div>
-                <!-- /.col-md-3 -->
-            </div><!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
+                        <div class="widget widget-recent-news"><h5 class="widget-title">Recent Post</h5>
+                            <ul class="popular-news clearfix">
+                                <li>
+                                    <div class="text"><h6><a href="blog-single.html#">Why Do I Need To Use Financial
+                                                ?</a></h6>
+                                        <p>January 11, 2017</p></div>
+                                </li>
+                                <li>
+                                    <div class="text"><h6><a href="blog-single.html#"> Why your sales forecast is
+                                                off</a></h6>
+                                        <p>January 11, 2017</p></div>
+                                </li>
+                                <li>
+                                    <div class="text"><h6><a href="blog-single.html#"> 6 tips to retain your top sales
+                                                talent</a></h6>
+                                        <p>January 11, 2017</p></div>
+                                </li>
+                                <li>
+                                    <div class="text"><h6><a href="blog-single.html#"> What the martian can teach
+                                                sales</a></h6>
+                                        <p>January 11, 2017</p></div>
+                                </li>
+                            </ul><!-- /.popular-news --></div><!-- /.widget-popular-news -->
+                        <div class="widget widget_categories"><h5 class="widget-title">Category</h5>
+                            <ul>
+                                <li><a href="blog-single.html#">Business</a></li>
+                                <li><a href="blog-single.html#">Finanve</a></li>
+                                <li><a href="blog-single.html#">Insurance</a></li>
+                                <li><a href="blog-single.html#">Leasing</a></li>
+                            </ul>
+                        </div><!-- /.widget-categories -->
+                        <div class="widget widget_tag"><h5 class="widget-title">Tags</h5>
+                            <div class="tag-list"><a href="blog-single.html#">Business</a><a href="blog-single.html#">Consulting</a><a
+                                    href="blog-single.html#">Finanve</a><a href="blog-single.html#">Insurance</a><a
+                                    href="blog-single.html#">Management</a><a href="blog-single.html#">Portfolio</a></div>
+                        </div><!-- /.widget-tag --></div><!-- /.sidebar --></div><!-- /.col-md-3 --></div><!-- /.row -->
+        </div><!-- /.container --></section>
     <section class="flat-row v1 bg-theme">
         <div class="container">
             <div class="row">
@@ -252,7 +117,7 @@
                     <div class="title-section"><h1 class="title">Newsletter</h1>
                         <div class="sub-title">Subscribe now and receive weekly newsletter with</div>
                     </div>
-                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="listing-list.html#"
+                    <form id="subscribe-form" class="flat-mailchimp" method="post" action="blog-single.html#"
                           data-mailchimp="true">
                         <div class="field clearfix" id="subscribe-content"><p class="wrap-input-email"><input
                                     type="text" tabindex="2" id="subscribe-email" name="subscribe-email"
@@ -297,5 +162,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- Footer -->
 @endsection
+
+

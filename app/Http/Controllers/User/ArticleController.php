@@ -4,7 +4,7 @@
  * 个人可以发布文章
  */
 
-namespace App\Http\Controllers\Seller;
+namespace App\Http\Controllers\User;
 
 
 use App\Models\Article;

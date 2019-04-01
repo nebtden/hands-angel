@@ -43,12 +43,13 @@ class UploadController extends Controller
             $input->storeAs(
                 'images/task',$name, 'public'
             );
-            $paths[] = '/images/task'.$name;
+
 
             //存储到数据库
             $image->user_id = $user->id;
             $image->src = '/images/task'.$name;
             $image->save();
+            $paths[] = $image->id;
         }
         return   implode(',',$paths);
 

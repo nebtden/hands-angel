@@ -34,5 +34,6 @@
 </div>
 @include('layouts.javascript')
 @yield('javascript')
+@yield('css')
 </body>
 </html>

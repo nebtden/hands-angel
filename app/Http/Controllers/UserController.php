@@ -105,23 +105,10 @@ class UserController extends Controller
     }
 
 
-    public function addTask(Request $request){
-        $user = Auth::user();
-        $types = Task::$types;
-        if($request->post()){
-            $task = new Task();
 
-            $task->images = $request->input('images');
-            $task->title = $request->input('title');
-            $task->user_id = $user->id;
-            $task->save();
 
-        }
 
-        return view('user.add-task',[
-            'user'=>$user,
-            'types'=>$types,
-        ]);
-    }
+
+
 
 }

@@ -107,6 +107,7 @@ class UserController extends Controller
 
     public function addTask(Request $request){
         $user = Auth::user();
+        $types = Task::$types;
         if($request->post()){
             $task = new Task();
 
@@ -119,6 +120,7 @@ class UserController extends Controller
 
         return view('user.add-task',[
             'user'=>$user,
+            'types'=>$types,
         ]);
     }
 

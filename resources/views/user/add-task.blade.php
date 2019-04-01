@@ -37,7 +37,13 @@
                                 <input type="hidden" name="images" id="images" value="">
                             </div>
                         </div>
+                        <div class="button-addlisting">
+                            <button type="submit" class="flat-button" onclick="location.href='page-addlisting.html'">Add
+                                Listing
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -63,13 +69,7 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-/*            init: function () {
-                var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
-                this.options.addedfile.call(this, mockFile);
-                this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
-                mockFile.previewElement.classList.add('dz-success');
-                mockFile.previewElement.classList.add('dz-complete');
-            },*/
+
             success: function( file, response ){
                 var val = $('#images').val();
                 if (val) {

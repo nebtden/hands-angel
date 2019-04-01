@@ -17,3 +17,9 @@ ALTER TABLE `users`
 ALTER TABLE `tasks`
     MODIFY COLUMN `images`  json NULL DEFAULT '' AFTER `content`;
 
+
+ ALTER TABLE `user_images` RENAME `images`;
+ ALTER TABLE `tasks`
+ADD COLUMN `cover`  varchar(255) NULL AFTER `user_id`,
+ADD COLUMN `images`  varchar(255) NULL AFTER `cover`;
+

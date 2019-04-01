@@ -47,10 +47,10 @@ class TaskController extends Controller
         //显示列表页
         $types = Task::$types;
         $provinces = AreaProvince::all();
-        $list =  DB::table('tasks')->paginate(10);
+        $tasks =  DB::table('tasks')->paginate(10);
 
         return view('task/index',[
-            'list'=>$list,
+            'tasks'=>$tasks,
             'types'=>$types,
             'provinces'=>$provinces,
         ]);

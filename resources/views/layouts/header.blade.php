@@ -4,7 +4,7 @@
             <div class="col-lg-4">
                 <div id="logo" class="logo float-left">
                     <a href="/" rel="home">
-                        <img src="/images/logo.png" alt="image"></a>
+                        <img src="/images/logo.png" alt="image" height="45" width=""></a>
                 </div>
                 <!-- /.logo -->
                 <div class="btn-menu">

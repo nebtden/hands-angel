@@ -1089,11 +1089,11 @@
     var s = function () {
         var y = window.devicePixelRatio > 1 ? true : false;
         if (y) {
-            a(".header .logo").find("img").attr({
-                src: "./images/logo@2x.png",
-                width: "144",
-                height: "45"
-            })
+            // a(".header .logo").find("img").attr({
+            //     src: "./images/logo@2x.png",
+            //     width: "144",
+            //     height: "45"
+            // })
         }
     };
     var p = function () {

@@ -18,6 +18,8 @@
                 @endforeach
             @endif
         @endforeach
+        @if ($paginator->hasMorePages())
         <li class="next"><a href="{{ $paginator->nextPageUrl() }}">Next</a></li>
+        @endif
     </ul>
 @endif

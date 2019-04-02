@@ -2,8 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div id="logo" class="logo float-left"><a href="/" rel="home"><img src="/images/logo.png"
-                                                                                            alt="image"></a></div>
+                <div id="logo" class="logo float-left">
+                    <a href="/" rel="home">
+                        <img src="/images/logo.png" alt="image"></a>
+                </div>
                 <!-- /.logo -->
                 <div class="btn-menu">
                     <span></span>

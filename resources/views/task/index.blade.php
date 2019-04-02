@@ -52,13 +52,8 @@
                     @endforeach
                 </div>
                 <div class="blog-pagination style2 text-center">
-                    <ul class="flat-pagination clearfix">
-                        <li class="active"><a href="listing-list.html#">1</a></li>
-                        <li><a href="listing-list.html#">2</a></li>
-                        <li><a href="listing-list.html#">3</a></li>
-                        <li class="next"><a href="listing-list.html#">Next</a></li>
-                    </ul>
-                    <!-- /.flat-pagination -->
+
+                    {{ $tasks->links() }}
                 </div>
                 <!-- /.blog-pagination -->
             </div>

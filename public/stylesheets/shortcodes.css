@@ -289,8 +289,13 @@ section.flat-row.section-product {
     margin-bottom: 29px;
 }
 
+.flat-product .featured-product img {
+    max-width: 580px;
+
+}
 .flat-product .featured-product img:hover {
     opacity: 0.8;
+
 }
 
 .flat-product .featured-product .time {

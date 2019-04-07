@@ -916,12 +916,12 @@
     };
     var t = function () {
         a(".form-filter").each(function () {
-            a("#ex8").slider({
-                tooltip: "always"
-            });
-            var y = new Slider("#ex8", {
-                tooltip: "always"
-            })
+            // a("#ex8").slider({
+            //     tooltip: "always"
+            // });
+            // var y = new Slider("#ex8", {
+            //     tooltip: "always"
+            // })
         })
     };
     var w = function () {

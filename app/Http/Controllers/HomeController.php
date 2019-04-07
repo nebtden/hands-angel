@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\AreaCountry;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Task;
@@ -54,6 +55,9 @@ class HomeController extends Controller
             'status'=>1,
         ])->limit(3)->get();
 
+        $types = Task::$types;
+        $countries = AreaCountry::all();
+
         return view('home',[
 
             'categories'=>$categories,
@@ -61,6 +65,8 @@ class HomeController extends Controller
             'send_articles'=>$send_articles,
             'tasks'=>$tasks,
             'users'=>$users,
+            'types'=>$types,
+            'countries'=>$countries,
         ]);
     }
 

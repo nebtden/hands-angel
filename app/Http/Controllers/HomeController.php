@@ -37,7 +37,7 @@ class HomeController extends Controller
         //任务列表
         $tasks = Task::where([
             'status'=>1,
-        ])->orderBy('id', 'desc')->limit(3)->get();
+        ])->orderBy('id', 'desc')->limit(6)->get();
 
         //用户列表
 

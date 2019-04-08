@@ -4,7 +4,7 @@
     @include('home.slider')
     @include('home.categories')
     @include('home.most')
-    @include('home.download')
+    {{--@include('home.download')--}}
     @include('home.news')
 
 

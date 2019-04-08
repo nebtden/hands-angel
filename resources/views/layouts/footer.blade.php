@@ -5,7 +5,7 @@
                 <div class="title-section">
                     <h1 class="title">Newsletter</h1>
                     <div class="sub-title">
-                        Subscribe now and receive weekly newsletter with
+                        Subscribe now and receive newsletter with
                     </div>
                 </div>
                 <form id="subscribe-form" class="flat-mailchimp" method="post" action="blog-single.html#" data-mailchimp="true">

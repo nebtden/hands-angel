@@ -15,16 +15,9 @@
                     </i>
                 </p>
                 <p class="book-form-select icon">
-                    <select class=" dropdown_sort" disabled>
-                            <option value="44" selected>China</option>
-                    </select>
-                    <i class="fa fa-angle-down">
-                    </i>
-                </p>
-                <p class="book-form-select icon">
                     <select class=" dropdown_sort">
-                        @foreach ($provinces as $key=>$province)
-                            <option value="{{$province->id}}">{{$province->name}}</option>
+                        @foreach ($countries as $key=>$country)
+                            <option value="{{$country->id}}">{{$country->country_name}}</option>
                         @endforeach
                     </select>
                     <i class="fa fa-angle-down">

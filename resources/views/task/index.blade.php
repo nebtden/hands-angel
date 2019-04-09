@@ -26,26 +26,24 @@
                         <div class="rate-product">
                             <div class="link-review clearfix">
                                 <div class="button-product float-left">
-                                    <button type="button" class="flat-button" onclick="location.href='#'"> Restautrant </button>
+                                    <button type="button" class="flat-button" onclick="location.href='#'">
+                                        Restautrant
+                                    </button>
                                 </div>
                                 <div class="start-review">
-                                    {{--<span class="flat-start">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>--}}
-                                    {{--<a href="listing-list.html#" class="review">
-                                        ( 2 reviewers )
-                                    </a>--}}
+
                                 </div>
                             </div>
                             <div class="info-product">
                                 <h6 class="title">
-                                    <a href="listing-single.html">{{$task->title}}</a></h6>
+                                    <a href="/tasks/{{$task->id}}">{{$task->title}}</a>
+                                </h6>
                                 <p>208 W 70th Street, New York, NY</p>
-                                <a href="listing-list.html#" class="heart"><i class="ion-android-favorite-outline"></i></a>
+{{--                                <a href="listing-list.html#" class="heart">
+                                    <i class="ion-android-favorite-outline">
+
+                                    </i>
+                                </a>--}}
                             </div>
                         </div>
                     </div>

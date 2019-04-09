@@ -156,8 +156,8 @@
             failure_message: '<div class="notification_error">Error! <strong>There was a problem processing your submission.</strong></div>',
             noticeError: '<div class="notification_error">{msg}</div>',
             noticeInfo: '<div class="notification_error">{msg}</div>',
-            basicAction: "mail/subscribe.php",
-            mailChimpAction: "mail/subscribe-mailchimp.php"
+            basicAction: "/mail",
+            mailChimpAction: "/mail"
         },
         eventLoad: function () {
             var y = c.obj;
@@ -180,8 +180,11 @@
                 url: y,
                 type: "POST",
                 dataType: "json",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 data: {
-                    subscribeEmail: A.subscribeEmail.val()
+                    email: A.subscribeEmail.val()
                 },
                 success: function (C, D, B) {
                     if (C.status) {
@@ -189,31 +192,12 @@
                             z.html(A.success_message).fadeIn(500)
                         })
                     } else {
-                        switch (C.msg) {
-                            case "email-required":
-                                z.html(A.noticeError.replace("{msg}", "Error! <strong>Email is required.</strong>"));
-                                break;
-                            case "email-err":
-                                z.html(A.noticeError.replace("{msg}", "Error! <strong>Email invalid.</strong>"));
-                                break;
-                            case "duplicate":
-                                z.html(A.noticeError.replace("{msg}", "Error! <strong>Email is duplicate.</strong>"));
-                                break;
-                            case "filewrite":
-                                z.html(A.noticeInfo.replace("{msg}", "Error! <strong>Mail list file is open.</strong>"));
-                                break;
-                            case "undefined":
-                                z.html(A.noticeInfo.replace("{msg}", "Error! <strong>undefined error.</strong>"));
-                                break;
-                            case "api-error":
-                                A.subscribeContent.fadeOut(500, function () {
-                                    z.html(A.failure_message)
-                                })
-                        }
+
                         z.fadeIn(500)
                     }
                 }, error: function (C, D, B) {
-                    alert("Connection error")
+                    alert(C.responseJSON.errors['email'][0]);
+                    //z.html(A.noticeError.replace("{msg}", "Error! <strong>C.responseJSON.errors['email'][0]</strong>"));
                 }, complete: function (B) {
                     window.ajaxCalling = false
                 }

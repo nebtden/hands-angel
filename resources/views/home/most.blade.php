@@ -23,9 +23,16 @@
                         </div>
                     </div>
                     <div class="content-product">
-                        <div class="tm"> TM</div>
+                        <div class="tm">
+                            <a href="/tasks?type_id={{$task->type_id}}">
+                            {{$types[$task->type_id]}}
+                            </a>
+                        </div>
                         <div class="text">
-                            <p>{{$task->title}}
+                            <p>
+                                <a href="/tasks/{{$task->id}}">
+                                    {{$task->title}}
+                                </a>
                             </p>
                         </div>
                     </div>

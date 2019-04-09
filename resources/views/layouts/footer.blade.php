@@ -8,10 +8,14 @@
                         Subscribe now and receive newsletter with
                     </div>
                 </div>
-                <form id="subscribe-form" class="flat-mailchimp" method="post" action="blog-single.html#" data-mailchimp="true">
+                <form id="subscribe-form" class="flat-mailchimp" method="post" action="#"  data-mailchimp="true">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="field clearfix" id="subscribe-content">
-                        <p class="wrap-input-email"><input type="text" tabindex="2" id="subscribe-email" name="subscribe-email" placeholder="Your Email Here" /></p>
-                        <p class="wrap-btn"> <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE </button> </p>
+                        <p class="wrap-input-email">
+                            <input type="text" tabindex="2" id="subscribe-email" name="email" placeholder="Your Email Here" />
+                        </p>
+                        <p class="wrap-btn">
+                            <button type="button" id="subscribe-button" class=" subscribe-submit effect-button" title="Subscribe now">SUBSCRIBE </button> </p>
                     </div>
                     <div id="subscribe-msg"></div>
                 </form>

@@ -23,3 +23,14 @@ ALTER TABLE `tasks`
 ADD COLUMN `cover`  varchar(255) NULL AFTER `user_id`,
 ADD COLUMN `images`  varchar(255) NULL AFTER `cover`;
 
+ALTER TABLE `tasks`
+    ADD COLUMN `country_id`  int NOT NULL DEFAULT 0 AFTER `reply`;
+
+CREATE TABLE `email` (
+                         `id` int(11) NOT NULL AUTO_INCREMENT,
+                         `email` varchar(255) DEFAULT '',
+                         `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+                         `updated_at` timestamp NULL DEFAULT NULL,
+                         PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+

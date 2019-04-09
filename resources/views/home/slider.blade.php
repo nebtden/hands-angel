@@ -53,20 +53,21 @@
 <div class="container">
     <div class="wrap-form">
         <div class="flat-formsearch ">
-            <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="post"
-                  action="index.html#">
+            <form novalidate="" class="search-form form-filter clearfix" id="searchform" method="get" action="{{ url('/tasks') }}">
                 <span class="input-question">
                     <input type="text" placeholder="What are your looking for ?" name="title" id="title">
                 </span>
-                <span class="select">
-                     <select name="country">
+                <span class="input-country">
+                     <select name="country_id">
+                         <option value="0">please select the country</option>
                         @foreach ($countries as  $country)
                              <option value="{{$country->id}}">{{$country->country_name}}</option>
                          @endforeach
                     </select>
                 </span>
-                <span class="select">
-                    <select name="type">
+                <span class="input-type">
+                    <select name="type_id">
+                        <option value="0">please select the type</option>
                         @foreach ($types as $key=>$type)
                                 <option value="{{$key}}">{{$type}}</option>
                         @endforeach

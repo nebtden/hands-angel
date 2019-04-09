@@ -22,9 +22,9 @@ Route::get('/', 'HomeController@index')->name('index');
 //Route::get('/users', 'HomeController@userList');
 
 //文章列表页
-Route::get('/articles', 'ArticleController@list');
-Route::get('/article/list', 'ArticleController@list');
-Route::get('/article/detail', 'ArticleController@detail');
+//Route::get('/articles', 'ArticleController@list');
+//Route::get('/article/list', 'ArticleController@list');
+//Route::get('/article/detail', 'ArticleController@detail');
 
 //任务列表页
 Route::resource('user/tasks', 'User\TaskController');
@@ -32,7 +32,7 @@ Route::get('/tasks', 'TaskController@index');
 Route::get('/tasks/{id}', 'TaskController@show');
 
 //用户列表页
-Route::get('/users', 'UserController@index');
+Route::get('/users', 'HomeController@users');
 Route::get('/users/{id}', 'UserController@show');
 
 
@@ -61,7 +61,7 @@ Route::any('/upload', 'UploadController@upload');
 //  7 可以考虑使用paypay等方式进行开通，尽量使用第三方语言，多个翻译。。
 
 
-Route::resource('/users', 'UserController');
+//Route::resource('/users', 'UserController');
 
 
 //查看最近几个用户

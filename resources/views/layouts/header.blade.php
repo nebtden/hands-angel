@@ -17,7 +17,7 @@
                         <ul class="menu">
                             <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">Home</a></li>
 
-                            <li class="{{ Request::is('/articles') ? 'home' : '' }}"><a href="/articles">Articles</a>
+                            {{--<li class="{{ Request::is('/articles') ? 'home' : '' }}"><a href="/articles">Articles</a>--}}
                             <li class="{{ Request::is('/tasks') ? 'home' : '' }}"><a href="/tasks">Tasks</a>
                             <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">Users</a>
 

@@ -651,21 +651,28 @@ section.flat-row.section-product {
     position: relative;
 }
 
-.search-form span.input-location {
+.search-form span.input-country {
     width: 33.8%;
     padding-left: 40px;
 }
 
-.search-form span.select {
-    width: 18%;
+
+
+.search-form span.input-type {
+    width: 18%;;
     padding-left: 15px;
 }
+
+/*.search-form span.select {*/
+    /*width: 18%;*/
+    /*padding-left: 15px;*/
+/*}*/
 
 .search-form .form-submit {
     width: 21.4%;
 }
 
-.search-form span.input-question:before, .search-form span.input-location:before {
+.search-form span.input-question:before, .search-form span.input-country:before {
     position: absolute;
     right: 0;
     top: 0;
@@ -694,15 +701,7 @@ section.flat-row.section-product {
     cursor: pointer;
 }
 
-.search-form span.input-location:after {
-    position: absolute;
-    right: 31px;
-    top: 13px;
-    font-size: 16px;
-    content: "\f455";
-    font-family: "Ionicons";
-    color: #FFF;
-}
+
 
 .search-form span.select:before {
     position: absolute;

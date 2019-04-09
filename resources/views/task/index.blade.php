@@ -19,31 +19,23 @@
                     <div class="flat-product clearfix">
                         <div class="featured-product">
                             <img src="{{$task->cover}}" alt="image" />
-                            <div class="time">
-                                Now Close
-                            </div>
+
                         </div>
                         <div class="rate-product">
                             <div class="link-review clearfix">
                                 <div class="button-product float-left">
-                                    <button type="button" class="flat-button" onclick="location.href='#'">
-                                        Restautrant
+                                    <button type="button" class="flat-button" onclick="location.href='/tasks?type_id={{$task->type_id}}'">
+                                        {{$types[$task->type_id]}}
                                     </button>
                                 </div>
-                                <div class="start-review">
 
-                                </div>
                             </div>
                             <div class="info-product">
                                 <h6 class="title">
                                     <a href="/tasks/{{$task->id}}">{{$task->title}}</a>
                                 </h6>
-                                <p>208 W 70th Street, New York, NY</p>
-{{--                                <a href="listing-list.html#" class="heart">
-                                    <i class="ion-android-favorite-outline">
+                                <p>{{$task->title}}</p>
 
-                                    </i>
-                                </a>--}}
                             </div>
                         </div>
                     </div>

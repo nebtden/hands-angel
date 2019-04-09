@@ -2564,7 +2564,7 @@ section.main-content.page-listing {
 /* Footer-------------------------------------------------------------- */
 footer {
     background-color: #252525;
-    padding: 69px 0 25px;
+    padding: 35px 0 25px;
     color: #646464;
 }
 
@@ -2683,8 +2683,8 @@ footer a:hover {
 /* Bottom-------------------------------------------------------------- */
 .bottom {
     border-top: 1px solid #343434;
-    padding-top: 29px;
-    margin-top: 74px;
+    /*padding-top: 29px;*/
+    margin-top: 15px;
 }
 
 .bottom .copyright {

@@ -41,8 +41,9 @@
                      data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
                      data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                     style="z-index: 17; white-space: nowrap;">Find awesome places, bars, restaurants <span>just one click </span>Our
-                    website will provide you with reliable <br>addresses best price for the nearest address
+                     style="z-index: 17; white-space: nowrap;">
+                    Find awesome man, women,the art of love, Our website will provide you all
+
                 </div>
             </li>
 

@@ -5,7 +5,7 @@
     @include('home.categories')
     @include('home.most')
     {{--@include('home.download')--}}
-    @include('home.news')
+    {{--@include('home.news')--}}
 
 
 @endsection

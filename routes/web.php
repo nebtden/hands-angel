@@ -38,6 +38,7 @@ Route::get('/users/{id}', 'UserController@show');
 
 Route::get('/user/profile', 'UserController@profile');
 Route::post('/user/profile', 'UserController@profile');
+Route::get('/user/index', 'UserController@index');
 //Route::any('/user/add-task', 'UserController@addTask');
 
 Route::post('/user/upload', 'UserController@upload');

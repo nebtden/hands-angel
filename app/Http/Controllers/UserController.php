@@ -29,19 +29,20 @@ class UserController extends Controller
 
     public function index(){
         //用户列表
+        $where = [];
+        $user_id = Auth::user()->id;
+        $where['user_id'] = $user_id;
+        $tasks =  Task::where(
+            $where
+        )->paginate(7);
 
-
-        $users = DB::table('user_messages')
-            ->join('users', 'users.id', '=', 'user_messages.id')
-            ->select('user_messages.*')
-            ->where('users.status',1)
-            ->orderBy('id', 'desc')
-            ->limit(15)
-            ->get() ;
-
+        $user = Auth::user();
+        $types = Task::$types;
 
         return view('user.index',[
-            'users'=>$users,
+            'tasks'=>$tasks,
+            'user'=>$user,
+            'types'=>$types,
         ]);
     }
 

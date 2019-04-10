@@ -68,7 +68,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="button delete"  >
+                                            <button type="button" class="button delete" data-id="{{$task->id}}" >
                                                 <i class="ion-trash-a"></i>
                                                 <span>Delete</span>
                                             </button>
@@ -81,7 +81,7 @@
                                     {{ $tasks->links() }}
                                 </div>
                             </div>
-                             
+
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,30 @@
     <script type="text/javascript">
         $(function(){
             $('.delete').click(function () {
-                alert("The paragraph was clicked.");
+                var ul = $(this).closest('.flat-product');
+               var id = $(this).data('id');
+                $.ajax({
+                    url: '/user/tasks/'+id,
+                    type: "DELETE",
+                    dataType: "json",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+                        if(data.status){
+                            alert('delete success!');
+                            ul.hide();
+                        }
+
+                    }, error: function (data) {
+                        alert(data.message);
+                    }, complete: function (B) {
+
+                    }
+                })
             });
         });
     </script>

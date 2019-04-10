@@ -28,6 +28,28 @@ class TaskController extends Controller
         ]);
     }
 
+    public function destroy($id){
+        $return = [];
+        $return['status'] = 1;
+        $user = Auth::user();
+        try{
+
+            $task = Task::find($id);
+            if(!$task){
+                throw  new \Exception('not found');
+            }
+            if($task->user_id !=$user->id){
+                throw  new \Exception('error');
+            }
+            $task->delete();
+        }catch (\Exception $exception){
+            $return['msg'] = $exception->getMessage();
+            $return['status'] = 0;
+        }
+
+        return response()->json($return);
+    }
+
     public function store(Request $request){
         $task = new Task();
         $user = Auth::user();

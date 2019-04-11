@@ -13,7 +13,9 @@
                 @foreach($tasks as $task)
                 <div class="flat-product">
                     <div class="featured-product">
+                        <a href="/tasks/{{$task->id}}">
                         <img src="{{$task->cover}}" alt="image" width="361px" height="238px">
+                        </a>
 
                         <div class="rate-product">
                             <div class="link-review clearfix">

@@ -14,8 +14,6 @@ ALTER TABLE `users`
     MODIFY COLUMN `facebook`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' AFTER `youtube`,
     MODIFY COLUMN `twitter`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' AFTER `facebook`;
 
-ALTER TABLE `tasks`
-    MODIFY COLUMN `images`  json NULL DEFAULT '' AFTER `content`;
 
 
  ALTER TABLE `user_images` RENAME `images`;

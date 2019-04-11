@@ -245,9 +245,14 @@
         height:30px;
         line-height:30px;
     }
-    .search-form span.input-location {
+    .search-form span.input-country{
         width:26.8%;
         padding-left:8px;
+    }
+
+    .search-form span.input-type {
+        width:23%;
+        padding-left:5px;
     }
     .search-form span.select {
         width:23%;
@@ -329,17 +334,25 @@
     .flat-tabs.style2 ul.menu-tab li {
         width:40%;
     }
-    .search-form span,.search-form span.input-location,.search-form span.select,.search-form .form-submit {
+    .search-form span,
+    .search-form span.input-country,
+    .search-form span.input-type,
+    .search-form span.select,.search-form .form-submit {
         width:100%;
         padding-left:0;
     }
     .search-form .form-submit,.bottom .copyright,.bottom .social-links.float-right {
         text-align:center!important;
     }
-    .search-form span.input-question::before,.search-form span.input-location::before {
+    .search-form span.input-question::before,
+    .search-form span.input-country::before,
+    .search-form span.input-type::before
+    {
         content:none;
     }
-    .search-form span.input-location::after,.search-form span.select::before {
+    .search-form span.input-country::after,
+    .search-form span.input-type::after,
+    .search-form span.select::before {
         color:#b1b1b1;
         right:15px;
     }
@@ -435,17 +448,26 @@
     .flat-tabs ul.menu-tab li:last-child {
         margin-bottom:0;
     }
-    .search-form span,.search-form span.input-location,.search-form span.select,.search-form .form-submit,.search-form.form-filter span.filter {
+    .search-form span,.search-form span.input-country,
+    .search-form span,.search-form span.input-type,
+    .search-form span.select,
+    .search-form .form-submit,
+    .search-form.form-filter span.filter {
         width:100%;
         padding-left:0;
     }
     .search-form .form-submit,.bottom .copyright,.bottom .social-links.float-right {
         text-align:center!important;
     }
-    .search-form span.input-question::before,.search-form span.input-location::before {
+    .search-form span.input-question::before,
+    .search-form span.input-country::before,
+    .search-form span.input-type::before
+    {
         content:none;
     }
-    .search-form span.input-location::after,.search-form span.select::before {
+    .search-form span.input-country::after,
+    .search-form span.input-type::after,
+    .search-form span.select::before {
         color:#b1b1b1;
         right:15px;
     }

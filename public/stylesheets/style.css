@@ -1742,7 +1742,9 @@ section.main-content.page-listing {
     margin-bottom: 30px;
 }
 
-.section-filter .widget-form p.input-location.form-filter {
+.section-filter .widget-form p.input-type.form-filter,
+.section-filter .widget-form p.input-country.form-filter
+{
     margin-bottom: 46px;
 }
 
@@ -2254,7 +2256,9 @@ section.main-content.page-listing {
     margin-top: 19px;
 }
 
-.listing-maps .widget-form p.input-location.form-filter {
+.listing-maps .widget-form p.input-country.form-filter,
+.listing-maps .widget-form p.input-type.form-filter
+{
     margin-bottom: 35px;
 }
 
@@ -2497,7 +2501,9 @@ section.main-content.page-listing {
     background-color: #f7f7f7;
 }
 
-.widget-form p.input-location.form-filter {
+.widget-form p.input-country.form-filter,
+.widget-form p.input-type.form-filter
+{
     margin-bottom: 30px;
 }
 

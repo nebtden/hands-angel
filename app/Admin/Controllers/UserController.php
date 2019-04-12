@@ -8,6 +8,7 @@ namespace App\Admin\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\AreaCountry;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\UserMessage;
@@ -76,6 +77,13 @@ class UserController extends Controller
 
         $grid->column('name')->display(function ($name){
             return $name;
+        });
+
+        $grid->country_id('country')->display(function($id) {
+            return AreaCountry::find($id)->country_name;
+        });
+        $grid->country_id('country')->display(function($id) {
+            return AreaCountry::find($id)->country_name;
         });
 
         $grid->column('status')->display(function ($status){

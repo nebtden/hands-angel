@@ -8,6 +8,7 @@ namespace App\Admin\Controllers;
 
 
 
+use App\Models\Images;
 use App\Models\Task;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -40,7 +41,8 @@ class TaskController extends Controller
         return $content
             ->header('Detail')
             ->description('description')
-            ->body($this->detail($id));
+            ->body($this->detail($id))
+            ->row($this->images_show($id));
     }
 
 
@@ -58,7 +60,28 @@ class TaskController extends Controller
         return $content
             ->header('Edit')
             ->description('description')
-            ->body($this->form()->edit($id));
+            ->body($this->form()->edit($id))
+            ->row($this->images_show($id));
+    }
+
+
+    public function images_show($id){
+        $task = Task::find($id);
+        $images = $task->images;
+        $image_ids = explode(',',$images);
+        $html = '';
+        if($image_ids){
+
+            $images = Images::find($image_ids);
+
+            foreach($images as $image){
+                $html.="<div class=\"container\"><img src='".$image['src']."''><br></div>";
+            }
+        }
+
+        return $html;
+
+
     }
 
 
@@ -74,7 +97,7 @@ class TaskController extends Controller
 
 
         $grid->column('title')->display(function ($title) {
-            return "<a href='".url('/user/task',[
+            return "<a target='_blank' href='".url('/tasks',[
                     'id'=>$this->id
                 ])."'>$title</span></a>";
         });
@@ -121,6 +144,7 @@ class TaskController extends Controller
         $form->text('title', '标题');
         $form->textarea('content', '内容');
         $form->select('type_id', '类型')->options(Task::$types);
+
 
 
         $form->saving(function(Form $form) {

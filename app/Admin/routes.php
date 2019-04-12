@@ -12,9 +12,9 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
     $router->resource('/example', 'ExampleController');
-    $router->resource('/articles', 'ArticleController');
+//    $router->resource('/articles', 'ArticleController');
     $router->resource('/tasks', 'TaskController');
     $router->resource('/users', 'UserController');
-    $router->resource('/user-messages', 'UserMessageController');
+//    $router->resource('/user-messages', 'UserMessageController');
 
 });

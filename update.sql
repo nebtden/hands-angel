@@ -32,3 +32,6 @@ CREATE TABLE `email` (
                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
+ALTER TABLE `tasks`
+    ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' AFTER `reply`;
+

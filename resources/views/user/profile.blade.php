@@ -9,11 +9,11 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="flat-user profile">
-                        <a href="page-user.html" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
+                        <a href="/user/index" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
                         <ul class="info">
-                            <li><a href="page-profile.html#" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
+                            <li><a href="#basic" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
                             </li>
-                            <li><a href="page-profile.html#" title=""><i class="fa fa-link"></i>ON THE WEB</a></li>
+                            <li><a href="#web" title=""><i class="fa fa-link"></i>ON THE WEB</a></li>
                         </ul>
                     </div>
                 </div>
@@ -22,14 +22,23 @@
                         <form method="post" action="{{ url('user/profile') }}" class="form-profile">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <ul class="menu-tab clearfix">
-                            <li class="active"><a href="page-profile.html#"><i class="ion-navicon-round"></i>(3)
-                                    Listings</a></li>
-                            <li class=""><a href="page-profile.html#"><i class="ion-chatbubbles"></i>(3) Reviews</a>
-                            </li>
+                            {{--<li class="active">
+                                <a href="page-profile.html#">
+                                    <i class="ion-navicon-round"></i>
+                                    (3) Listings
+                                </a>
+                            </li>--}}
+                            {{--<li class="">
+                                <a href="page-profile.html#">
+                                    <i class="ion-chatbubbles"></i>
+                                    (3) Reviews
+                                </a>
+                            </li>--}}
                         </ul><!-- /.menu-tab -->
-                        <div class="content-tab listing-user profile">
-                            <div class="content-inner active">
-                                <div class="basic-info"><h5>Basic Infomation</h5>
+                        <div class="content-tab listing-user profile" >
+                            <div class="content-inner active" >
+                                <div class="basic-info" name="basic">
+                                    <h5>Basic Infomation</h5>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
@@ -41,19 +50,26 @@
                                         <div class="col-md-8">
 
                                                 <p class="input-info"><label>Your name*</label>
-
                                                     <input type="text" name="name" id="name" value="{{$user->name}}"></p>
                                                 <p class="input-info">
-                                                    <label>Your Phone Numbers*</label>
-                                                    <input type="text" name="phone" id="phone" value="{{$user->mobile}}"></p>
+                                                    <label>Your Gender*</label>
+                                                    <select type="" name="country">
+                                                        <option value="0">male</option>
+                                                    </select>
+                                                </p>
                                                 <p class="input-info">
-                                                    <label>Your Phone Numbers*</label>
-                                                    <input type="text" name="email" id="email">
+                                                    <label>Your Country*</label>
+                                                    <select type="" name="country" class="dropdown_sort">
+                                                        <option value="0">sdfsdfs</option>
+                                                        <option value="1">sdfsdfs</option>
+                                                        <option value="2">sdfsdfs</option>
+                                                    </select>
+                                                    {{--<input type="text" name="email" id="email">--}}
                                                 </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="on-web">
+                                <div class="on-web" name="web">
                                     <div class="row">
                                         <div class="col-md-4"><h5>On the web</h5></div>
                                         <div class="col-md-8">
@@ -131,4 +147,15 @@
         }
     });
 </script>
+    <style>
+        .basic-info select{
+            background-color: #FFF;
+            -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            color: #C3C3C3;
+        }
+    </style>
 @stop

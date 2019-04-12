@@ -18,8 +18,9 @@
                     @foreach($tasks as $task)
                     <div class="flat-product clearfix">
                         <div class="featured-product">
-                            <img src="{{$task->cover}}" alt="image" />
-
+                            <a href="/tasks/{{$task->id}}">
+                                <img src="{{$task->cover}}" alt="image" />
+                            </a>
                         </div>
                         <div class="rate-product">
                             <div class="link-review clearfix">
@@ -28,14 +29,14 @@
                                         {{$types[$task->type_id]}}
                                     </button>
                                 </div>
-
                             </div>
                             <div class="info-product">
                                 <h6 class="title">
-                                    <a href="/tasks/{{$task->id}}">{{$task->title}}</a>
+                                    <a href="/tasks/{{$task->id}}">
+                                        {{$task->title}}
+                                    </a>
                                 </h6>
                                 <p>{{$task->title}}</p>
-
                             </div>
                         </div>
                     </div>

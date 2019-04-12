@@ -7,9 +7,19 @@
     color: #FFF;
 }
 
-.flat-row, .flat-button, .title-section, .title-section .title, .wrap-form, .flat-download button i, .flat-product .featured-product, .flat-product .rate-product .info-product, .flat-client .client, .effect-button, .fancybox, .textbox .text-header, .flat-team .avatar {
+.flat-row, .flat-button,
+.title-section,
+.title-section .title,
+.wrap-form,
+.flat-download button i, .flat-product .featured-product,
+.flat-product .rate-product .info-product,
+.flat-client .client, .effect-button,
+.fancybox, .textbox .text-header,
+.flat-team .avatar {
     position: relative;
 }
+
+
 
 .flat-product .featured-product .time, .flat-product .rate-product .heart {
     background: #e8280b;
@@ -289,8 +299,27 @@ section.flat-row.section-product {
     margin-bottom: 29px;
 }
 
+/*simon add*/
+.flat-product .featured-product{
+    width: 361px;
+    height: 238px;
+    display: block;
+}
+
+.flat-product .content-product{
+    height: 75px;
+}
+.flat-product .content-product .text p a{
+    line-height: 18px;
+    height: 37px;
+    overflow: hidden;
+    display: block;
+}
+
 .flat-product .featured-product img {
     max-width: 580px;
+    width: 100%;
+    height: 100%;
 
 }
 .flat-product .featured-product img:hover {

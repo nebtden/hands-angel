@@ -35,3 +35,6 @@ CREATE TABLE `email` (
 ALTER TABLE `tasks`
     ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' AFTER `reply`;
 
+ALTER TABLE `users`
+    ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' ;
+

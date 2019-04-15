@@ -36,5 +36,8 @@ ALTER TABLE `tasks`
     ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' AFTER `reply`;
 
 ALTER TABLE `users`
-    ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' ;
+    ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' ,
+    ADD COLUMN `line`  varchar(255) NULL DEFAULT '' AFTER `status`;
+
+
 

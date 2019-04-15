@@ -6,6 +6,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AreaCountry;
 use App\Models\Task;
 use App\Models\UserMessage;
 use Illuminate\Http\Request;
@@ -59,15 +60,23 @@ class UserController extends Controller
 
     public function profile(Request $request){
         if($request->post()){
-            $user_id = Auth::user()->id;
-            $name = $request->input('name');
-            $mobile = $request->input('mobile');
-            $name = $request->input('name');
-            $name = $request->input('name');
+            $user = Auth::user();
+            $user->name = $request->input('name');
+            $user->mobile = $request->input('mobile')??'';
+            $user->wechat = $request->input('wechat');
+            $user->facebook = $request->input('facebook');
+            $user->twitter = $request->input('twitter');
+            $user->line = $request->input('line');
+            $user->sex = $request->input('sex')??0;
+            $user->country_id = $request->input('country_id')??0;
+            $user->save();
+
         }
         $user = Auth::user();
+        $countries = AreaCountry::all();
         return view('user.profile',[
             'user'=>$user,
+            'countries'=>$countries,
         ]);
     }
 
@@ -94,6 +103,21 @@ class UserController extends Controller
         return view('user.task-list',[
             'user'=>$user,
         ]);
+    }
+
+    public function store(Request $request){
+        $user = Auth::user();
+
+        $task = new Task();
+        $task->country_id = $user->country_id;
+        $task->sex        = $user->sex;
+        $task->type_id = $request->input('type_id');
+        $task->title   = $request->input('title');
+        $task->content = $request->input('content');
+        $task->images  = $request->input('images');
+        $task->save();
+//        $task->cover   = $request->input('images');
+
     }
 
     public function task(Request $request){

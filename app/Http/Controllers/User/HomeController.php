@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index(Content $content)
     {
-        return $content->header('Dashboard')->description('Welcome to nilo...')
+        return $content->header('Dashboard')->description('Welcome to ...')
             ->row('欢迎来到天使之城！');
 
 

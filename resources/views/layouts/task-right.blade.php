@@ -11,7 +11,7 @@
                     <select class="dropdown_sort" name="type_id">
                         <option value="">Please choose the type</option>
                         @foreach ($types as $key=>$type)
-                        <option value="{{$key}}">{{$type}}</option>
+                            <option value="{{$key}}">{{$type}}</option>
                         @endforeach
                     </select>
                     <i class="fa fa-angle-down">
@@ -41,3 +41,16 @@
     </div>
     <!-- /.sidebar -->
 </div>
+<style type="text/css">
+    .sidebar .book-form-select select{
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        cursor: pointer;
+        border: 1px solid #FFF;
+        font-size: 15px;
+        font-weight: 500;
+        color: #FFF;
+    }
+</style>

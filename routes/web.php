@@ -45,6 +45,7 @@ Route::post('/user/upload', 'UserController@upload');
 
 //上传图像必须本人
 Route::any('/upload', 'UploadController@upload');
+Route::any('/upload/head', 'UploadController@head');
 
 
 

@@ -37,13 +37,11 @@ class UploadController extends Controller
         $image = new Images();
         $user = Auth::user();
         foreach($files as $key=>$input ){
-
             $extension =$input->getClientOriginalExtension();
             $name = $key.'-'.time().'.'.$extension;
             $input->storeAs(
                 'images/task',$name, 'public'
             );
-
 
             //存储到数据库
             $image->user_id = $user->id;
@@ -53,6 +51,22 @@ class UploadController extends Controller
         }
         return   implode(',',$paths);
 
+
+    }
+
+
+    public function head(Request $request){
+        $input  = Input::all()['file'];
+        $user = Auth::user();
+        $extension =$input->getClientOriginalExtension();
+        $name =  $user->id.'-'.time().'.'.$extension;
+        $input->storeAs(
+            'images/user',$name, 'public'
+        );
+        $user->head_img = $src = '/storage/images/user/'.$name;
+        $user->save();
+
+        return $src;
 
     }
 

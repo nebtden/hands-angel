@@ -42,8 +42,11 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
-                                                <div    class="dropzone" id="my-awesome-dropzone">
+                                                {{--<div    class="dropzone" id="my-awesome-dropzone">--}}
 
+                                                {{--</div>--}}
+                                                <div action="{{ url('upload') }}" class="dropzone" id="my-awesome-dropzone">
+                                                    <input type="hidden" name="head" id="head" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -54,15 +57,16 @@
                                                 <p class="input-info">
                                                     <label>Your Gender*</label>
                                                     <select type="" name="country">
-                                                        <option value="0">male</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>
                                                     </select>
                                                 </p>
                                                 <p class="input-info">
                                                     <label>Your Country*</label>
                                                     <select type="" name="country" class="dropdown_sort">
-                                                        <option value="0">sdfsdfs</option>
-                                                        <option value="1">sdfsdfs</option>
-                                                        <option value="2">sdfsdfs</option>
+                                                        @foreach ($countries as $key=>$country)
+                                                            <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                     {{--<input type="text" name="email" id="email">--}}
                                                 </p>
@@ -79,20 +83,27 @@
                                                     <span>Twitter</span>
                                                     <input type="url" name="twitter" value="{{$user->twitter}}">
 
-                                                    <i class="fa fa-minus-circle float-right"></i>
+
                                                 </li>
                                                 <li class="face">
                                                     <i class="fa fa-facebook-square face"></i>
                                                     <span>Facebook</span>
                                                     <input type="url" name="facebook" value="{{$user->facebook}}">
 
-                                                    <i class="fa fa-minus-circle float-right"></i>
+
                                                 </li>
                                                 <li class="weixin">
                                                     <i class="fa fa-weixin weixin"></i>
                                                     <span>Wechat</span>
-                                                    <input type="text" name="twitter" value="{{$user->wechat}}">
-                                                    <i class="fa fa-minus-circle float-right"></i>
+                                                    <input type="text" name="wechat" value="{{$user->wechat}}">
+
+                                                </li>
+
+                                                <li class="line">
+                                                    <i class="fa fa-line line"></i>
+                                                    <span>Line</span>
+                                                    <input type="text" name="line" value="{{$user->line}}">
+
                                                 </li>
 
 
@@ -126,7 +137,7 @@
     Dropzone.options.myAwesomeDropzone = false;
     Dropzone.autoDiscover = false;
     $("#my-awesome-dropzone").dropzone({
-        url: "{{ url('upload') }}",
+        url: "{{ url('/upload/head') }}",
         addRemoveLinks : true,
         maxFilesize: 5,
         dictDefaultMessage: ' ',
@@ -142,8 +153,7 @@
             mockFile.previewElement.classList.add('dz-complete');
         },
         success: function( file, response ){
-            obj = JSON.parse(response);
-            alert(obj.filename); // <---- here is your filename
+            $('#head').val( response);
         }
     });
 </script>

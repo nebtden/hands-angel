@@ -1,7 +1,4 @@
-<!DOCTYPE html><!--[if IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
-      lang="en-US"><![endif]--><!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<!DOCTYPE html>
 <head><!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]>
@@ -13,7 +10,7 @@
 
 <body class="header_sticky"><!-- Preloader -->
 <section class="loading-overlay">
-    <div class="Loading-Page"><h2 class="loader">Loading</h2></div>
+    <div class="Loading-Page"><h2 classbackground.js="loader">Loading</h2></div>
 </section><!-- Boxed -->
 <div class="boxed"><!-- Header -->
     @include('layouts.header')

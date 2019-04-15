@@ -18,7 +18,7 @@
                             </p>
                             <p class="input-info">
                                 <label class="nhan">Description*</label>
-                                <textarea class="" tabindex="4" name="comment">{{ $task->comment??'' }}</textarea>
+                                <textarea class="" tabindex="4" name="content">{{ $task->content??'' }}</textarea>
                             </p>
                             <p class="input-info icon">
                                 <label class="nhan">Categories*</label>
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="button-addlisting">
-                            <button type="submit" class="flat-button">Submit</button>
+                            <button type="submit" class="flat-buttons">Submit</button>
                         </div>
                     </div>
 
@@ -82,5 +82,41 @@
            }
         });
     </script>
+    <style>
+        .flat-buttons{
+            position: relative;
+        }
+
+        .button-addlisting .flat-buttons {
+            margin-top: 54px;
+            font-size: 14px;
+            padding: 15px 48px 18px 49px;
+        }
+        .flat-buttons:hover {
+            color: #e8280b;
+            background-color: #FFF;
+        }
+
+        .flat-buttons {
+            padding: 17px 48px 17px 48px;
+            background-color: #e8280b;
+            /*background-color: transparent;*/
+            font-size: 16px;
+            box-shadow: 0 0 0 2px #E8280B;
+            font-weight: 700;
+            display: inline-block;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            -webkit-transition: color 0.3s;
+            -moz-transition: color 0.3s;
+            transition: color 0.3s;
+
+        }
+
+    </style>
 
 @endsection

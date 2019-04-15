@@ -49,7 +49,7 @@
                 <!-- /.blog-pagination -->
             </div>
             <!-- /.col-lg-9 -->
-            @include('layouts.task-right')
+            @include('task.right')
             <!-- /.col-md-3 -->
         </div>
         <!-- /.row -->

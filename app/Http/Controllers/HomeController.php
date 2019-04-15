@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $id = Auth::user();
+
         //栏目
         $categories = Category::all();
 
@@ -40,7 +40,6 @@ class HomeController extends Controller
         ])->orderBy('id', 'desc')->limit(6)->get();
 
         //用户列表
-
         $users = DB::table('user_messages')
             ->join('users', 'users.id', '=', 'user_messages.id')
             ->select('user_messages.*')
@@ -49,7 +48,7 @@ class HomeController extends Controller
             ->limit(3)
             ->get() ;
 
-        //文章列表2
+        //文章列表
         $send_articles = Article::where([
             'category_id'=>2,
             'status'=>1,
@@ -59,7 +58,6 @@ class HomeController extends Controller
         $countries = AreaCountry::all();
 
         return view('home',[
-
             'categories'=>$categories,
             'first_articles'=>$first_articles,
             'send_articles'=>$send_articles,
@@ -70,27 +68,5 @@ class HomeController extends Controller
         ]);
     }
 
-    public function vpn(){
-        $article =         $send_articles = Article::where([
-            'category_id'=>2,
-            'status'=>1,
-        ])->limit(3)->get();
-        return view('article',[
 
-            'article'=>$article,
-
-        ]);
-
-    }
-
-    public function users(){
-        return 222;
-
-        return view('user.index',[
-
-            'article'=>[],
-
-        ]);
-
-    }
 }

@@ -43,7 +43,11 @@
                                         <div class="col-md-8">
 
                                                 <p class="input-info"><label>Your name*</label>
-                                                    <input type="text" name="name" id="name" value="{{$user->name}}"></p>
+                                                    <input type="text" name="name" id="name" value="{{$user->name}}" required>
+                                                </p>
+                                                <p class="input-info"><label>Self-introduction*</label>
+                                                    <textarea  name="introduction" >{{$user->introduction}}</textarea>
+                                                </p>
                                                 <p class="input-info">
                                                     <label>Your Gender*</label>
                                                     <select type="" name="sex">

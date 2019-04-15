@@ -11,9 +11,12 @@
                     <div class="flat-user profile">
                         <a href="/user/index" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
                         <ul class="info">
-                            <li><a href="#basic" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
+                            <li>
+                                <a href="#basic" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
                             </li>
-                            <li><a href="#web" title=""><i class="fa fa-link"></i>ON THE WEB</a></li>
+                            <li>
+                                <a href="#web" title=""><i class="fa fa-link"></i>ON THE WEB</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -22,29 +25,16 @@
                         <form method="post" action="{{ url('user/profile') }}" class="form-profile">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <ul class="menu-tab clearfix">
-                            {{--<li class="active">
-                                <a href="page-profile.html#">
-                                    <i class="ion-navicon-round"></i>
-                                    (3) Listings
-                                </a>
-                            </li>--}}
-                            {{--<li class="">
-                                <a href="page-profile.html#">
-                                    <i class="ion-chatbubbles"></i>
-                                    (3) Reviews
-                                </a>
-                            </li>--}}
+
                         </ul><!-- /.menu-tab -->
                         <div class="content-tab listing-user profile" >
                             <div class="content-inner active" >
-                                <div class="basic-info" name="basic">
+                                <div class="basic-info" id="basic" name="basic">
                                     <h5>Basic Infomation</h5>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
-                                                {{--<div    class="dropzone" id="my-awesome-dropzone">--}}
 
-                                                {{--</div>--}}
                                                 <div action="{{ url('upload') }}" class="dropzone" id="my-awesome-dropzone">
                                                     <input type="hidden" name="head" id="head" value="">
                                                 </div>
@@ -56,16 +46,16 @@
                                                     <input type="text" name="name" id="name" value="{{$user->name}}"></p>
                                                 <p class="input-info">
                                                     <label>Your Gender*</label>
-                                                    <select type="" name="country">
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
+                                                    <select type="" name="sex">
+                                                        <option value="1" @if($user->sex==1) selected @endif>Male</option>
+                                                        <option value="2" @if($user->sex==2) selected @endif>Female</option>
                                                     </select>
                                                 </p>
                                                 <p class="input-info">
                                                     <label>Your Country*</label>
-                                                    <select type="" name="country" class="dropdown_sort">
+                                                    <select type="" name="country_id" class="dropdown_sort">
                                                         @foreach ($countries as $key=>$country)
-                                                            <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                                            <option value="{{$country->id}}" @if($user->country_id==$country->id) selected @endif>{{$country->country_name}}</option>
                                                         @endforeach
                                                     </select>
                                                     {{--<input type="text" name="email" id="email">--}}
@@ -73,7 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="on-web" name="web">
+                                <div class="on-web" id="web" name="#web">
                                     <div class="row">
                                         <div class="col-md-4"><h5>On the web</h5></div>
                                         <div class="col-md-8">

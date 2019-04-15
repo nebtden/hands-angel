@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class TaskController extends Controller
 {
@@ -66,7 +67,8 @@ class TaskController extends Controller
         $task->user_id = $user->id;
         $task->save();
         $id = $task->id;
-        return redirect()->route("tasks/$id");
+        return   redirect('/tasks/'.$id);
+
     }
 
 

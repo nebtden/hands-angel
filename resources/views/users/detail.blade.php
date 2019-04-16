@@ -41,12 +41,46 @@
                                         <!-- #comment-## -->
                                     </ol>
 
+                                    <ul class="add-section" style="">
+                                        <li class="twitter">
+                                            <i class="fab fa-twitter-square twitter"></i>
+                                            <span>Twitter</span>
+                                            <a href="{{ $user->twitter }}" title="">
+                                                {{ $user->twitter }}
+                                            </a>
+                                        </li>
+                                        <li class="face">
+                                            <i class="fab fa-facebook-square face"></i>
+                                            <span>Facebook</span>
+                                            <a href="{{ $user->facebook }}" title="">
+                                                {{ $user->facebook }}
+                                            </a>
+
+                                        </li>
+                                        <li class="wechat">
+                                            <i class="fab fa-wechat wechat"></i>
+                                            <span>Wechat</span>
+                                            {{ $user->wechat }}
+                                        </li>
+
+                                        <li class="wechat">
+                                            <i class="fab fa-line line"></i>
+                                            <span>Line</span>
+                                            {{ $user->line }}
+                                        </li>
+
+                                    </ul>
+
+
                                     <div class="comment-respond" id="respond">
-                                        <h2 class="comment-reply-title">Leave a comment</h2>
+
+                                        <h2 class="comment-reply-title">Send a message</h2>
                                         <form novalidate="" class="comment-form clearfix" id="commentform" method="post" action="#">
                                             <div class="wrap-input clearfix">
                                                 <p class="comment-notes"><input type="text" placeholder="Your Name" aria-required="true" size="30" value="" name="author" id="author" /></p>
-                                                <p class="comment-form-email"><input type="email" placeholder="Your Name" size="30" value="" name="email" id="email" /></p>
+                                                <p class="comment-form-email">
+                                                    <input type="email" placeholder="Your Name" size="30" value="" name="email" id="email" />
+                                                </p>
                                             </div>
                                             <p class="comment-form-comment"><textarea class="" tabindex="4" placeholder="Message" name="comment" required=""></textarea></p>
                                             <p class="form-submit"><button class="comment-submit effect-button">Send Message</button></p>
@@ -85,4 +119,35 @@
         <!-- /.container -->
     </section>
     <!-- Footer -->
+@endsection
+
+@section('css')
+    <style type="text/css">
+        .add-section li{
+            border-bottom: 1px solid #e5e5e5;
+            line-height: 50px;
+        }
+
+        .add-section li span{
+            width: 70px;
+            margin: 0px 10px 0px 5px;
+            display: inline-block;
+            color: #1DA1F2;
+        }
+          .add-section li i.twitter {
+            color: #1DA1F2;
+        }
+
+        .add-section li i.face {
+            color: #3b5998;
+        }
+
+        .add-section li i.wechat {
+            color: #00bd0c;;
+        }
+        .add-section li i.line{
+            color: #00bd0c;
+        }
+
+    </style>
 @endsection

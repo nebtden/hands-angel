@@ -73,28 +73,28 @@
                                         <div class="col-md-8">
                                             <ul class="add-section">
                                                 <li class="twitter">
-                                                    <i class="fa fa-twitter-square twitter"></i>
+                                                    <i class="fab fa-twitter-square twitter"></i>
                                                     <span>Twitter</span>
                                                     <input type="url" name="twitter" value="{{$user->twitter}}">
 
 
                                                 </li>
                                                 <li class="face">
-                                                    <i class="fa fa-facebook-square face"></i>
+                                                    <i class="fab fa-facebook-square face"></i>
                                                     <span>Facebook</span>
                                                     <input type="url" name="facebook" value="{{$user->facebook}}">
 
 
                                                 </li>
                                                 <li class="weixin">
-                                                    <i class="fa fa-weixin weixin"></i>
+                                                    <i class="fab fa-weixin weixin"></i>
                                                     <span>Wechat</span>
                                                     <input type="text" name="wechat" value="{{$user->wechat}}">
 
                                                 </li>
 
                                                 <li class="line">
-                                                    <i class="fa fa-line line"></i>
+                                                    <i class="fab fa-line line"></i>
                                                     <span>Line</span>
                                                     <input type="text" name="line" value="{{$user->line}}">
 

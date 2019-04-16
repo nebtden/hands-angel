@@ -6,7 +6,7 @@
                 <div class="page-title-heading"><h1 class="title">Blog</h1></div><!-- /.page-title-captions -->
                 <div class="breadcrumbs">
                     <ul>
-                        <li><a href="index.html"> <!-- home --></a></li>
+                        <li><a href="/"> <!-- home --></a></li>
                         <li>-</li>
                         <li><!-- blog --></li>
                     </ul>

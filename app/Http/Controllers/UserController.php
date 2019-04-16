@@ -10,7 +10,6 @@ use App\Models\AreaCountry;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -45,6 +44,19 @@ class UserController extends Controller
 
     public function show($id){
 
+        $user = User::find($id);
+
+
+        //recent 列表
+        $recent = User::where([])->orderBy('created_at','desc')->take(6)->get();
+        $types = Task::$types;
+
+        return view('users/detail',[
+            'user'=>$user,
+            'types'=>$types,
+            'recent'=>$recent,
+
+        ]);
     }
 
 

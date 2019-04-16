@@ -16,7 +16,10 @@
                             <h3 class="title-post"> {{$task->title}} </h3>
                             <ul class="meta-post clearfix">
                                 <li class="time"> January 22, 2017</li>
-                                <li class="categories"><a href="blog-single.html#">Business</a>, <a href="blog-single.html#">Leasing</a></li>
+                                <li class="categories">
+                                    <a href="blog-single.html#">Business</a>,
+                                    <a href="blog-single.html#">Leasing</a>
+                                </li>
                             </ul>
                             <!-- /.meta-post -->
                             <div class="entry excerpt">

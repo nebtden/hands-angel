@@ -21,22 +21,11 @@
                                                     </span>
                                                     </div>
                                                     <div class="content-food float-left">
-                                                        <h5><a href="listing-single.html#">{{$user->name}}</a> </h5>
+                                                        <h5><a href="/users/{{ $user->id }}">{{$user->name}}</a> </h5>
                                                         <p>{{$user->introduction}}
                                                         </p>
                                                     </div>
-                                                    <div class="rate-food float-right">
-                                                        <div class="price">
-                                                            $10.99
-                                                        </div>
-                                                        <div class="flat-start">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
+
                                                 </div>
                                             @endforeach
 

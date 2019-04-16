@@ -12,7 +12,6 @@
 */
 
 Route::get('/test', 'HomeController@test');
-Route::get('/home', 'HomeController@test');
 Route::post('/mail', 'MailController@subscribe');
 
 Auth::routes();
@@ -32,7 +31,7 @@ Route::get('/users/{id}', 'UserController@show');
 
 //用户自身相关列表
 Route::get('/user/profile', 'User\UserController@profile');
-Route::post('/user/profile', 'User\UserController@profile');
+Route::post('/user/message', 'User\UserController@message');
 Route::get('/user/index', 'User\UserController@index');
 
 //上传图像必须本人

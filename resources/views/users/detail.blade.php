@@ -23,50 +23,48 @@
                                                 <div class="comment-author">
                                                     <img src="{{$user->head_img}}" alt="image" />
                                                 </div>
-                                                <!-- .comment-author -->
                                                 <div class="comment-text">
                                                     <div class="comment-metadata">
                                                         <h5><a href="#">{{$user->name}}</a></h5>
                                                     </div>
-                                                    <!-- .comment-metadata -->
                                                     <div class="comment-content">
                                                         <p>{{$user->introduction}}</p>
                                                     </div>
-                                                    <!-- .comment-content -->
                                                 </div>
-                                                <!-- /.comment-text -->
                                             </article>
-                                            <!-- .comment-body -->
                                         </li>
-                                        <!-- #comment-## -->
                                     </ol>
 
                                     <ul class="add-section" style="">
                                         <li class="twitter">
                                             <i class="fab fa-twitter-square twitter"></i>
                                             <span>Twitter</span>
-                                            <a href="{{ $user->twitter }}" title="">
-                                                {{ $user->twitter }}
+                                            <a href="#" title="">
+                                                {{--{{ $user->twitter }}--}}
+                                                Due to too many complaints, the twitter information is temporarily not displayed
                                             </a>
                                         </li>
                                         <li class="face">
                                             <i class="fab fa-facebook-square face"></i>
                                             <span>Facebook</span>
-                                            <a href="{{ $user->facebook }}" title="">
-                                                {{ $user->facebook }}
+                                            <a href="#" title="">
+                                                {{--{{ $user->facebook }}--}}
+                                                Due to too many complaints, the facebook information is temporarily not displayed
                                             </a>
 
                                         </li>
                                         <li class="wechat">
                                             <i class="fab fa-wechat wechat"></i>
                                             <span>Wechat</span>
-                                            {{ $user->wechat }}
+                                            {{--{{ $user->wechat }}--}}
+                                             Due to too many complaints, the wechat information is temporarily not displayed
                                         </li>
 
                                         <li class="wechat">
                                             <i class="fab fa-line line"></i>
                                             <span>Line</span>
-                                            {{ $user->line }}
+                                            {{--{{ $user->line }}--}}
+                                            Due to too many complaints, the line information is temporarily not displayed
                                         </li>
 
                                     </ul>
@@ -75,15 +73,15 @@
                                     <div class="comment-respond" id="respond">
 
                                         <h2 class="comment-reply-title">Send a message</h2>
-                                        <form novalidate="" class="comment-form clearfix" id="commentform" method="post" action="#">
-                                            <div class="wrap-input clearfix">
-                                                <p class="comment-notes"><input type="text" placeholder="Your Name" aria-required="true" size="30" value="" name="author" id="author" /></p>
-                                                <p class="comment-form-email">
-                                                    <input type="email" placeholder="Your Name" size="30" value="" name="email" id="email" />
-                                                </p>
-                                            </div>
-                                            <p class="comment-form-comment"><textarea class="" tabindex="4" placeholder="Message" name="comment" required=""></textarea></p>
-                                            <p class="form-submit"><button class="comment-submit effect-button">Send Message</button></p>
+                                        <form novalidate="" class="comment-form clearfix" id="commentform" method="post" action="{{ url('/user/message') }}">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                            <p class="comment-form-comment">
+                                                <textarea class="" tabindex="4" placeholder="Message" name="comment" required="">you</textarea>
+                                            </p>
+                                            <p class="form-submit">
+                                                <button class="comment-submit effect-button">Send Message</button>
+                                            </p>
                                         </form>
                                     </div>
                                     <!-- /.comment-respond -->
@@ -127,6 +125,7 @@
             border-bottom: 1px solid #e5e5e5;
             line-height: 50px;
         }
+
 
         .add-section li span{
             width: 70px;

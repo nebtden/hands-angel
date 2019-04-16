@@ -10,12 +10,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\AreaCountry;
 use App\Models\Task;
-use App\Models\UserMessage;
+use App\Models\UserRelation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Storage;
+
 
 class UserController extends Controller
 {
@@ -75,24 +73,18 @@ class UserController extends Controller
     }
 
 
-    public function tasks(){
-        $user = Auth::user();
-        return view('user.task-list',[
-            'user'=>$user,
-        ]);
-    }
 
-    public function store(Request $request){
+
+
+    public function message(Request $request){
         $user = Auth::user();
 
-        $task = new Task();
-        $task->country_id = $user->country_id;
-        $task->sex        = $user->sex;
-        $task->type_id = $request->input('type_id');
-        $task->title   = $request->input('title');
-        $task->content = $request->input('content');
-        $task->images  = $request->input('images');
-        $task->save();
+        $relation = new UserRelation();
+        $relation->apply_user_id = $user->id;
+        $relation->applied_user_id = $request->input('user_id');
+        $relation->message = $request->input('message');
+        $relation->status = 0;
+        $relation->save();
 
     }
 

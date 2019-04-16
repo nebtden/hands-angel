@@ -37,7 +37,12 @@ ALTER TABLE `tasks`
 
 ALTER TABLE `users`
     ADD COLUMN `sex`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '1 男  2 女' ,
+    ADD COLUMN `is_married`  tinyint(1) NOT NULL DEFAULT 0 COMMENT '' ,
+    ADD COLUMN `birth_day`  date DEFAULT NULL   ,
     ADD COLUMN `line`  varchar(255) NULL DEFAULT '' AFTER `status`;
+
+ALTER TABLE `users_relations`
+    ADD COLUMN `message`  text NULL AFTER `status`;
 
 
 

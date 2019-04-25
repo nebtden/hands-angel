@@ -26,6 +26,9 @@
                                     <a   href="{{ url('user/profile') }}"  >
                                          Profile </a>
                                 </li>
+
+                                    <li><a   href="{{ url('logout') }}"  > Logout  </a></li>
+
                             @endauth
 
                             @guest

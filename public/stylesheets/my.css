@@ -8,6 +8,9 @@
 .profile ul.add-section li.line span, .profile ul.add-section li i.line {
     color: #00bd0c;
 }
+.content-food p span,.content-food p i.weixin{
+    color: #00bd0c;
+}
 
 .focus{
     border: 1px solid #e8280b;

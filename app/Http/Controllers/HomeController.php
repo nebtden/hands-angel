@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function test(){
+         return  request()->ip();
          return Auth::user();
     }
 

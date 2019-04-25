@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -41,6 +42,17 @@ class LoginController extends Controller
     //重写验证字段
     public function username()
     {
+//        echo $request->ip();
         return 'name';
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('name', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
     }
 }

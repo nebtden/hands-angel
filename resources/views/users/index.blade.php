@@ -21,11 +21,13 @@
                                                     </span>
                                                     </div>
                                                     <div class="content-food float-left">
-                                                        <h5><a href="/users/{{ $user->id }}">{{$user->name}}</a> </h5>
-                                                        <p>{{$user->introduction}}
+                                                        <h5>Name: <a href="/users/{{ $user->id }}">{{$user->name}}</a> </h5>
+                                                        <p>
+                                                            <i class="fab fa-weixin weixin"></i><span>wechat：</span>
+                                                            {{substr_replace($user->wechat,"****",5)}}
                                                         </p>
+                                                        <p>{{$user->introduction}} </p>
                                                     </div>
-
                                                 </div>
                                             @endforeach
 

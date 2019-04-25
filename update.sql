@@ -44,5 +44,9 @@ ALTER TABLE `users`
 ALTER TABLE `users_relations`
     ADD COLUMN `message`  text NULL AFTER `status`;
 
+ALTER TABLE `users`
+    ADD COLUMN `ip`  varchar(255) NOT NULL AFTER `updated_at`;
+
+
 
 

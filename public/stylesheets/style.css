@@ -163,7 +163,9 @@ ul, ol {
 
 img {
     max-width: 100%;
-    height: auto;
+    /*height: auto;*/
+    height: 65px;
+    /*simon add*/
 }
 
 b, strong {

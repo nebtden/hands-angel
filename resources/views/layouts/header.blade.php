@@ -4,12 +4,12 @@
             <div class="col-lg-4">
                 <div id="logo" class="logo float-left">
                     <a href="/" rel="home">
-                        <img src="/images/logo.png" alt="image" height="45" width=""></a>
+                        <img src="/images/logo.png" alt="image"   width=""></a>
                 </div>
                 <!-- /.logo -->
                 <div class="btn-menu">
                     <span></span>
-                </div><!-- //mobile menu button -->
+                </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-8">
                 <div class="nav-wrap">
@@ -26,9 +26,9 @@
                                     <a   href="{{ url('user/profile') }}"  >
                                          Profile </a>
                                 </li>
-
-                                    <li><a   href="{{ url('logout') }}"  > Logout  </a></li>
-
+                                <li>
+                                    <a   href="{{ url('logout') }}"  > Logout  </a>
+                                </li>
                             @endauth
 
                             @guest

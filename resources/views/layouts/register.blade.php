@@ -77,7 +77,7 @@
                     },
                     success: function (data) {
                         // $("#result").html(data.success);
-                        location.href = '/user/profile'
+                        location.href = '/user/index'
                     },
                     error: function (request, status, error) {
                         json = $.parseJSON(request.responseText);

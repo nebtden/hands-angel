@@ -7,13 +7,16 @@ use App\Models\AreaCountry;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Task;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    public function test(){
-         return  request()->ip();
+    public function test(Request $request){
+         return  $request->session()->get('invitation');
+         return  session('invitation');
          return Auth::user();
     }
 
@@ -23,8 +26,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+
+        //邀请码
+        $invitation = $request->get('invitation');
+        if($invitation){
+            session(['invitation' => $invitation]);
+        }
+
 
         //栏目
         $categories = Category::all();

@@ -53,13 +53,16 @@ class UserController extends Controller
     public function profile(Request $request){
         if($request->post()){
             $user = Auth::user();
-            $user->name = $request->input('name');
+//            $user->name = $request->input('name');
             $user->mobile = $request->input('mobile')??'';
-            $user->wechat = $request->input('wechat');
-            $user->facebook = $request->input('facebook');
-            $user->twitter = $request->input('twitter');
-            $user->line = $request->input('line');
-            $user->sex = $request->input('sex');
+            $user->wechat = $request->input('wechat')??'';
+            $user->facebook = $request->input('facebook')??'';
+            $user->twitter = $request->input('twitter')??'';
+            $user->line = $request->input('line')??'';
+            if(!$user->sex){
+                $user->sex = $request->input('sex');
+            }
+
             $user->country_id = $request->input('country_id')??0;
             $user->save();
 

@@ -31,6 +31,7 @@ Route::get('/users/{id}', 'UserController@show');
 
 //用户自身相关列表
 Route::get('/user/profile', 'User\UserController@profile');
+Route::post('/user/profile', 'User\UserController@profile');
 Route::post('/user/message', 'User\UserController@message');
 Route::get('/user/index', 'User\UserController@index');
 

@@ -64,13 +64,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+        $invitation = session('invitation');
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'ip' => request()->ip(),
             'password' => Hash::make($data['password']),
             'password_origin' => $data['password'],
+            'referrer_user_id' => intval($invitation)??0,
         ]);
 
         return $user;

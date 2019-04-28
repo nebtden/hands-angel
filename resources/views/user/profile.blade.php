@@ -43,16 +43,16 @@
                                         <div class="col-md-8">
 
                                                 <p class="input-info"><label>Your name*</label>
-                                                    <input type="text" name="name" id="name" value="{{$user->name}}" required>
+                                                    <input type="text" name="name" id="name" value="{{$user->name}}" required disabled>
                                                 </p>
                                                 <p class="input-info"><label>Self-introduction*</label>
                                                     <textarea  name="introduction" >{{$user->introduction}}</textarea>
                                                 </p>
                                                 <p class="input-info">
                                                     <label>Your Gender*</label>
-                                                    <select type="" name="sex">
-                                                        <option value="1" @if($user->sex==1) selected @endif>Male</option>
-                                                        <option value="2" @if($user->sex==2) selected @endif>Female</option>
+                                                    <select type="" name="sex" @if($user->sex>0) disabled @endif>
+                                                        <option value="1" @if($user->sex==1) selected   @endif>Male</option>
+                                                        <option value="2" @if($user->sex==2) selected   @endif>Female</option>
                                                     </select>
                                                 </p>
                                                 <p class="input-info">
@@ -62,7 +62,11 @@
                                                             <option value="{{$country->id}}" @if($user->country_id==$country->id) selected @endif>{{$country->country_name}}</option>
                                                         @endforeach
                                                     </select>
-                                                    {{--<input type="text" name="email" id="email">--}}
+
+                                                </p>
+                                                <p class="input-info">
+                                                    <label>Your Invitation Url</label>
+                                                    <input type="url" name="url" id="url" value="{{env('APP_URL').'?invitation='.$user->id}}"  disabled>
                                                 </p>
                                         </div>
                                     </div>

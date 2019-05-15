@@ -29,6 +29,10 @@ Route::get('/tasks/{id}', 'TaskController@show');
 Route::get('/users', 'UserController@index');
 Route::get('/users/{id}', 'UserController@show');
 
+//视频列表页
+Route::get('/videos', 'VideoController@index');
+Route::get('/video/{id}', 'VideoController@show');
+
 //用户自身相关列表
 Route::get('/user/profile', 'User\UserController@profile');
 Route::post('/user/profile', 'User\UserController@profile');
@@ -42,9 +46,9 @@ Route::any('/upload/head', 'UploadController@head');
 
 
 //   最近有很多女生反应，受骚扰情况较多，因此，只展示部分资料,微信、QQ等一律屏蔽。，  2016-08-04
-//    也对网站的逻辑进行了更新，现在男生女生都需要像对方发送邀请，对方同意之后，才可以交换资料。
+//   也对网站的逻辑进行了更新，现在男生女生都需要像对方发送邀请，对方同意之后，才可以交换资料。
 
-// 3 希望大家都做一个文明人，不要爆粗口。文明交友，文明撩骚，文明聊骚。。
+//   希望大家都做一个文明人，不要爆粗口。文明交友，文明撩骚，文明聊骚。。
 
 //  4 现网站支持大家分享，大家可以分享自己的用户id。对于分享成功次数较多（以成功注册且通过审核为准）的用户，可以升级为管理员（可以对用户进行审核）。
 

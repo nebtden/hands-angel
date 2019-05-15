@@ -66,12 +66,16 @@ class TaskController extends Controller
             $where
         )->paginate(5);
 
+        $total = DB::table('tasks')->count();
+
         $countries = AreaCountry::all();
+
 
         return view('task/index',[
             'tasks'=>$tasks,
             'types'=>$types,
             'countries'=>$countries,
+            'total'=>$total,
 //            'provinces'=>$provinces,
         ]);
     }

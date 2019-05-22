@@ -7,18 +7,18 @@
             <div class="modal-body text-center clearfix">
                 <form class="form-login form-listing" role="form" action="{{ route('login') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <h3 class="title-formlogin">Log in</h3>
+                    <h3 class="title-formlogin">登录</h3>
                     <div class="form-group has-feedback">
                         {{--<label class="control-label" for="name"> 2222</label></br>--}}
                         <span class="input-login icon-form ">
-                            <input type="text" placeholder="Your Name*" name="name" required="required">
+                            <input type="text" placeholder="用户名*" name="name" required="required">
                               <i class="fa fa-user"></i>
                         </span>
                     </div>
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="password" placeholder="Password*" name="password" required="required"
+                            <input type="password" placeholder="密码*" name="password" required="required"
                                    value=" ">
                             <i class="fa fa-lock"></i>
 
@@ -26,20 +26,20 @@
                     </div>
 
                     <div class="flat-fogot clearfix">
-                        <label class="float-left">
+                       {{-- <label class="float-left">
                             <span class="input-check">
                                 <input type="checkbox" id="rem" name="check" value="0" checked="">
                                 <label for="rem" class="remember">Remember me</label>
                             </span>
-                        </label>
+                        </label>--}}
 
-                        <label class="float-right link-register">
-                            <a href="index.html#">Lost your password?</a>
-                        </label>
+                        {{--<label class="float-right link-register">--}}
+                            {{--<a href="index.html#">Lost your password?</a>--}}
+                        {{--</label>--}}
                     </div>
                     <span class="wrap-button">
                         <button type="submit" id="login-button" class=" login-btn effect-button"
-                                title="log in">LOG IN</button></span>
+                                title="log in">提交</button></span>
                 </form>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     },
                     success: function (data) {
                         // $("#result").html(data.success);
-                       location.href='/user/index'
+                       location.href='/user/profile'
                     },
                     error: function (request, status, error) {
                         json = $.parseJSON(request.responseText);

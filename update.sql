@@ -82,6 +82,10 @@ CREATE TABLE `videos_tags` (
 -- 更改逻辑
 update videos set video =CONCAT('https://ap1-ws.yoipu.com/',video_id,'/preview/pv.m3u8' );
 
+ALTER TABLE `users`
+    ADD COLUMN `qq`  varchar(255) NOT NULL DEFAULT '' AFTER `twitter`,
+    ADD COLUMN `is_recommend`  tinyint(1) NOT NULL DEFAULT 0 AFTER `status`;
+
 
 
 

@@ -59,6 +59,7 @@ class UserController extends Controller
             $user->facebook = $request->input('facebook')??'';
             $user->twitter = $request->input('twitter')??'';
             $user->line = $request->input('line')??'';
+            $user->qq = $request->input('qq')??'';
             if(!$user->sex){
                 $user->sex = $request->input('sex');
             }

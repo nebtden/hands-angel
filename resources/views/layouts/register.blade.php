@@ -7,36 +7,36 @@
             <div class="modal-body text-center clearfix">
                 <form class="form-login form-listing" role="form" action="{{ route('register') }}" method="post">
                     @csrf
-                    <h3 class="title-formlogin">Sign Up</h3>
+                    <h3 class="title-formlogin">注册</h3>
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="Your Name*" name="name" required="required">
+                            <input type="text" placeholder="用户名*" name="name" required="required">
                             <i class="fa fa-user"></i>
                         </span>
                     </div>
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="E-mail*" name="email" required="required">
+                            <input type="text" placeholder="邮件*" name="email" required="required">
                             <i class="fa fa-envelope-o"></i>
                         </span>
                     </div>
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="Password*" name="password" required="required">
+                            <input type="text" placeholder="密码*" name="password" required="required">
                               <i class="fa fa-lock"></i>
                         </span>
                     </div>
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="Repeat Password*" name="password_confirmation" required="required">
+                            <input type="text" placeholder="请再次输入密码*" name="password_confirmation" required="required">
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>
                     <div class="wrap-button signup">
-                        <button type="submit" id="logup-button" class=" login-btn effect-button" title="log in">LOG UP
+                        <button type="submit" id="logup-button" class=" login-btn effect-button" title="log in">注册
                         </button>
                     </div>
                 </form>
@@ -77,7 +77,7 @@
                     },
                     success: function (data) {
                         // $("#result").html(data.success);
-                        location.href = '/user/index'
+                        location.href = '/user/profile'
                     },
                     error: function (request, status, error) {
                         json = $.parseJSON(request.responseText);

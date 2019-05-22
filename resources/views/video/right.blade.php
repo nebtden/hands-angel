@@ -1,18 +1,16 @@
 <div class="col-lg-3">
     <div class="sidebar">
         <div class=" widget widget-form style2">
-            <h5 class="widget-title"> Search Box</h5>
+            <h5 class="widget-title"> 搜索框</h5>
             <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ url('/tasks')  }}">
                 {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                 <p class="book-notes">
-                    <input type="text" placeholder="What are you looking for?" name="title" required="" />
+                    <input type="text" placeholder="请输入视频标题" name="title" required="" />
                 </p>
-
-
 
                 <p class="form-submit text-center">
                     <button class="flat-button">
-                        Search
+                        搜索
                         <i class="ion-ios-search-strong"></i>
                     </button>
                 </p>

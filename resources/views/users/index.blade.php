@@ -2,55 +2,57 @@
 
 @section('content')
     @include('layouts.banner')
-    <section class="main-content page-listing">
+    <section class="main-content page-listing-grid">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="listing-wrap">
-                        <div class="content-listing">
-                            <p style="margin: 28px 0 0;color: red;text-indent: 2em;"> <span></span>
-                                   最近，有很多女生反应微信及QQ受骚扰情况较多，
-                                频繁的加好友请求给大家带来了不便，
-                                因此我们这边永久关闭微信、QQ等社交账号的显示,
-                                只对管理员显示。
-                               <br>
-                               <span style="float: right">    ---- 中国区管理员</span>
-                            </p>
-                            <div class="list-tab">
-                                <div class="flat-tabs" data-effect="fadeIn">
-                                    <div class="content-tab">
-                                        <div class="content-inner active">
-                                            @foreach($users as $user)
-                                                <div class="menu-food clearfix">
-                                                    <div class="featured-food float-left">
-                                                    <span class="effect">
-                                                        @if($user->head_img)
-                                                            <img src="{{$user->head_img}}" alt="" />
-                                                            @else
-                                                            <img src="/images/logo.png" alt="" />
-                                                            @endif
+                    <div class="flat-select clearfix">
+                        <div class="float-left width50 clearfix">
+                            <div class="one-three showing">
+                                <p><span></span>用户列表</p>
+                            </div>
+                        </div>
 
-                                                    </span>
-                                                    </div>
-                                                    <div class="content-food float-left">
-                                                        <h5>Name: <a href="/users/{{ $user->id }}">{{$user->name}}</a> </h5>
-                                                        <p>
-                                                            <i class="fab fa-weixin weixin"></i><span>wechat：</span>
-                                                            {{substr_replace($user->wechat,"****",5)}}
-                                                        </p>
-                                                        <p>{{$user->introduction}} </p>
-                                                    </div>
-                                                </div>
-                                            @endforeach
+                    </div>
+                    <div class="listing-list">
+                        @foreach($users as $user)
+                            <div class="flat-product clearfix">
+                                <div class="featured-product">
+                                    <a href="/users/{{ $user->id }}">
+                                        <img src="{{ $user->head_img }}" alt="image" />
+                                    </a>
+                                </div>
+                                <div class="rate-product">
+                                    <div class="link-review clearfix">
+                                        <div class="button-product float-left">
 
                                         </div>
                                     </div>
+                                    <div class="info-product">
+                                        <h6 class="title">
+                                            <a href="/users/{{$user->id}}">
+                                                {{$user->name}}
+                                            </a>
+                                        </h6>
+                                        <p>{{$user->introduction}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
+                    <div class="blog-pagination style2 text-center">
+
+                        {{ $users->links() }}
+                    </div>
+                    <!-- /.blog-pagination -->
                 </div>
-                @include('users.right')
+                <!-- /.col-lg-9 -->
+            @include('users.right')
+            <!-- /.col-md-3 -->
             </div>
+            <!-- /.row -->
         </div>
-    </section> @endsection
+        <!-- /.container -->
+    </section>
+
+@endsection

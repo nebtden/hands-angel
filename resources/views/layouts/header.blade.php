@@ -16,49 +16,47 @@
                 <div class="nav-wrap">
                     <nav id="mainnav" class="mainnav float-left">
                         <ul class="menu">
-                            <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">Home</a></li>
+                            <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">首页</a></li>
 
                             {{--<li class="{{ Request::is('/articles') ? 'home' : '' }}"><a href="/articles">Articles</a>--}}
-                            <li class="{{ Request::is('/tasks') ? 'home' : '' }}"><a href="/tasks">Tasks</a>
-                            <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">Users</a>
-                            <li class="{{ Request::is('/videos') ? 'home' : '' }}"><a href="/videos">Videos</a>
+
+                            <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">用户</a>
+
+                            <li class="{{ Request::is('/videos') ? 'home' : '' }}"><a href="/videos">视频</a>
 
                             @auth
                                 <li class="{{ Request::is('user/profile') ? 'home' : '' }}">
                                     <a   href="{{ url('user/profile') }}"  >
-                                         Profile </a>
+                                         个人中心 </a>
                                 </li>
                                 <li>
-                                    <a   href="{{ url('logout') }}"  > Logout  </a>
+                                    <a   href="{{ url('logout') }}"  > 退出  </a>
                                 </li>
                             @endauth
 
                             @guest
                                 <li>
                                     <a data-toggle="modal" href="#popup_login">
-                                        <i class="fa fa-user"></i>Sign in
+                                        <i class="fa fa-user"></i>
+                                        登录
                                     </a>
                                 </li>
                                 <li>
                                     <a data-toggle="modal" href="#popup_register">
                                         <i class="fa fa-user-plus"></i>
-                                        Register</a>
+                                        注册
+                                    </a>
                                 </li>
                             @endguest
 
-                        </ul><!-- /.menu -->
+                        </ul>
                     </nav>
-                    <!-- /.mainnav -->
-                    <div class="button-addlist float-right">
-                        <button type="button" class="flat-button" onclick="location.href='/user/tasks/create'">Add
-                            Task
-                        </button>
-                    </div>
+
                 </div>
-                <!-- /.nav-wrap -->
+
             </div>
-            <!-- /.col-lg-8 -->
+
         </div>
-        <!-- /.row -->
+
     </div>
 </header>

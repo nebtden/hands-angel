@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading"><h1 class="title">Blog</h1></div><!-- /.page-title-captions -->
+                <div class="page-title-heading"><h1 class="title">Logo</h1></div><!-- /.page-title-captions -->
                 <div class="breadcrumbs">
                     <ul>
                         <li><a href="/"> <!-- home --></a></li>

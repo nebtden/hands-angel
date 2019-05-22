@@ -9,13 +9,12 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="flat-user profile">
-                        <a href="/user/index" class="edit" title="">Back to profile <i class="fa fa-backward"></i></a>
                         <ul class="info">
                             <li>
-                                <a href="#basic" title=""><i class="fa fa-user"></i>BASIC INFOMATION</a>
+                                <a href="#basic" title=""><i class="fa fa-user"></i>基本信息</a>
                             </li>
                             <li>
-                                <a href="#web" title=""><i class="fa fa-link"></i>ON THE WEB</a>
+                                <a href="#web" title=""><i class="fa fa-link"></i>其他信息</a>
                             </li>
                         </ul>
                     </div>
@@ -30,7 +29,7 @@
                         <div class="content-tab listing-user profile" >
                             <div class="content-inner active" >
                                 <div class="basic-info" id="basic" name="basic">
-                                    <h5>Basic Infomation</h5>
+                                    <h5>基本信息</h5>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="upload-img">
@@ -42,30 +41,22 @@
                                         </div>
                                         <div class="col-md-8">
 
-                                                <p class="input-info"><label>Your name*</label>
+                         {{--                       <p class="input-info"><label>用户名(无法更改)*</label>
                                                     <input type="text" name="name" id="name" value="{{$user->name}}" required disabled>
-                                                </p>
-                                                <p class="input-info"><label>Self-introduction*</label>
+                                                </p>--}}
+                                                <p class="input-info"><label>个人简介*</label>
                                                     <textarea  name="introduction" >{{$user->introduction}}</textarea>
                                                 </p>
                                                 <p class="input-info">
-                                                    <label>Your Gender*</label>
+                                                    <label>性别(会有管理员验证，一旦选择，即无法更改！)*</label>
                                                     <select type="" name="sex" @if($user->sex>0) disabled @endif>
-                                                        <option value="1" @if($user->sex==1) selected   @endif>Male</option>
-                                                        <option value="2" @if($user->sex==2) selected   @endif>Female</option>
+                                                        <option value="1" @if($user->sex==1) selected   @endif>男</option>
+                                                        <option value="2" @if($user->sex==2) selected   @endif>女</option>
                                                     </select>
                                                 </p>
-                                                <p class="input-info">
-                                                    <label>Your Country*</label>
-                                                    <select type="" name="country_id" class="dropdown_sort">
-                                                        @foreach ($countries as $key=>$country)
-                                                            <option value="{{$country->id}}" @if($user->country_id==$country->id) selected @endif>{{$country->country_name}}</option>
-                                                        @endforeach
-                                                    </select>
 
-                                                </p>
                                                 <p class="input-info">
-                                                    <label>Your Invitation Url</label>
+                                                    <label>您的邀请链接(邀请用户成功并验证通过，可获取一定管理员权限)</label>
                                                     <input type="url" name="url" id="url" value="{{env('APP_URL').'?invitation='.$user->id}}"  disabled>
                                                 </p>
                                         </div>
@@ -73,45 +64,40 @@
                                 </div>
                                 <div class="on-web" id="web" name="#web">
                                     <div class="row">
-                                        <div class="col-md-4"><h5>On the web</h5></div>
+                                        <div class="col-md-4"><h5>其他信息</h5></div>
                                         <div class="col-md-8">
                                             <ul class="add-section">
-                                                <li class="twitter">
-                                                    <i class="fab fa-twitter-square twitter"></i>
-                                                    <span>Twitter</span>
-                                                    <input type="url" name="twitter" value="{{$user->twitter}}">
+                                                {{--<li class="twitter">--}}
+                                                    {{--<i class="fab fa-twitter-square twitter"></i>--}}
+                                                    {{--<span>Twitter</span>--}}
+                                                    {{--<input type="url" name="twitter" value="{{$user->twitter}}">--}}
 
 
-                                                </li>
-                                                <li class="face">
-                                                    <i class="fab fa-facebook-square face"></i>
-                                                    <span>Facebook</span>
-                                                    <input type="url" name="facebook" value="{{$user->facebook}}">
+                                                {{--</li>--}}
+                                                {{--<li class="face">--}}
+                                                    {{--<i class="fab fa-facebook-square face"></i>--}}
+                                                    {{--<span>Facebook</span>--}}
+                                                    {{--<input type="url" name="facebook" value="{{$user->facebook}}">--}}
 
 
-                                                </li>
+                                                {{--</li>--}}
                                                 <li class="weixin">
                                                     <i class="fab fa-weixin weixin"></i>
-                                                    <span>Wechat</span>
+                                                    <span>微信</span>
                                                     <input type="text" name="wechat" value="{{$user->wechat}}">
-
                                                 </li>
-
-                                                <li class="line">
-                                                    <i class="fab fa-line line"></i>
-                                                    <span>Line</span>
-                                                    <input type="text" name="line" value="{{$user->line}}">
-
+                                                <li class="weixin">
+                                                    <i class="fab fa-qq qq"></i>
+                                                    <span>QQ</span>
+                                                    <input type="text" name="qq" value="{{$user->qq}}">
                                                 </li>
-
 
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="update-button text-center">
-                                    <button type="submit" class="flat-button"  >Update
-                                        Profile
+                                    <button type="submit" class="flat-button"  > 更新
                                     </button>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@
 
 
                         <div class="content-post">
-                            <h3 class="title-post"> {{$task->title}} </h3>
+                            <h3 class="title-post"> {{$video->title}} </h3>
                             <ul class="meta-post clearfix">
                                 <li class="time"> January 22, 2017</li>
                                 <li class="categories">
@@ -19,7 +19,7 @@
                             </ul>
                             <!-- /.meta-post -->
                             <div class="entry excerpt">
-                                {{$task->content}}
+                                {{$video->content}}
                             </div>
                         </div>
                         <!-- /.content-post -->
@@ -31,13 +31,13 @@
             <div class="col-lg-3">
                 <div class="sidebar">
                     <div class="widget widget-recent-news">
-                        <h5 class="widget-title">Recent Post</h5>
+                        <h5 class="widget-title">Recent Video</h5>
                         <ul class="popular-news clearfix">
-                            @foreach($recent as $task)
+                            @foreach($recent as $video)
                                 <li>
                                     <div class="text">
-                                        <h6><a href="/task/{{$task->id}}">{{$task->title}}</a></h6>
-                                        <p>{{$task->created_at}}</p>
+                                        <h6><a href="/task/{{$video->id}}">{{$video->title}}</a></h6>
+                                        <p>{{$video->created_at}}</p>
                                     </div>
                                 </li>
 
@@ -47,26 +47,8 @@
                         <!-- /.popular-news -->
                     </div>
                     <!-- /.widget-popular-news -->
-                    <div class="widget widget_categories">
-                        <h5 class="widget-title">Category</h5>
-                        <ul>
-                            @foreach ($types as $key=>$type)
-                                <li><a href="/task?type={{$key}}">{{$type}}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <!-- /.widget-categories -->
-{{--                    <div class="widget widget_tag">
-                        <h5 class="widget-title">Tags</h5>
-                        <div class="tag-list">
-                            <a href="blog-single.html#">Business</a>
-                            <a href="blog-single.html#">Consulting</a>
-                            <a href="blog-single.html#">Finanve</a>
-                            <a href="blog-single.html#">Insurance</a>
-                            <a href="blog-single.html#">Management</a>
-                            <a href="blog-single.html#">Portfolio</a>
-                        </div>
-                    </div>--}}
+
+
 
                 </div>
                 <!-- /.sidebar -->

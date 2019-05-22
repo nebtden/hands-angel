@@ -1043,7 +1043,7 @@
         })
     };
     var o = function () {
-        a(".wrap-flat-product .flat-product").slice(0, 6).show();
+        a(".wrap-flat-product .flat-product").slice(0, 12).show();
         a(".wrap-flat-product .flat-button").on("click", function (y) {
             y.preventDefault();
             a(".wrap-flat-product .flat-product:hidden").slice(0, 3).slideDown(600);

@@ -4,7 +4,8 @@
             <div class="col-lg-4">
                 <div id="logo" class="logo float-left">
                     <a href="/" rel="home">
-                        <img src="/images/logo.png" alt="image"   width=""></a>
+                       <h1>Logo</h1>
+                    </a>
                 </div>
                 <!-- /.logo -->
                 <div class="btn-menu">
@@ -20,6 +21,7 @@
                             {{--<li class="{{ Request::is('/articles') ? 'home' : '' }}"><a href="/articles">Articles</a>--}}
                             <li class="{{ Request::is('/tasks') ? 'home' : '' }}"><a href="/tasks">Tasks</a>
                             <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">Users</a>
+                            <li class="{{ Request::is('/videos') ? 'home' : '' }}"><a href="/videos">Videos</a>
 
                             @auth
                                 <li class="{{ Request::is('user/profile') ? 'home' : '' }}">

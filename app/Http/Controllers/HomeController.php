@@ -7,6 +7,7 @@ use App\Models\AreaCountry;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Task;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -51,6 +52,11 @@ class HomeController extends Controller
             'status'=>1,
         ])->orderBy('id', 'desc')->limit(6)->get();
 
+        //video列表
+        $videos = Video::where([
+            'status'=>1,
+        ])->orderBy('id', 'desc')->limit(6)->get();
+
         //用户列表
         $users = DB::table('user_messages')
             ->join('users', 'users.id', '=', 'user_messages.id')
@@ -74,6 +80,7 @@ class HomeController extends Controller
             'first_articles'=>$first_articles,
             'send_articles'=>$send_articles,
             'tasks'=>$tasks,
+            'videos'=>$videos,
             'users'=>$users,
             'types'=>$types,
             'countries'=>$countries,

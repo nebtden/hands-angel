@@ -47,6 +47,43 @@ ALTER TABLE `users_relations`
 ALTER TABLE `users`
     ADD COLUMN `ip`  varchar(255) NOT NULL AFTER `updated_at`;
 
+-- 新增三个表
+CREATE TABLE `tags` (
+                        `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                        `name` varchar(50) NOT NULL DEFAULT '',
+                        `created_at` timestamp NULL DEFAULT NULL,
+                        `updated_at` timestamp NULL DEFAULT NULL,
+                        PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `videos` (
+                          `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                          `title` varchar(255) NOT NULL DEFAULT '',
+                          `img` varchar(255) NOT NULL COMMENT '首页封面',
+                          `keywords` varchar(255) NOT NULL,
+                          `url` varchar(255) NOT NULL COMMENT '第三方播放链接',
+                          `video_id` varchar(25) NOT NULL DEFAULT '',
+                          `video` varchar(255) NOT NULL,
+                          `video1` varchar(255) NOT NULL DEFAULT '',
+                          `created_at` timestamp NULL DEFAULT NULL,
+                          `updated_at` timestamp NULL DEFAULT NULL,
+                          PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `videos_tags` (
+                               `video_id` int(11) unsigned NOT NULL DEFAULT 0,
+                               `tag_id` int(11) unsigned NOT NULL DEFAULT 0,
+                               `created_at` timestamp NULL DEFAULT NULL,
+                               `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 更改逻辑
+update videos set video =CONCAT('https://ap1-ws.yoipu.com/',video_id,'/preview/pv.m3u8' );
+
+
+
 
 
 

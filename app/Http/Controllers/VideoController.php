@@ -24,9 +24,12 @@ class VideoController extends Controller
         //video  列表
         $video = Video::find($id);
 
+        //recent 列表
+        $recent = Video::where([])->orderBy('created_at','desc')->take(6)->get();
 
         return view('video/detail',[
             'video'=>$video,
+            'recent'=>$recent,
         ]);
     }
 

@@ -51,7 +51,6 @@ class UploadController extends Controller
         }
         return   implode(',',$paths);
 
-
     }
 
 

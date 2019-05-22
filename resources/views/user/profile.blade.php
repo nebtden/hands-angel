@@ -86,7 +86,7 @@
                                                     <span>微信</span>
                                                     <input type="text" name="wechat" value="{{$user->wechat}}">
                                                 </li>
-                                                <li class="weixin">
+                                                <li class="qq">
                                                     <i class="fab fa-qq qq"></i>
                                                     <span>QQ</span>
                                                     <input type="text" name="qq" value="{{$user->qq}}">

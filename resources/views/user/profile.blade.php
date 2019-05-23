@@ -41,9 +41,7 @@
                                         </div>
                                         <div class="col-md-8">
 
-                         {{--                       <p class="input-info"><label>用户名(无法更改)*</label>
-                                                    <input type="text" name="name" id="name" value="{{$user->name}}" required disabled>
-                                                </p>--}}
+
                                                 <p class="input-info"><label>个人简介*</label>
                                                     <textarea  name="introduction" >{{$user->introduction}}</textarea>
                                                 </p>
@@ -67,20 +65,6 @@
                                         <div class="col-md-4"><h5>其他信息</h5></div>
                                         <div class="col-md-8">
                                             <ul class="add-section">
-                                                {{--<li class="twitter">--}}
-                                                    {{--<i class="fab fa-twitter-square twitter"></i>--}}
-                                                    {{--<span>Twitter</span>--}}
-                                                    {{--<input type="url" name="twitter" value="{{$user->twitter}}">--}}
-
-
-                                                {{--</li>--}}
-                                                {{--<li class="face">--}}
-                                                    {{--<i class="fab fa-facebook-square face"></i>--}}
-                                                    {{--<span>Facebook</span>--}}
-                                                    {{--<input type="url" name="facebook" value="{{$user->facebook}}">--}}
-
-
-                                                {{--</li>--}}
                                                 <li class="weixin">
                                                     <i class="fab fa-weixin weixin"></i>
                                                     <span>微信</span>

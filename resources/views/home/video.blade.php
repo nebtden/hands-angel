@@ -13,7 +13,7 @@
                 @foreach($videos as $video)
                 <div class="flat-product">
                     <div class="featured-product">
-                        <a href="/tasks/{{$video->id}}">
+                        <a href="/video/{{$video->id}}">
                         <img src="{{$video->img}}" alt="image" width="361px" height="238px">
                         </a>
 

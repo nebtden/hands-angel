@@ -300,10 +300,14 @@ section.flat-row.section-product {
 }
 
 /*simon add*/
+/*.flat-product .featured-product{*/
+    /*width: 361px;*/
+    /*height: 238px;*/
+    /*display: block;*/
+/*}*/
+
 .flat-product .featured-product{
-    width: 361px;
-    height: 238px;
-    display: block;
+
 }
 
 .flat-product .content-product{
@@ -316,8 +320,9 @@ section.flat-row.section-product {
     display: block;
 }
 
+/*simon update from 580 px to 290px*/
 .flat-product .featured-product img {
-    max-width: 580px;
+    max-width: 290px;
     width: 100%;
     height: 100%;
 

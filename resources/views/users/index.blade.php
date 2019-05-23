@@ -6,21 +6,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="flat-select clearfix">
-                        <div class="float-left width50 clearfix">
-                            <div class="one-three showing">
-                                <p><span></span>用户列表</p>
-                            </div>
-                        </div>
 
-                    </div>
                     <div class="listing-list">
                         @foreach($users as $user)
                             <div class="flat-product clearfix">
                                 <div class="featured-product">
-                                    <a href="/users/{{ $user->id }}">
+
                                         <img src="{{ $user->head_img }}" alt="image" />
-                                    </a>
+                                    <div class="time">                                    Now Close</div>
                                 </div>
                                 <div class="rate-product">
                                     <div class="link-review clearfix">

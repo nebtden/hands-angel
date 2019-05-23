@@ -6,23 +6,24 @@
                 <div class="post-wrap">
                     <article class="post clearfix">
 
-
-
                         <div class="content-post">
                             <h3 class="title-post"> {{$video->title}} </h3>
-                            <ul class="meta-post clearfix">
-                                <li class="time"> January 22, 2017</li>
-                                <li class="categories">
-                                    <a href="blog-single.html#">Business</a>,
-                                    <a href="blog-single.html#">Leasing</a>
-                                </li>
-                            </ul>
-                            <!-- /.meta-post -->
+
                             <div class="entry excerpt">
-                                {{$video->content}}
+                                <img src="{{$video->img}}">
                             </div>
+                            <p></p>
+                            <p></p>
+
+                            <br>
+                            <p>
+                                点此新窗口进行播放:
+                                <a target="_blank"  href="{{$video->video}}" >
+                                    <img src="/images/video.png" width="20px" height="20px">
+                                </a>
+                            </p>
                         </div>
-                        <!-- /.content-post -->
+
                     </article>
                 </div>
                 <!-- /.post-wrap -->
@@ -31,12 +32,13 @@
             <div class="col-lg-3">
                 <div class="sidebar">
                     <div class="widget widget-recent-news">
-                        <h5 class="widget-title">Recent Video</h5>
+                        <h5 class="widget-title">相关视频</h5>
                         <ul class="popular-news clearfix">
                             @foreach($recent as $video)
                                 <li>
                                     <div class="text">
-                                        <h6><a href="/task/{{$video->id}}">{{$video->title}}</a></h6>
+
+                                        <p><a href="/task/{{$video->id}}">{{$video->title}}</a></p>
                                         <p>{{$video->created_at}}</p>
                                     </div>
                                 </li>

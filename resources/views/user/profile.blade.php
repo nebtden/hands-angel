@@ -58,6 +58,16 @@
                                                     <input type="url" name="url" id="url" value="{{env('APP_URL').'?invitation='.$user->id}}"  disabled>
                                                 </p>
                                         </div>
+                                        <div class="col-md-12">
+
+                                            <div class="add-images">
+                                                <label class="nhan">相册(可上传自己生活照！)</label>
+                                                <div action="{{ url('upload') }}" class="dropzone" id="images">
+                                                    <input type="hidden" name="images" id="images" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="on-web" id="web" name="#web">
@@ -114,9 +124,13 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         init: function () {
-            var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
-            this.options.addedfile.call(this, mockFile);
-            this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
+
+            if("{{$user->head_img}}"){
+                var mockFile = { name: "head.jpg", size: 12345, type: 'image/jpeg' };
+                this.options.addedfile.call(this, mockFile);
+                this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
+            }
+
             mockFile.previewElement.classList.add('dz-success');
             mockFile.previewElement.classList.add('dz-complete');
         },
@@ -125,7 +139,51 @@
         }
     });
 </script>
-    <style>
+
+    <script type="text/javascript">
+        Dropzone.options.myAwesomeDropzone = false;
+        Dropzone.autoDiscover = false;
+        $("#images").dropzone({
+            url: "{{ url('upload') }}",
+            // addRemoveLinks : true,
+            maxFilesize: 5,
+            dictDefaultMessage: ' ',
+            uploadMultiple:true,
+            dictResponseError: 'Error uploading file!',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+
+            success: function( file, response ){
+                console.log(response);
+                var val = $('#images').val();
+                if (val) {
+                    $('#images').val(val + ',' +response);
+                } else {
+                    $('#images').val( response);
+                }
+            },
+            init: function () {
+
+                if("{{$images}}"){
+
+                    var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
+                    this.options.addedfile.call(this, mockFile);
+                    @foreach($images as $image)
+                    this.options.thumbnail.call(this, mockFile, "{{$image->src}}");
+                    @endforeach
+                }
+
+                mockFile.previewElement.classList.add('dz-success');
+                mockFile.previewElement.classList.add('dz-complete');
+            },
+            removedfile: function(file) {
+                var name = file.name;
+                console.log(name);
+            }
+        });
+    </script>
+<style>
         .basic-info select{
             background-color: #FFF;
             -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -135,5 +193,5 @@
             appearance: none;
             color: #C3C3C3;
         }
-    </style>
+ </style>
 @stop

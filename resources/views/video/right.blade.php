@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class=" widget widget-form style2">
             <h5 class="widget-title"> 搜索框</h5>
-            <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ url('/tasks')  }}">
+            <form novalidate="" class="filter-form clearfix" id="filter-form" method="get" action="{{ url('/video')  }}">
                 {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                 <p class="book-notes">
                     <input type="text" placeholder="请输入视频标题" name="title" required="" />

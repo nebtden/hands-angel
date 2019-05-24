@@ -38,14 +38,14 @@ class UploadController extends Controller
         $user = Auth::user();
         foreach($files as $key=>$input ){
             $extension =$input->getClientOriginalExtension();
-            $name = $key.'-'.time().'.'.$extension;
+            $name = $key.'-'.time().rand(10000,99990).'.'.$extension;
             $input->storeAs(
-                'images/task',$name, 'public'
+                'images/user_images/',$name, 'public'
             );
 
             //存储到数据库
             $image->user_id = $user->id;
-            $image->src = '/storage/images/task/'.$name;
+            $image->src = '/storage/images/user_images/'.$name;
             $image->save();
             $paths[] = $image->id;
         }

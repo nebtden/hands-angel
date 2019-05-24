@@ -7,6 +7,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AreaCountry;
+use App\Models\Images;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -45,16 +46,23 @@ class UserController extends Controller
     public function show($id){
 
         $user = User::find($id);
+        $image_ids = $user->images;
+        if($image_ids){
+            $ids= explode(',',$image_ids);
+            $images = Images::find($ids);
+        }else{
+            $images = [];
+        }
 
 
         //recent 列表
         $recent = User::where([])->orderBy('created_at','desc')->take(6)->get();
-        $types = Task::$types;
+
 
         return view('users/detail',[
             'user'=>$user,
-            'types'=>$types,
             'recent'=>$recent,
+            'images'=>$images,
 
         ]);
     }

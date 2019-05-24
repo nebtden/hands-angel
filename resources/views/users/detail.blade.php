@@ -4,7 +4,23 @@
 
 @section('content')
     @include('layouts.banner')
-    <section class="flat-row page-profile bg-theme">
+    <div class="parallax" style="background-position: 50% 16px;padding: 20px 0 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="color: red">
+                    <h6>审核员点评</h6>
+                    <div class="row">
+                        <div class="col-md-12" >
+                            {{$user->review}}
+                        </div>
+                    </div>
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <section class="flat-row page-profile bg-theme" style="padding: 60px 0 10px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -22,12 +38,11 @@
                 <div class="col-lg-9">
                     <div class="flat-tabs style2" data-effect="fadeIn">
 
-                            <ul class="menu-tab clearfix">
 
-                            </ul><!-- /.menu-tab -->
                             <div class="content-tab listing-user profile" >
                                 <div class="content-inner active" >
                                     <div class="basic-info" id="basic" name="basic">
+
                                         <h5>基本信息</h5>
                                         <div class="row">
                                             <div class="col-md-4">
@@ -39,18 +54,29 @@
                                                 <br>
                                                 <h6>个人简介</h6>
                                                 <p class="input-info">
-
                                                     {{$user->introduction}}
                                                 </p>
                                                 <br>
                                                 <p class="input-info">
-                                                    <h6>性别</h6>
+                                                    <span style="font-size: 1.1rem">性别</span>
+                                                    @if($user->sex==0)  保密  @endif
                                                     @if($user->sex==1)  男  @endif
                                                     @if($user->sex==2)  女  @endif
                                                 </p>
                                             </div>
+
+                                            <div class="col-md-12">
+                                                <div class="add-images">
+                                                    <label class="nhan">用户相册</label>
+                                                     @foreach($images as $image)
+                                                        <img src="{{ $image->src }}" >
+                                                     @endforeach
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="on-web" id="web" name="#web">
                                         <div class="row">
                                             <div class="col-md-4">

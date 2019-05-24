@@ -2006,7 +2006,7 @@ section.main-content.page-listing {
     margin-left: -44px;
 }
 
-.profile .dropzone .dz-message {
+.profile .upload-img .dropzone .dz-message {
     position: absolute;
     left: 0;
     top: 0;

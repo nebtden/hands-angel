@@ -9,6 +9,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\AreaCountry;
+use App\Models\Images;
 use App\Models\Task;
 use App\Models\UserRelation;
 use Illuminate\Http\Request;
@@ -53,7 +54,6 @@ class UserController extends Controller
     public function profile(Request $request){
         if($request->post()){
             $user = Auth::user();
-//            $user->name = $request->input('name');
             $user->mobile = $request->input('mobile')??'';
             $user->wechat = $request->input('wechat')??'';
             $user->facebook = $request->input('facebook')??'';
@@ -64,15 +64,30 @@ class UserController extends Controller
                 $user->sex = $request->input('sex');
             }
 
+            //图片添加
+            if($images = $request->input('images')){
+                $user->images = $images;
+            }
+
+
             $user->country_id = $request->input('country_id')??0;
             $user->save();
 
         }
         $user = Auth::user();
+        $image_ids = $user->images;
+        if($image_ids){
+            $ids= explode(',',$image_ids);
+            $images = Images::find($ids);
+        }else{
+            $images = [];
+        }
+
         $countries = AreaCountry::all();
         return view('user.profile',[
             'user'=>$user,
             'countries'=>$countries,
+            'images'=>$images,
         ]);
     }
 

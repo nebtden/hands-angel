@@ -63,6 +63,12 @@
                                                     @if($user->sex==1)  男  @endif
                                                     @if($user->sex==2)  女  @endif
                                                 </p>
+                                                <p class="input-info">
+                                                    <span style="font-size: 1.1rem">是否接受</span>
+                                                    @if($user->sex==0)  保密  @endif
+                                                    @if($user->sex==1)  男  @endif
+                                                    @if($user->sex==2)  女  @endif
+                                                </p>
                                             </div>
 
                                             <div class="col-md-12">

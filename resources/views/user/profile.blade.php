@@ -52,6 +52,16 @@
                                                         <option value="2" @if($user->sex==2) selected   @endif>女</option>
                                                     </select>
                                                 </p>
+                                                <p class="input-info">
+                                                    <label>能接受的污污*</label>
+                                                    <br>
+
+                                                    <label><input name="Fruit" type="checkbox" value="" />苹果 </label>
+                                                    <label><input name="Fruit" type="checkbox" value="" />桃子 </label>
+                                                    <label><input name="Fruit" type="checkbox" value="" />香蕉 </label>
+                                                    <label><input name="Fruit" type="checkbox" value="" />梨 </label>
+                                                </p>
+                                               <br>
 
                                                 <p class="input-info">
                                                     <label>您的邀请链接(邀请用户成功并验证通过，可获取一定管理员权限)</label>
@@ -62,8 +72,8 @@
 
                                             <div class="add-images">
                                                 <label class="nhan">相册(可上传自己生活照！)</label>
-                                                <div action="{{ url('upload') }}" class="dropzone" id="images">
-                                                    <input type="hidden" name="images" id="images" value="">
+                                                <div action="{{ url('upload') }}" class="dropzone" id="image">
+                                                    <input type="hidden" name="images" id="images" value="{{$user->images}}">
                                                 </div>
                                             </div>
 
@@ -141,14 +151,15 @@
 </script>
 
     <script type="text/javascript">
-        Dropzone.options.myAwesomeDropzone = false;
-        Dropzone.autoDiscover = false;
-        $("#images").dropzone({
+        // Dropzone.options.myAwesomeDropzone = false;
+        // Dropzone.autoDiscover = false;
+        $("#image").dropzone({
             url: "{{ url('upload') }}",
             // addRemoveLinks : true,
             maxFilesize: 5,
             dictDefaultMessage: ' ',
             uploadMultiple:true,
+            addRemoveLinks: true,
             dictResponseError: 'Error uploading file!',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -167,19 +178,24 @@
 
                 if("{{$images}}"){
 
-                    var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
-                    this.options.addedfile.call(this, mockFile);
                     @foreach($images as $image)
+                    var mockFile = { name: "{{$image->id}}", size: 12345, type: 'image/jpeg' };
+
+                    this.options.addedfile.call(this, mockFile);
                     this.options.thumbnail.call(this, mockFile, "{{$image->src}}");
+                     // mockFile.previewElement.classList.add('dz-success');
+                     mockFile.previewElement.classList.add('dz-complete');
+                    // mockFile.previewElement.classList.add('dz-remove');
                     @endforeach
                 }
-
-                mockFile.previewElement.classList.add('dz-success');
-                mockFile.previewElement.classList.add('dz-complete');
             },
             removedfile: function(file) {
-                var name = file.name;
-                console.log(name);
+                file.previewElement.remove();
+                var id = file.name;
+                var val = $('#images').val();
+                val=val.replace(id,"");
+                $('#images').val(val);
+
             }
         });
     </script>

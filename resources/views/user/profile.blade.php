@@ -55,11 +55,10 @@
                                                 <p class="input-info">
                                                     <label>能接受的污污*</label>
                                                     <br>
+                                                    <label><input name="types[]" type="checkbox" value="1" @if(in_array(1,$types))checked @endif />文爱 </label>
+                                                    <label><input name="types[]" type="checkbox" value="3" @if(in_array(3,$types))checked @endif />视频 </label>
+                                                    <label><input name="types[]" type="checkbox" value="5" @if(in_array(5,$types))checked @endif />其他 </label>
 
-                                                    <label><input name="Fruit" type="checkbox" value="" />苹果 </label>
-                                                    <label><input name="Fruit" type="checkbox" value="" />桃子 </label>
-                                                    <label><input name="Fruit" type="checkbox" value="" />香蕉 </label>
-                                                    <label><input name="Fruit" type="checkbox" value="" />梨 </label>
                                                 </p>
                                                <br>
 

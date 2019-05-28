@@ -10,9 +10,9 @@ class Task extends Model
     public static $types = [
         '1'=>'视频',
 //        '2'=>'偷窥',
-//        '3'=>'文爱',
+       '3'=>'文爱',
 //        '4'=>'手天使',
-//        '5'=>'其他',
+       '5'=>'其他',
     ];
 
     public static $status = [

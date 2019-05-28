@@ -68,6 +68,9 @@ class UserController extends Controller
             if($images = $request->input('images')){
                 $user->images = $images;
             }
+            if($types = $request->input('types')){
+                 $user->types = implode(',',$types);
+            }
 
 
             $user->country_id = $request->input('country_id')??0;
@@ -75,6 +78,14 @@ class UserController extends Controller
 
         }
         $user = Auth::user();
+
+        $types = $user->types;
+        if($types){
+            $types= explode(',',$types);
+        }else{
+            $types = [];
+        }
+
         $image_ids = $user->images;
         if($image_ids){
             $ids= explode(',',$image_ids);
@@ -88,6 +99,7 @@ class UserController extends Controller
             'user'=>$user,
             'countries'=>$countries,
             'images'=>$images,
+            'types'=>$types,
         ]);
     }
 

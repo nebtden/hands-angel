@@ -90,6 +90,8 @@ ALTER TABLE `users`
     ADD COLUMN `images`  varchar(255) NOT NULL DEFAULT '' AFTER `line`;
 
 
+ALTER TABLE `users`
+    ADD COLUMN `types`  varchar(255) NOT NULL DEFAULT '' AFTER `line`;
 
 
 

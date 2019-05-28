@@ -46,6 +46,13 @@ class UserController extends Controller
     public function show($id){
 
         $user = User::find($id);
+        $types = $user->types;
+        if($types){
+            $types= explode(',',$types);
+        }else{
+            $types = [];
+        }
+
         $image_ids = $user->images;
         if($image_ids){
             $ids= explode(',',$image_ids);
@@ -63,6 +70,7 @@ class UserController extends Controller
             'user'=>$user,
             'recent'=>$recent,
             'images'=>$images,
+            'types'=>$types,
 
         ]);
     }

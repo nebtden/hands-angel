@@ -64,21 +64,24 @@
                                                     @if($user->sex==2)  女  @endif
                                                 </p>
                                                 <p class="input-info">
-                                                    <span style="font-size: 1.1rem">是否接受</span>
-                                                    @if($user->sex==0)  保密  @endif
-                                                    @if($user->sex==1)  男  @endif
-                                                    @if($user->sex==2)  女  @endif
+                                                    <label>能接受的污污*</label>
+                                                    <br>
+                                                    <label><input name="types" type="checkbox" value="1" @if(in_array(1,$types))checked @endif />文爱 </label>
+                                                    <label><input name="types" type="checkbox" value="3" @if(in_array(3,$types))checked @endif />视频 </label>
+                                                    <label><input name="types" type="checkbox" value="5" @if(in_array(5,$types))checked @endif />其他 </label>
                                                 </p>
-                                            </div>
+                                                <br>
+                                                <div   id="image">
+                                                    @foreach($images as $image)
+                                                    <div class="dz-preview dz-complete dz-image-preview">
+                                                        <div class="dz-image">
+                                                            <img data-dz-thumbnail=""  src="{{$image->src}}">
 
-                                            <div class="col-md-12">
-                                                <div class="add-images">
-                                                    <label class="nhan">用户相册</label>
-                                                     @foreach($images as $image)
-                                                        <img src="{{ $image->src }}" >
+                                                        </div>
+                                                     </div>
                                                      @endforeach
-                                                </div>
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -127,25 +130,32 @@
     <script type="text/javascript">
         Dropzone.options.myAwesomeDropzone = false;
         Dropzone.autoDiscover = false;
-        $("#my-awesome-dropzone").dropzone({
-            url: "{{ url('/upload/head') }}",
-            addRemoveLinks : true,
+
+    </script>
+    <script type="text/javascript">
+        // Dropzone.options.myAwesomeDropzone = false;
+        // Dropzone.autoDiscover = false;
+        $("#image").dropzone({
+            // addRemoveLinks : true,
             maxFilesize: 5,
             dictDefaultMessage: ' ',
             dictResponseError: 'Error uploading file!',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
             init: function () {
-                var mockFile = { name: "myimage.jpg", size: 12345, type: 'image/jpeg' };
-                this.options.addedfile.call(this, mockFile);
-                this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
-                mockFile.previewElement.classList.add('dz-success');
-                mockFile.previewElement.classList.add('dz-complete');
+
+                if("{{$images}}"){
+
+                        @foreach($images as $image)
+                    var mockFile = { name: "{{$image->id}}", size: 12345, type: 'image/jpeg' };
+
+                    this.options.addedfile.call(this, mockFile);
+                    this.options.thumbnail.call(this, mockFile, "{{$image->src}}");
+                    // mockFile.previewElement.classList.add('dz-success');
+                    mockFile.previewElement.classList.add('dz-complete');
+                    // mockFile.previewElement.classList.add('dz-remove');
+                    @endforeach
+                }
             },
-            success: function( file, response ){
-                $('#head').val( response);
-            }
+
         });
     </script>
     <style>

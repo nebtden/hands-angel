@@ -46,7 +46,7 @@
                                                     <textarea  name="introduction" >{{$user->introduction}}</textarea>
                                                 </p>
                                                 <p class="input-info"><label>要求*</label>
-                                                    <textarea  name="introduction" >{{$user->require}}</textarea>
+                                                    <textarea  name="require" >{{$user->require}}</textarea>
                                                 </p>
                                                 <p class="input-info">
                                                     <label>性别(会有管理员验证，一旦选择，即无法更改！)*</label>

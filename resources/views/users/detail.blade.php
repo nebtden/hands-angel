@@ -56,6 +56,10 @@
                                                 <p class="input-info">
                                                     {{$user->introduction}}
                                                 </p>
+                                                <h6>要求</h6>
+                                                <p class="input-info">
+                                                    {{$user->require}}
+                                                </p>
                                                 <br>
                                                 <p class="input-info">
                                                     <span style="font-size: 1.1rem">性别</span>

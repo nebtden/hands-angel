@@ -56,10 +56,12 @@ class UserController extends Controller
             $user = Auth::user();
             $user->mobile = $request->input('mobile')??'';
             $user->wechat = $request->input('wechat')??'';
-            $user->facebook = $request->input('facebook')??'';
-            $user->twitter = $request->input('twitter')??'';
-            $user->line = $request->input('line')??'';
+//            $user->facebook = $request->input('facebook')??'';
+//            $user->twitter = $request->input('twitter')??'';
+//            $user->line = $request->input('line')??'';
             $user->qq = $request->input('qq')??'';
+            $user->introduction = $request->input('introduction')??'';
+            $user->require = $request->input('require')??'';
             if(!$user->sex){
                 $user->sex = $request->input('sex');
             }

@@ -7,23 +7,21 @@
 namespace App\Admin\Controllers;
 
 
-use App\Http\Controllers\Controller;
-use App\Models\AreaCountry;
+
 use App\Models\Images;
 use App\Models\Task;
-use App\Models\User;
-use App\Models\UserMessage;
+use App\Models\Video;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 use  Encore\Admin\Controllers\HasResourceActions;
 
-class UserController extends Controller
+class VideoController extends Controller
 {
-
-    use  HasResourceActions;
+    use   HasResourceActions;
 
     public function index(Content $content){
         return $content->header('header')->description('description')
@@ -44,7 +42,8 @@ class UserController extends Controller
         return $content
             ->header('Detail')
             ->description('description')
-            ->body($this->detail($id));
+            ->body($this->detail($id))
+            ->row($this->images_show($id));
     }
 
 
@@ -66,6 +65,8 @@ class UserController extends Controller
     }
 
 
+
+
     /**
      * Make a grid builder.
      *
@@ -74,21 +75,18 @@ class UserController extends Controller
     protected function grid()
     {
 
-        $grid = new Grid(new User());
+        $grid = new Grid(new Video());
 
-        $grid->column('name')->display(function ($name){
-            return $name;
+
+        $grid->column('title')->display(function ($title) {
+            return "<a target='_blank' href='".url('/videos',[
+                    'id'=>$this->id
+                ])."'>$title</span></a>";
+        });
+        $grid->column('img')->display(function ($value){
+            return "<img src='$value'>";
         });
 
-        $grid->column('status')->display(function ($status){
-            return User::$status[$status];
-        });
-
-        $grid->column('review','审核');
-
-        $grid->filter(function ($filter) {
-
-        });
 
         return $grid;
     }
@@ -105,11 +103,11 @@ class UserController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(User::findOrFail($id));
+        $show = new Show(Task::findOrFail($id));
 
         $show->id('ID');
-        $show->name('用户名');
-        $show->status('内容');
+        $show->title('标题');
+        $show->img('内容');
 
         return $show;
     }
@@ -124,27 +122,14 @@ class UserController extends Controller
     protected function form()
     {
 
-        $form = new Form(new User());
+        $form = new Form(new Task());
 
-        $form->display('name', '用户名');
-        $form->display('qq', 'qq');
-        $form->display('wechat', '微信');
-        $form->display('introduction', '个人简介');
-        $form->display('require', '要求');
-        $form->image('head_img', '头像')->disable();
-        $form->display('images')->with(function ($value) {
-            $ids= explode(',',$value);
-            $images = Images::find($ids);
-            $html = '';
-            foreach ($images as $image){
-                $html = $html ."<img src='$image->src' style='width:400px;max-width: 100%;float: left'/>";
-            }
-              return  $html;
-        });
-        $form->divide();
-        $form->select('status', '状态')->options(User::$status);
-        $form->textarea('review', '审核说明');
-
+        $form->text('title', '标题');
+        $form->input('video', '视频连接');
+        $form->image('img', '视频封面');
+//        $form->saving(function(Form $form) {
+//
+//        });
         return $form;
 
 

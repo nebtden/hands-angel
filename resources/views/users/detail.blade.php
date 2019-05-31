@@ -63,9 +63,7 @@
                                                 </p>
                                                 <h6>性别</h6>
                                                 <p class="input-info">
-                                                    <input type="text"  value="@if($user->sex==0)  保密  @endif
-                                                    @if($user->sex==1)  男  @endif
-                                                    @if($user->sex==2)  女  @endif" disabled>
+                                                    <input type="text"  value="@if($user->sex==0)保密@elseif($user->sex==1)男@elseif($user->sex==2)女@endif" disabled>
                                                 </p>
                                                 <h6>能接受的污污</h6>
                                                 <p class="input-info">
@@ -79,7 +77,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div   id="image">
+                                                <div>
                                                     @foreach($images as $image)
                                                         <div class="dz-preview dz-complete dz-image-preview">
                                                             <div class="dz-image">
@@ -133,46 +131,5 @@
     <script src="/javascript/dropzone.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/dropzone.css"><!-- Animation Style -->
 
-    <script type="text/javascript">
-        Dropzone.options.myAwesomeDropzone = false;
-        Dropzone.autoDiscover = false;
 
-    </script>
-    <script type="text/javascript">
-        // Dropzone.options.myAwesomeDropzone = false;
-        // Dropzone.autoDiscover = false;
-        $("#image").dropzone({
-            // addRemoveLinks : true,
-            maxFilesize: 5,
-            dictDefaultMessage: ' ',
-            dictResponseError: 'Error uploading file!',
-            init: function () {
-
-                if("{{$images}}"){
-
-                        @foreach($images as $image)
-                    var mockFile = { name: "{{$image->id}}", size: 12345, type: 'image/jpeg' };
-
-                    this.options.addedfile.call(this, mockFile);
-                    this.options.thumbnail.call(this, mockFile, "{{$image->src}}");
-                    // mockFile.previewElement.classList.add('dz-success');
-                    mockFile.previewElement.classList.add('dz-complete');
-                    // mockFile.previewElement.classList.add('dz-remove');
-                    @endforeach
-                }
-            },
-
-        });
-    </script>
-    <style>
-        .basic-info select{
-            background-color: #FFF;
-            -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            color: #C3C3C3;
-        }
-    </style>
 @stop

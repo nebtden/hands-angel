@@ -15,6 +15,7 @@ Route::group([
 //    $router->resource('/articles', 'ArticleController');
     $router->resource('/tasks', 'TaskController');
     $router->resource('/users', 'UserController');
+    $router->resource('/videos', 'VideoController');
 //    $router->resource('/user-messages', 'UserMessageController');
 
 });

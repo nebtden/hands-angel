@@ -33,7 +33,7 @@ class UserController extends Controller
 
         $users =  User::where(
             $where
-        )->paginate(7);
+        )->where(['status','>=',0])->paginate(7);
         $countries = AreaCountry::all();
 
         return view('users.index',[
@@ -45,7 +45,8 @@ class UserController extends Controller
 
     public function show($id){
 
-        $user = User::find($id);
+        $user   = User::find($id);
+        $status = User::$status;
         $types = $user->types;
         if($types){
             $types= explode(',',$types);
@@ -71,6 +72,7 @@ class UserController extends Controller
             'recent'=>$recent,
             'images'=>$images,
             'types'=>$types,
+            'status'=>$status,
 
         ]);
     }

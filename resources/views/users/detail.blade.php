@@ -8,10 +8,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="color: red">
-                    <h6>审核员点评</h6>
+                    <p>审核状态： {{$status[$user->status]}}</p>
                     <div class="row">
                         <div class="col-md-12" >
-                            {{$user->review}}
+                            审核点评： {{$user->review}}
                         </div>
                     </div>
                 </div><!-- /.col-md-12 -->
@@ -54,37 +54,39 @@
                                                 <br>
                                                 <h6>个人简介</h6>
                                                 <p class="input-info">
-                                                    {{$user->introduction}}
+                                                    <textarea  disabled="disabled">{{$user->introduction}}</textarea>
+
                                                 </p>
                                                 <h6>要求</h6>
                                                 <p class="input-info">
-                                                    {{$user->require}}
+                                                    <textarea  disabled="disabled">{{$user->require}}</textarea>
                                                 </p>
-                                                <br>
+                                                <h6>性别</h6>
                                                 <p class="input-info">
-                                                    <span style="font-size: 1.1rem">性别</span>
-                                                    @if($user->sex==0)  保密  @endif
+                                                    <input type="text"  value="@if($user->sex==0)  保密  @endif
                                                     @if($user->sex==1)  男  @endif
-                                                    @if($user->sex==2)  女  @endif
+                                                    @if($user->sex==2)  女  @endif" disabled>
                                                 </p>
+                                                <h6>能接受的污污</h6>
                                                 <p class="input-info">
-                                                    <label>能接受的污污*</label>
-                                                    <br>
                                                     <label><input name="types" type="checkbox" value="1" @if(in_array(1,$types))checked @endif />文爱 </label>
                                                     <label><input name="types" type="checkbox" value="3" @if(in_array(3,$types))checked @endif />视频 </label>
                                                     <label><input name="types" type="checkbox" value="5" @if(in_array(5,$types))checked @endif />其他 </label>
                                                 </p>
                                                 <br>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <div   id="image">
                                                     @foreach($images as $image)
-                                                    <div class="dz-preview dz-complete dz-image-preview">
-                                                        <div class="dz-image">
-                                                            <img data-dz-thumbnail=""  src="{{$image->src}}">
-
+                                                        <div class="dz-preview dz-complete dz-image-preview">
+                                                            <div class="dz-image">
+                                                                <img data-dz-thumbnail=""  src="{{$image->src}}" style='width:400px;max-width: 100%;float: left'>
+                                                            </div>
                                                         </div>
-                                                     </div>
-                                                     @endforeach
-
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

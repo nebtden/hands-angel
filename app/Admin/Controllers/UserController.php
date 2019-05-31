@@ -9,6 +9,7 @@ namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\AreaCountry;
+use App\Models\Images;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\UserMessage;
@@ -79,16 +80,11 @@ class UserController extends Controller
             return $name;
         });
 
-        $grid->country_id('country')->display(function($id) {
-            return AreaCountry::find($id)->country_name;
-        });
-        $grid->country_id('country')->display(function($id) {
-            return AreaCountry::find($id)->country_name;
+        $grid->column('status')->display(function ($status){
+            return User::$status[$status];
         });
 
-        $grid->column('status')->display(function ($status){
-            return Task::$status[$status];
-        });
+        $grid->column('review','审核');
 
         $grid->filter(function ($filter) {
 
@@ -131,8 +127,23 @@ class UserController extends Controller
         $form = new Form(new User());
 
         $form->display('name', '用户名');
-
-        $form->select('status', '类型')->options(User::$status);
+        $form->display('qq', 'qq');
+        $form->display('wechat', '微信');
+        $form->display('introduction', '个人简介');
+        $form->display('require', '要求');
+        $form->image('head_img', '头像');
+        $form->display('images')->with(function ($value) {
+            $ids= explode(',',$value);
+            $images = Images::find($ids);
+            $html = '';
+            foreach ($images as $image){
+                $html = $html ."<img src='$image->src' style='width:400px;max-width: 100%;float: left'/>";
+            }
+              return  $html;
+        });
+        $form->divide();
+        $form->select('status', '状态')->options(User::$status);
+        $form->textarea('review', '审核说明');
 
         return $form;
 

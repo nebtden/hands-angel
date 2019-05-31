@@ -10,9 +10,10 @@ class User extends Model
     protected $table = 'users';
 
     public static  $status =[
-//        0=>'the first vessel',
+
         1=>'正常',
         0=>'关闭',
+        -1=>'没通过',
     ];
 
 

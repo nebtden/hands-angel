@@ -4,7 +4,7 @@
             <div class="col-lg-4">
                 <div id="logo" class="logo float-left">
                     <a href="/" rel="home">
-                       <h1>Logo</h1>
+                       <h1>{{ config('app.name') }}</h1>
                     </a>
                 </div>
                 <!-- /.logo -->

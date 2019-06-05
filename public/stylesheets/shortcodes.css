@@ -321,12 +321,12 @@ section.flat-row.section-product {
 }
 
 /*simon update from 580 px to 290px*/
-.flat-product .featured-product img {
-    max-width: 290px;
-    width: 100%;
-    height: 100%;
+/*.flat-product .featured-product img {*/
+/*    max-width: 290px;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
 
-}
 .flat-product .featured-product img:hover {
     opacity: 0.8;
 

@@ -9,33 +9,17 @@
         </div>
         <div class="row">
             <div class="wrap-flat-product clearfix">
-
-                @foreach($users as $user)
-                <div class="flat-product">
-                    <div class="featured-product">
-                        <a href="/users/{{$user->id}}">
-                            <img src="{{$user->head_img}}" alt="image" width="361px" height="238px">
-                        </a>
-
-                        <div class="rate-product">
-                            <div class="link-review clearfix">
-
-                            </div>
+                <div class="dw">
+                    @foreach($users as $user)
+                        <div class="dw-panel">
+                            <a href="/users/{{$user->id}}">
+                                <img src="{{$user->head_img}}" alt="image" class="dw-panel__content">
+                            </a>
                         </div>
-                    </div>
-                    <div class="content-product">
-                        <div class="text">
-                            <p>
-                                <a href="/users/{{$user->id}}">
-                                    {{$user->name}}
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
-
             </div>
         </div>
+    </div>
     </div>
 </section>

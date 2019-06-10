@@ -1,4 +1,11 @@
-﻿wxid_nlymgcdh9hs122 
+﻿https://www.cnblogs.com/liwei0526vip/p/5002434.html
+百度云linux云备份
+https://github.com/houtianze/bypy
+
+//定时任务，备份sql，同时图片上传到云服务器
+
+
+wxid_nlymgcdh9hs122
 
 xu25836999  喜欢看小视频
 

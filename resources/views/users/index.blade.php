@@ -8,30 +8,26 @@
                 <div class="col-lg-9">
 
                     <div class="listing-list">
-                        @foreach($users as $user)
-                            <div class="flat-product clearfix">
-                                <div class="featured-product">
-
-                                        <img src="{{ $user->head_img }}" alt="image" />
-                                    <div class="time">                                    Now Close</div>
-                                </div>
-                                <div class="rate-product">
-                                    <div class="link-review clearfix">
-                                        <div class="button-product float-left">
-
+                        <div class="dw">
+                            @foreach($users as $user)
+                                <div class="dw-panel" style="border: 1px solid #dbdbdb;margin-right: 5px;margin-bottom: 5px;">
+                                    <div class="featured-product">
+                                        <a href="/users/{{$user->id}}">
+                                            <img src="{{$user->head_img}}" alt="image" class="dw-panel__content">
+                                        </a>
+                                    </div>
+                                    <div class="content-product">
+                                        <div class="text" style="padding-left: 20px;">
+                                            <p>
+                                                <a href="/users/{{$user->id}}">
+                                                    {{$user->name}}
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="info-product">
-                                        <h6 class="title">
-                                            <a href="/users/{{$user->id}}">
-                                                {{$user->name}}
-                                            </a>
-                                        </h6>
-                                        <p>{{$user->introduction}}</p>
-                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                     <div class="blog-pagination style2 text-center">
 
@@ -48,4 +44,18 @@
         <!-- /.container -->
     </section>
 
+@endsection
+
+@section('css')
+    @parent
+    <link rel="stylesheet" type="text/css" href="/stylesheets/driveway.css">
+    <style>
+        @media (min-width: 1500px) {
+            .dw {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+            }
+        }
+    </style>
 @endsection

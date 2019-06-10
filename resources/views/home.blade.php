@@ -17,7 +17,7 @@
 
     {{--@include('home.slider')--}}
     {{--@include('home.categories')--}}
-    @include('home.video')
+    {{--@include('home.video')--}}
     @include('home.most')
 
     {{--@include('home.download')--}}

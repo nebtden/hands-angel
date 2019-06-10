@@ -11,10 +11,21 @@
             <div class="wrap-flat-product clearfix">
                 <div class="dw">
                     @foreach($users as $user)
-                        <div class="dw-panel">
-                            <a href="/users/{{$user->id}}">
-                                <img src="{{$user->head_img}}" alt="image" class="dw-panel__content">
-                            </a>
+                        <div class="dw-panel flat-product" style="width: 93%">
+                            <div class="featured-product">
+                                <a href="/users/{{$user->id}}">
+                                    <img src="{{$user->head_img}}" alt="image" class="dw-panel__content">
+                                </a>
+                            </div>
+                            <div class="content-product">
+                                <div class="text" style="padding-left: 20px;">
+                                    <p>
+                                        <a href="/users/{{$user->id}}">
+                                            {{$user->name}}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>

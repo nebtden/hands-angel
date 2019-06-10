@@ -33,7 +33,7 @@ class UserController extends Controller
 
         $users =  User::where(
             $where
-        )->where(['status','>=',0])->paginate(7);
+        )->where('status','>=',0)->paginate(7);
         $countries = AreaCountry::all();
 
         return view('users.index',[

@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="title-section text-center">
+                    <div class="text-center" style="margin: 26px 0;font-size: 1.3rem;">
                         <div class="sub-title" style="color:indianred">
                             此网站视频免费向大众开放，但也可以注册享受更多服务。
                             祝大家玩得开心！！
@@ -29,4 +29,5 @@
 @section('css')
     @parent
     <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/driveway.css">
 @endsection

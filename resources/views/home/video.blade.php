@@ -11,17 +11,12 @@
             <div class="wrap-flat-product clearfix">
 
                 @foreach($videos as $video)
-                <div class="flat-product">
+                <div class="flat-product video">
                     <div class="featured-product">
                         <a href="/video/{{$video->id}}">
-                        <img src="{{$video->img}}" alt="image" width="361px" height="238px">
+                        <img src="{{$video->img}}" alt="image" >
                         </a>
 
-                        <div class="rate-product">
-                            <div class="link-review clearfix">
-
-                            </div>
-                        </div>
                     </div>
                     <div class="content-product">
 

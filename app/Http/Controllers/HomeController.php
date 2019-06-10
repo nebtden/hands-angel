@@ -53,7 +53,7 @@ class HomeController extends Controller
 
         $users = User::where([
             'status'=>1,
-        ])->orderBy('id', 'desc')->limit(6)->get();
+        ])->orderBy('id', 'desc')->limit(15)->get();
 
 
         //用户列表

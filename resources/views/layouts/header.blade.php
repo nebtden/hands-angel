@@ -18,8 +18,6 @@
                         <ul class="menu">
                             <li class="{{ Request::is('/') ? 'home' : '' }}"><a href="/">首页</a></li>
 
-                            {{--<li class="{{ Request::is('/articles') ? 'home' : '' }}"><a href="/articles">Articles</a>--}}
-
                             <li class="{{ Request::is('/users') ? 'home' : '' }}"><a href="/users">用户</a>
 
                             <li class="{{ Request::is('/videos') ? 'home' : '' }}"><a href="/videos">视频</a>

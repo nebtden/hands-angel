@@ -177,19 +177,17 @@
                 }
             },
             init: function () {
-
-                if("{{$images}}"){
-
+                @if($images)
                     @foreach($images as $image)
                     var mockFile = { name: "{{$image->id}}", size: 12345, type: 'image/jpeg' };
 
                     this.options.addedfile.call(this, mockFile);
                     this.options.thumbnail.call(this, mockFile, "{{$image->src}}");
-                     // mockFile.previewElement.classList.add('dz-success');
-                     mockFile.previewElement.classList.add('dz-complete');
+                    // mockFile.previewElement.classList.add('dz-success');
+                    mockFile.previewElement.classList.add('dz-complete');
                     // mockFile.previewElement.classList.add('dz-remove');
                     @endforeach
-                }
+                @endif
             },
             removedfile: function(file) {
                 file.previewElement.remove();

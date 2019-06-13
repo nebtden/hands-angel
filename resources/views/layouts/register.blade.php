@@ -24,14 +24,14 @@
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="密码*" name="password" required="required">
+                            <input type="password" placeholder="密码*" name="password" required="required">
                               <i class="fa fa-lock"></i>
                         </span>
                     </div>
 
                     <div class="form-group has-feedback">
                         <span class="input-login icon-form">
-                            <input type="text" placeholder="请再次输入密码*" name="password_confirmation" required="required">
+                            <input type="password" placeholder="请再次输入密码*" name="password_confirmation" required="required">
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>

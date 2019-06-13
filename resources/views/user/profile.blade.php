@@ -141,10 +141,11 @@
                 var mockFile = { name: "head.jpg", size: 12345, type: 'image/jpeg' };
                 this.options.addedfile.call(this, mockFile);
                 this.options.thumbnail.call(this, mockFile, "{{$user->head_img}}");
+                mockFile.previewElement.classList.add('dz-success');
+                mockFile.previewElement.classList.add('dz-complete');
             }
 
-            mockFile.previewElement.classList.add('dz-success');
-            mockFile.previewElement.classList.add('dz-complete');
+
         },
         success: function( file, response ){
             $('#head').val( response);
@@ -193,6 +194,11 @@
                 file.previewElement.remove();
                 var id = file.name;
                 var val = $('#images').val();
+
+                val=val.replace(id,"");
+                val=val.replace(id,"");
+                val=val.replace(id,"");
+                val=val.replace(id,"");
                 val=val.replace(id,"");
                 $('#images').val(val);
 

@@ -68,6 +68,10 @@ class UserController extends Controller
 
             //图片添加
             if($images = $request->input('images')){
+                //处理逗号
+                $images = explode(',',$images);
+                $images = array_unique($images);
+                $images = implode(',',$images);
                 $user->images = $images;
             }
             if($types = $request->input('types')){

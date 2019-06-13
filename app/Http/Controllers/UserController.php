@@ -46,6 +46,9 @@ class UserController extends Controller
     public function show($id){
 
         $user   = User::find($id);
+        if(!$user){
+            return false;
+        }
         $status = User::$status;
         $types = $user->types;
         if($types){

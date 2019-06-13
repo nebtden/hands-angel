@@ -32,20 +32,6 @@ class HomeController extends Controller
         }
 
 
-        //栏目
-//        $categories = Category::all();
-
-        //文章列表1
-//        $first_articles = Article::where([
-//            'category_id'=>1,
-//            'status'=>1,
-//        ])->limit(2)->get();
-
-//        //任务列表
-//        $tasks = Task::where([
-//            'status'=>1,
-//        ])->orderBy('id', 'desc')->limit(6)->get();
-
         //video列表
         $videos = Video::where([
             'status'=>1,
@@ -53,36 +39,14 @@ class HomeController extends Controller
 
         $users = User::where([
             'status'=>1,
+            'is_recommend'=>1,
         ])->orderBy('id', 'desc')->limit(15)->get();
 
 
-        //用户列表
-//        $users = DB::table('user_messages')
-//            ->join('users', 'users.id', '=', 'user_messages.id')
-//            ->select('user_messages.*')
-//            ->where('users.status',1)
-//            ->orderBy('id', 'desc')
-//            ->limit(3)
-//            ->get() ;
-
-//        //文章列表
-//        $send_articles = Article::where([
-//            'category_id'=>2,
-//            'status'=>1,
-//        ])->limit(3)->get();
-
-//        $types = Task::$types;
-//        $countries = AreaCountry::all();
 
         return view('home',[
-//            'categories'=>$categories,
-//            'first_articles'=>$first_articles,
-//            'send_articles'=>$send_articles,
-//            'tasks'=>$tasks,
             'videos'=>$videos,
             'users'=>$users,
-//            'types'=>$types,
-//            'countries'=>$countries,
         ]);
     }
 

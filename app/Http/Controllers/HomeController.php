@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -32,19 +33,12 @@ class HomeController extends Controller
         }
 
 
-        //栏目
-//        $categories = Category::all();
+        //配置信息
+        $setting = Setting::where([
+            'key'=>'home_text'
+        ])->first();
 
-        //文章列表1
-//        $first_articles = Article::where([
-//            'category_id'=>1,
-//            'status'=>1,
-//        ])->limit(2)->get();
 
-//        //任务列表
-//        $tasks = Task::where([
-//            'status'=>1,
-//        ])->orderBy('id', 'desc')->limit(6)->get();
 
         //video列表
         $videos = Video::where([
@@ -81,6 +75,7 @@ class HomeController extends Controller
 //            'tasks'=>$tasks,
             'videos'=>$videos,
             'users'=>$users,
+            'setting'=>$setting,
 //            'types'=>$types,
 //            'countries'=>$countries,
         ]);

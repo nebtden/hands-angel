@@ -11,7 +11,7 @@ class User extends Model
 
     public static  $status =[
 
-        1=>'正常',
+        1=>'通过',
         0=>'关闭',
         -1=>'没通过',
     ];

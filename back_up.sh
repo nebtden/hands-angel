@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#mysqldump --host remotemysql.com -P 3306 -u fXA6bhxIBe -p2hKjIQAywq fXA6bhxIBe --skip-lock-tables > $(%Y%m%d).sql
+#mysqldump --host remotemysql.com -P 3306 -u fXA6bhxIBe -p2hKjIQAywq fXA6bhxIBe --skip-lock-tables > hands.sql
 
 
 zcDATE=$(date +%Y%m%d)

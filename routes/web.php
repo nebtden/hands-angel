@@ -12,6 +12,7 @@
 */
 
 Route::get('/test', 'HomeController@test');
+Route::get('/simon', 'HomeController@simon');
 Route::post('/mail', 'MailController@subscribe');
 
 Auth::routes();

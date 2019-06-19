@@ -50,23 +50,6 @@ class HomeController extends Controller
         ])->orderBy('id', 'desc')->limit(15)->get();
 
 
-        //用户列表
-//        $users = DB::table('user_messages')
-//            ->join('users', 'users.id', '=', 'user_messages.id')
-//            ->select('user_messages.*')
-//            ->where('users.status',1)
-//            ->orderBy('id', 'desc')
-//            ->limit(3)
-//            ->get() ;
-
-//        //文章列表
-//        $send_articles = Article::where([
-//            'category_id'=>2,
-//            'status'=>1,
-//        ])->limit(3)->get();
-
-//        $types = Task::$types;
-//        $countries = AreaCountry::all();
 
         return view('home',[
 //            'categories'=>$categories,
@@ -78,6 +61,33 @@ class HomeController extends Controller
             'setting'=>$setting,
 //            'types'=>$types,
 //            'countries'=>$countries,
+        ]);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function simon(Request $request)
+    {
+
+        //邀请码
+        $invitation = $request->get('invitation');
+        if($invitation){
+            session(['invitation' => $invitation]);
+        }
+
+        //配置信息
+        $setting = Setting::where([
+            'key'=>'home_text'
+        ])->first();
+
+
+        return view('simon',[
+//            'videos'=>$videos,
+//            'users'=>$users,
+            'setting'=>$setting,
         ]);
     }
 

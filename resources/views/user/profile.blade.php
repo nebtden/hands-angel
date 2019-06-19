@@ -163,6 +163,7 @@
             dictDefaultMessage: ' ',
             uploadMultiple:true,
             addRemoveLinks: true,
+            resizeWidth:500,
             dictResponseError: 'Error uploading file!',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -19,10 +19,13 @@
                             </div>
                             <div class="content-product">
                                 <div class="text" style="padding-left: 20px;">
-                                    <p>
+                                    <h5>
                                         <a href="/users/{{$user->id}}">
                                             {{$user->name}}
                                         </a>
+                                    </h5>
+                                    <p>
+                                        {{$user->introduction}}
                                     </p>
                                 </div>
                             </div>

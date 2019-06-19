@@ -47,15 +47,12 @@ class HomeController extends Controller
 
         $users = User::where([
             'status'=>1,
+            'is_recommend'=>1,
         ])->orderBy('id', 'desc')->limit(15)->get();
 
 
 
         return view('home',[
-//            'categories'=>$categories,
-//            'first_articles'=>$first_articles,
-//            'send_articles'=>$send_articles,
-//            'tasks'=>$tasks,
             'videos'=>$videos,
             'users'=>$users,
             'setting'=>$setting,

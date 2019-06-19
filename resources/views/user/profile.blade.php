@@ -129,8 +129,9 @@
     $("#my-awesome-dropzone").dropzone({
         url: "{{ url('/upload/head') }}",
         addRemoveLinks : true,
-        maxFilesize: 5,
+        maxFilesize: 15,
         dictDefaultMessage: ' ',
+        resizeWidth:500,
         dictResponseError: 'Error uploading file!',
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -159,7 +160,7 @@
         $("#image").dropzone({
             url: "{{ url('upload') }}",
             // addRemoveLinks : true,
-            maxFilesize: 5,
+            maxFilesize: 15,
             dictDefaultMessage: ' ',
             uploadMultiple:true,
             addRemoveLinks: true,
